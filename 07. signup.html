@@ -4,6 +4,7 @@
 	<title>07. Signup</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
 </head>
 <body>
 		
@@ -19,17 +20,22 @@
 						</p>
 
 						<form id="signup-form" class="gen-form">
-							<input type="text" name="" class="form-input" placeholder="Name">
+							<input id ="name" type="text" name="" class="form-input" placeholder="Name">
 
-							<input type="text" name="" class="form-input" placeholder="Mobile Number">
+							<input id="mobileNumber" type="text" name="" class="form-input" placeholder="Mobile Number">
 
-							<input type="text" name="" class="form-input" placeholder="Email Address">
+							<input id="email" type="email" name="" class="form-input" placeholder="Email Address">
 
-							<input type="password" name="" class="form-input" placeholder="Password">
+							<input id="password" type="password" name="" class="form-input" placeholder="Password">
 
-							<input type="password" name="" class="form-input" placeholder="Confirm Password">
+							<input id="confirm_password" type="password" name="" class="form-input" placeholder="Confirm Password">
+							
+							<select id="selectCities" ></select>
 
-							<button type="submit" class="form-submit-btn leaf-btn leaf-btn-green">Login</button>
+							<button type="submit" class="form-submit-btn leaf-btn leaf-btn-green"onclick="SignUp()">Login</button>
+
+							
+					<!-- <button id="signup-btn" type="button" onclick="SignUp()">Submit</button> -->
 						</form>
 
 						
@@ -49,6 +55,9 @@
 		</div>	
 			
 	</div>
+<!-- Scripts -->
+	<script src="server.js"></script>
+	<script src="07. signup.js"></script>
 
 </body>
 </html>

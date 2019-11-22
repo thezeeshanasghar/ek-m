@@ -4,6 +4,7 @@
 	<title>06. Login</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
 </head>
 <body>
 		
@@ -19,10 +20,10 @@
 						</p>
 
 						<form id="login-form" class="gen-form">
-							<input type="text" name="" class="form-input">
-							<input type="password" name="" class="form-input">
+							<input id="Email" type="email" name="" class="form-input">
+							<input id="Password" type="password" name="" class="form-input">
 
-							<button type="submit" class="form-submit-btn leaf-btn leaf-btn-green">Login</button>
+							<button type="submit" class="form-submit-btn leaf-btn leaf-btn-green" onclick="login()">Login</button>
 						</form>
 
 						<div class="forgot-pswd"><a href="#">Forgot Your Password?</a></div>
@@ -42,6 +43,8 @@
 		</div>	
 			
 	</div>
-
+<!-- Scripts -->
+  <script src="server.js"></script>
+  <script src="06. login.js"></script>
 </body>
 </html>
