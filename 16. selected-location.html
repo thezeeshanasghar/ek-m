@@ -2,108 +2,216 @@
 <html>
 <head>
 	<title>16. Selected Location</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<script type="text/javascript" src="js/jquery-latest.js"></script>
+	<script type="text/javascript" src="16. selected-location.js"></script>
+
 </head>
 <body>
-			<header>
-				<span class="glass"></span>
-				<div class="header_heading header-left-panel">
-					<span>Deliver Now</span> <br>
-					Selected Location
-					<img src="img/down-arrow.jpg" />
+	
+	<div class="toSticky fixed shadow top-sticky">
+		<header>
+
+				<div class="header-wrapper">
+
+					<div class="header_heading header-left-panel selected-location-heading">
+						<span>Deliver Now</span> <br>
+						Selected Location
+						<img src="img/down-arrow.jpg" />
+					</div>
+
+					<div class="right-panel">
+						<div class="select-location-header"> <img src="img/user-icon.jpg"> </div>
+					</div>
+
 				</div>
 
-				<div class="header-right-panel">
-					<img src="img/user-icon.jpg">
+		</header>
+
+		<div class="search-filter">
+				<div class="header-wrapper">
+						<div class="search-filter-back">
+							<img src="img/select-search-icon.jpg">
+							<input type="text" name="" placeholder="Restaurants or Cuisines" />
+						</div>			
+						<a href="17. filters.html"><img src="img/filter-icon.jpg"></a>
 				</div>
-			</header>
+		</div>
+	</div>
 
-			<div class="main-content">
 
-				<div class="search-filter">
-					<input type="text" name="" placeholder="Restaurants or Cuisines"> <img src="img/filter-icon.jpg">
+	<div class="toSticky">
+		<header>
+
+				<div class="header-wrapper">
+
+					<div class="header_heading header-left-panel selected-location-heading">
+						<span>Deliver Now</span> <br>
+						Selected Location
+						<img src="img/down-arrow.jpg" />
+					</div>
+
+					<div class="right-panel">
+						<div class="select-location-header"> <img src="img/user-icon.jpg"> </div>
+					</div>
+
 				</div>
 
-				<div class="item-list">
-					<ul>
-						<li>
-							<a href="#" class="one">Burger</a>
-						</li>
+		</header>
 
-						<li>
-							<a href="#" class="two">Pizza</a>
-						</li>
-
-						<li>
-							<a href="#" class="three">Chicken</a>
-						</li>
-
-						<li>
-							<a href="#" class="four">Wings</a>
-						</li>
-					</ul>
+		<div class="search-filter">
+				<div class="header-wrapper">
+						<div class="search-filter-back">
+							<img src="img/select-search-icon.jpg">
+							<input type="text" name="" placeholder="Restaurants or Cuisines" />
+						</div>			
+						<a href="17. filters.html"><img src="img/filter-icon.jpg"></a>
 				</div>
+		</div>
+	</div>
 
-				<div class="rest-slider">
-					<div class="rest-item">
-						
-						<div class="rest-heading">
-							<div class="rest-left">
-								<h3>
-									Sponsor
-								</h3>
-							</div>
+	<div class="med-wrapper relative">
 
-							<div class="rest-right">
-								<img src="img/arrow-left.jpg">
-							</div>
-						</div>
+		<div class="item-list cuisines">
+			<div class="swiper-container s1">
+			    <div id="cuisines" class="swiper-wrapper">
+				     <!--  <div class="swiper-slide swiper-slide-widthed-sm"><a class="one" href="#">Wings</a></div>
+				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="two" href="#">Burger</a></div>
+				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="three" href="#">Pizza</a></div>
+				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="four" href="#">Chicken</a></div>
+				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="one" href="#">Wings</a></div>
+				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="two" href="#">Burger</a></div>
+				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="three" href="#">Pizza</a></div>
+				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="four" href="#">Chicken</a></div>
+				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="one" href="#">Wings</a></div>
+				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="two" href="#">Burger</a></div>
+				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="three" href="#">Pizza</a></div>
+				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="four" href="#">Chicken</a></div>
+				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="one" href="#">Wings</a></div>
+				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="two" href="#">Burger</a></div>
+				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="three" href="#">Pizza</a></div>
+				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="four" href="#">Chicken</a></div> -->
+			  	</div>
+ 			 </div>
+ 		</div>
 
-						<ul>
-							<li>
-								<div class="rest-photo">
-									<span class="status">open</span>
+		<div class="rest-slider">
+			<div class="rest-item">
+				
+				<div class="rest-heading">
+					<div class="rest-left">
+						<h3>
+							Sponsor
+						</h3>
+					</div>
 
-									<span class="distance">
-										Approximately <br>
-										<b>45 Min</b>
-									</span>
-								</div>
-							</li>
-						</ul>
-
-						<div class="rest-info">
-							<h4>Big John's</h4>
-							<p>
-								<span>
-									<img src="img/star.jpg">
-									3.8 Good
-								</span>
-								(20+) - Pizza - Burger - Peri...
-							</p>
-						</div>
-
+					<div class="rest-right">
+						<img id="sponsor-list-right" src="img/arrow-right.jpg" style="margin-left: 10px">
 					</div>
 				</div>
 
-				<div class="rest-slider">
-					<div class="rest-item">
-						
-						<div class="rest-heading">
-							<div class="rest-left">
-								<h3>
-									Top rated
-								</h3>
-							</div>
+				<div class="item-list sponsor-list">
 
-							<div class="rest-right">
-								<img src="img/arrow-left.jpg">
-							</div>
-						</div>
+					<div class="swiper-container s2">
 
-						<ul>
-							<li>
+					    <div id="spon-rest" class="swiper-wrapper">
+
+					    	<!-- <div class="swiper-slide swiper-slide-widthed">
+					    		
+					    		<div class="restaurants-slides">
+								
+									<div class="rest-photo">
+
+										<div class="img"><img src="img/banner.jpg"></div>
+
+										<span class="status">open</span>
+
+										<span class="distance">
+											Approximately <br>
+											<b>45 Min</b>
+										</span>
+									</div>
+
+									<div class="rest-info">
+										<h4>Big John's</h4>
+										<p>
+											<span>
+												<img src="img/star.jpg">
+												3.8 Good
+											</span>
+											(20+) - Pizza - Burger - Peri...
+										</p>
+									</div>
+
+								</div>
+
+					    	</div> -->
+
+					    </div>
+
+					</div>			
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="rest-slider">
+			<div class="rest-item">
+
+				<div class="rest-heading">
+					<div class="rest-left">
+						<h3>
+							Top rated
+						</h3>
+					</div>
+
+					<div class="rest-right">
+						<img id="top-rated-right" src="img/arrow-right.jpg" style="margin-left: 10px">
+					</div>
+				</div>
+
+				<div class="top-item-list top-rated-list">
+
+					<div class="swiper-container s3">
+
+					    <div class="swiper-wrapper">
+
+					      <div class="swiper-slide swiper-slide-widthed">
+					      	
+						      	<div class="top-restaurants-slides">
+								
+									<div class="rest-photo">
+										<span class="status">open</span>
+
+										<span class="distance">
+											Approximately <br>
+											<b>40 Min</b>
+										</span>
+									</div>
+
+									<div class="rest-info">
+										<h4>All Aziz restaurant</h4>
+										<p>
+											<span>
+												<img src="img/star.jpg">
+												4.2 Good
+											</span>
+											(40+) - BBQ - Chinese - Pak...
+										</p>
+									</div>
+
+								</div>
+
+					      </div>
+
+					      <div class="swiper-slide swiper-slide-widthed">
+					      	
+					      	<div class="top-restaurants-slides">
+							
 								<div class="rest-photo">
 									<span class="status">open</span>
 
@@ -112,94 +220,308 @@
 										<b>40 Min</b>
 									</span>
 								</div>
-							</li>
-						</ul>
 
-						<div class="rest-info">
-							<h4>All Aziz restaurant</h4>
-							<p>
-								<span>
-									<img src="img/star.jpg">
-									4.2 Good
-								</span>
-								(40+) - BBQ - Chinese - Pak...
-							</p>
-						</div>
+								<div class="rest-info">
+									<h4>All Aziz restaurant</h4>
+									<p>
+										<span>
+											<img src="img/star.jpg">
+											4.2 Good
+										</span>
+										(40+) - BBQ - Chinese - Pak...
+									</p>
+								</div>
 
-					</div>
-				</div>
-
-				<div class="rest-slider">
-					<div class="rest-item">
-						
-						<div class="rest-heading">
-							<div class="rest-left">
-								<h3>
-									All restaurants around you
-								</h3>
 							</div>
 
-							<div class="rest-right">
+					      </div>
+
+					      <div class="swiper-slide swiper-slide-widthed">
+					      	
+					      	<div class="top-restaurants-slides">
+							
+								<div class="rest-photo">
+									<span class="status">open</span>
+
+									<span class="distance">
+										Approximately <br>
+										<b>40 Min</b>
+									</span>
+								</div>
+
+								<div class="rest-info">
+									<h4>3rd. All Aziz restaurant</h4>
+									<p>
+										<span>
+											<img src="img/star.jpg">
+											4.2 Good
+										</span>
+										(40+) - BBQ - Chinese - Pak...
+									</p>
+								</div>
+
+							</div>
+
+					      </div>
+
+					      <div class="swiper-slide swiper-slide-widthed">
+					      	
+						      	<div class="top-restaurants-slides">
 								
+									<div class="rest-photo">
+										<span class="status">open</span>
+
+										<span class="distance">
+											Approximately <br>
+											<b>40 Min</b>
+										</span>
+									</div>
+
+									<div class="rest-info">
+										<h4>All Aziz restaurant</h4>
+										<p>
+											<span>
+												<img src="img/star.jpg">
+												4.2 Good
+											</span>
+											(40+) - BBQ - Chinese - Pak...
+										</p>
+									</div>
+
+								</div>
+
+					      </div>
+
+					      <div class="swiper-slide swiper-slide-widthed">
+					      	
+					      	<div class="top-restaurants-slides">
+							
+								<div class="rest-photo">
+									<span class="status">open</span>
+
+									<span class="distance">
+										Approximately <br>
+										<b>40 Min</b>
+									</span>
+								</div>
+
+								<div class="rest-info">
+									<h4>All Aziz restaurant</h4>
+									<p>
+										<span>
+											<img src="img/star.jpg">
+											4.2 Good
+										</span>
+										(40+) - BBQ - Chinese - Pak...
+									</p>
+								</div>
+
 							</div>
-						</div>
 
-						<ul>
-							<li>
+					      </div>
+
+					      <div class="swiper-slide swiper-slide-widthed">
+					      	
+					      	<div class="top-restaurants-slides">
+							
 								<div class="rest-photo">
+									<span class="status">open</span>
 
 									<span class="distance">
 										Approximately <br>
-										<b>30 Min</b>
+										<b>40 Min</b>
 									</span>
 								</div>
-							</li>
-						</ul>
 
-						<div class="rest-info">
-							<h4>All Aziz restaurant</h4>
-							<p>
-								<span>
-									<img src="img/star.jpg">
-									4.2 Good
-								</span>
-								(40+) - BBQ - Chinese - Pak...
-							</p>
-						</div>
+								<div class="rest-info">
+									<h4>3rd. All Aziz restaurant</h4>
+									<p>
+										<span>
+											<img src="img/star.jpg">
+											4.2 Good
+										</span>
+										(40+) - BBQ - Chinese - Pak...
+									</p>
+								</div>
 
-					</div>
-				</div>
+							</div>
 
-				<div class="rest-slider">
-					<div class="rest-item">
+					      </div>
 
-						<ul>
-							<li>
+					      <div class="swiper-slide swiper-slide-widthed">
+					      	
+						      	<div class="top-restaurants-slides">
+								
+									<div class="rest-photo">
+										<span class="status">open</span>
+
+										<span class="distance">
+											Approximately <br>
+											<b>40 Min</b>
+										</span>
+									</div>
+
+									<div class="rest-info">
+										<h4>All Aziz restaurant</h4>
+										<p>
+											<span>
+												<img src="img/star.jpg">
+												4.2 Good
+											</span>
+											(40+) - BBQ - Chinese - Pak...
+										</p>
+									</div>
+
+								</div>
+
+					      </div>
+
+					      <div class="swiper-slide swiper-slide-widthed">
+					      	
+					      	<div class="top-restaurants-slides">
+							
 								<div class="rest-photo">
+									<span class="status">open</span>
 
 									<span class="distance">
 										Approximately <br>
-										<b>45 Min</b>
+										<b>40 Min</b>
 									</span>
 								</div>
-							</li>
-						</ul>
 
-						<div class="rest-info">
-							<h4>Hotel Millan inn</h4>
-							<p>
-								<span>
-									<img src="img/star.jpg">
-									4.2 Good
-								</span>
-								(40+) - BBQ - Chinese - Pak...
-							</p>
-						</div>
+								<div class="rest-info">
+									<h4>All Aziz restaurant</h4>
+									<p>
+										<span>
+											<img src="img/star.jpg">
+											4.2 Good
+										</span>
+										(40+) - BBQ - Chinese - Pak...
+									</p>
+								</div>
 
-					</div>
+							</div>
+
+					      </div>
+
+					      <div class="swiper-slide swiper-slide-widthed">
+					      	
+					      	<div class="top-restaurants-slides">
+							
+								<div class="rest-photo">
+									<span class="status">open</span>
+
+									<span class="distance">
+										Approximately <br>
+										<b>40 Min</b>
+									</span>
+								</div>
+
+								<div class="rest-info">
+									<h4>3rd. All Aziz restaurant</h4>
+									<p>
+										<span>
+											<img src="img/star.jpg">
+											4.2 Good
+										</span>
+										(40+) - BBQ - Chinese - Pak...
+									</p>
+								</div>
+
+							</div>
+
+					      </div>
+
+					  	</div>
+
+ 			 		</div>
+
 				</div>
 
 			</div>
+
+		</div>
+
+		
+		<div id="all-rest-heading">All restaurants around you</div>
+		<div id="all-rest">
+
+			<!-- <div class="rest-slider">
+
+				<div class="all-rest-item rest-item">
+
+					<div class="rest-photo">
+
+						<div class="img">
+							<img src="img/banner.jpg">
+						</div>
+
+						<span class="distance">
+							Approximately <br>
+							<b>30 Min</b>
+						</span>
+					</div>
+
+					<div class="rest-info">
+						<h4>Al Aziz Restaurant</h4>
+						<p>
+							<span>
+								<img src="img/star.jpg">
+								4.2 Good
+							</span>
+							(40+) - BBQ - Chinese - Pak...
+						</p>
+					</div>
+
+				</div>
+
+			</div> -->
+
+
+		</div>
+
+	</div>
+
+			<script type="text/javascript" src="js/jquery.js"></script>
+
+			<script type="text/javascript">
+							$(window).scroll(function(){
+			  var sticky = $('.top-sticky'),
+			      scroll = $(window).scrollTop();
+
+			  if (scroll >= 106) sticky.slideDown();
+			  else sticky.slideUp();
+			});
+			</script>
+
+
+
+			<script type="text/javascript" src="js/jquery.js"></script>
+
+			<script type="text/javascript">
+
+				// $.mobile.loading().hide();
+
+			</script>
+
+
+			<!-- Swiper JS -->
+  <script src="js/swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    // var swiper = new Swiper('.s1', {
+    //   slidesPerView: 4,
+    //   spaceBetween: 50,
+    //   freeMode: true,
+    // });
+
+    var swiper = new Swiper('.s3', {
+      slidesPerView: 'auto',
+      spaceBetween: 14,
+      freeMode: true,
+    });
+  </script>
 
 			
 </body>
