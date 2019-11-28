@@ -767,6 +767,8 @@ header .header-search-img img {
 
 /*Selected Location Page*/
 
+
+
 .header-left-panel {
 	float: left;
 	line-height: 23px !important;
@@ -823,6 +825,8 @@ header .select-location-header img {
 	background: #f3f5f4;
 	width: 86%;
 	float: left;
+	position: relative;
+	z-index: 99 !important;
 }
 
 .search-filter-back img {
@@ -833,15 +837,75 @@ header .select-location-header img {
 	margin-top: 10px;
 }
 
+#liveSearch {
+	position: absolute;
+	top: 42px;
+	width: 96%;
+	background: #f0f0f0;
+	z-index: 99 !important;
+
+}
+
+#liveSearch li {
+	float: left;
+	padding: 2px 5px;
+	width: 100%;
+	cursor: pointer;
+}
+
+#liveSearch li:nth-child(odd){
+	background: #f1f1f1;
+}
+
+#liveSearch li:nth-child(even){
+	background: #f9f9f9;
+}
+
+#liveSearch li img {
+	margin: 4px;
+	width: 25px;
+	height: 17px;
+}
+
+#livestickSearch {
+	position: absolute;
+	top: 42px;
+	width: 96%;
+	background: #f0f0f0;
+	z-index: 99 !important;
+}
+
+#livestickSearch li {
+	float: left;
+	padding: 2px 5px;
+	width: 100%;
+	cursor: pointer;
+}
+
+#livestickSearch li:nth-child(odd){
+	background: #f0f0f0;
+}
+
+#livestickSearch li:nth-child(even){
+	background: #f9f9f9;
+}
+
+#livestickSearch li img {
+	margin: 4px;
+	width: 25px;
+	height: 17px;
+}
+
 .search-filter-map .search-filter-back {
 	width: 100%;
 }
+
 
 .toSticky {
 	width: 100%;
 	float: left;
 	position: relative;
-	z-index: 1;
+	z-index: 9;
 }
 
 .top-sticky {

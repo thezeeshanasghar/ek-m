@@ -2,6 +2,8 @@ $(document).ready(function(){
       loadCuisine();
       loadSpon();
       loadRest();
+      searchRest();
+      searchstickRest();
 });
 
 // Load Cuisines
@@ -43,18 +45,36 @@ function loadCuisine() {
                 }); 
                 $("#cuisines").html(html);
 
-                var swiper = new Swiper('.s1', {
-			      slidesPerView: 4,
-			      spaceBetween: 50,
-			      freeMode: true,
-			    });
+                 if ($(window).width() > 559) {
+
+                    var swiper = new Swiper('.s1', {
+                      slidesPerView: 6,
+                      spaceBetween: 1,
+                      freeMode: true,
+                    });
+
+                } else {
+
+                    var swiper = new Swiper('.s1', {
+                      slidesPerView: 4,
+                      spaceBetween: 50,
+                      freeMode: true,
+                    });
+
+                }
+
+                
             }
         },
         error: function(xhr, status, error) {
             console.log(xhr.responseText);
           }
     });
+
+
+    
 }
+
 
 // Load Sponsors
 function loadSpon() {
@@ -144,3 +164,84 @@ function loadRest() {
     });
 }
 
+
+function searchRest() {
+
+    $("#search").keyup(function(){
+        $("#liveSearch").html('');
+        var searchField = $("#search").val();
+        var expression = new RegExp(searchField, "i");
+
+         $.ajax({
+        url: "http://localhost:3000/rest",
+        type: "GET",
+        dataType: "JSON",
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            
+            $.each(data, function(key, value){
+
+                if (value.title.search(expression) != -1 || value.imgPath.search(expression) != -1)
+
+                {
+                    $("#liveSearch").append('<li><img src="'+value.imgPath+'" /> | '+value.title+'</li>');
+                }
+
+                $("#liveSearch").on('click', 'li' , function(){
+                    var click_text = $(this).text().split('|');
+
+                    // alert(click_text);
+
+                    $("#search").val($.trim(click_text))
+                    $("#liveSearch").html('');
+                });
+            })
+
+
+            
+        },
+        error: function(xhr, status, error) {
+            console.log(xhr.responseText);
+          }
+    });
+
+
+    })
+
+}
+
+function searchstickRest() {
+
+    $("#stick-search").keyup(function(){
+        $("#livestickSearch").html('');
+        var searchField = $("#stick-search").val();
+        var expression = new RegExp(searchField, "i");
+
+         $.ajax({
+        url: "http://localhost:3000/rest",
+        type: "GET",
+        dataType: "JSON",
+        contentType: "application/json;charset=utf-8",
+        success: function (data) {
+            
+            $.each(data, function(key, value){
+
+                if (value.title.search(expression) != -1 || value.imgPath.search(expression) != -1)
+
+                {
+                    $("#livestickSearch").append('<li><img src="'+value.imgPath+'" /> | '+value.title+'</li>');
+                } 
+            })
+
+
+            
+        },
+        error: function(xhr, status, error) {
+            console.log(xhr.responseText);
+          }
+    });
+
+
+    })
+
+}

@@ -1,0 +1,7 @@
+I found the problem.
+
+With cordova or phongap you need to use the plugin phonegap-mobile-accessibility
+
+On device ready call add "MobileAccessibility.usePreferredTextZoom(false);"
+
+After it is ok.
