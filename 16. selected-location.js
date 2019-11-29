@@ -68,7 +68,7 @@ function loadCuisine() {
         },
         error: function(xhr, status, error) {
             console.log(xhr.responseText);
-          }
+        }
     });
 
 

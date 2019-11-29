@@ -1367,6 +1367,11 @@ padding-top: 4px;
 
 .order-nav li {
 	float: left;
+	margin-right: 1px;
+}
+
+.order-nav li a {
+	float: left;
 	color: white;
 	margin: 0 1px;
 	padding: 0px 18px;
@@ -1374,7 +1379,16 @@ padding-top: 4px;
 	border-radius: 25px;
 }
 
-.order-nav .active {
+.order-nav li a {
+	color: white;
+}
+
+.order-nav li a:hover {
+	background: white;
+	color: #039611;
+}
+
+.order-nav li a.active {
 	background: white;
 	color: #039611;
 }

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>24. Order Tracking</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+    	<header>
+        		
+            <div class="header-wrapper">
+                <div class="header_heading">
+        			<img src="img/round_left_arrow.jpg" />
+        			Order Tracking
+        		</div>
+            </div>
+
+        </header>
+        
+        <div class="order-track-info">
+
+            <div class="header-wrapper">
+                <div class="left-panel">
+                    <h3>Estimated Time</h3>
+                    <p>30 Minutes</p>
+                </div>
+
+                <div class="right-panel">
+                    <h3>Order ID</h3>
+                    <p>#152574</p>
+                </div>
+            </div>
+
+        </div>
+    		
+    	<div class="med-wrapper relative">	
+
+            <div class="track-diagram">
+                <ul>
+                    <li>
+
+                        <div class="order-con order-con-1">
+                            <span class="round">
+                                <span class="green-round"></span>
+                            </span>
+                            <span class="bar">
+                                <span class="green-bar"></span>
+                            </span>
+                        </div>
+                        
+                        <div class="track-dia-item track-dia-item-1">
+                            <div class="track-dia-icon">
+                                <img src="img/track-confirm.jpg" alt="">
+                            </div>
+
+                            <div class="track-dia-info">
+                                <h3>Confirmation</h3>
+                                <p>You will get confirmation call from our sales representative momentarily</p>
+                            </div>
+                        </div>
+
+                    </li>
+
+                   
+
+                    <li>
+
+                        <div class="order-con order-con-2">
+                            <span class="bar bar-1"></span>
+                            <span class="round"></span>
+                            <span class="bar bar-2"></span>
+                        </div>
+                        
+                        <div class="track-dia-item  track-dia-item-3">
+                            <div class="track-dia-icon">
+                            <img src="img/track-prepare.jpg" alt="">
+                            </div>
+
+                            <div class="track-dia-info">
+                                <h3>Preparation of Meal</h3>
+                                <p>Your order is being prepared at the moment</p>
+                            </div>
+                        </div>
+
+                    </li>
+
+                    <li>
+
+                       <div class="order-con order-con-3">
+                            <span class="bar"></span>
+                            <span class="round"></span>
+                        </div>
+
+                        <div class="track-dia-item  track-dia-item-4">
+                            <div class="track-dia-icon">
+                            <img src="img/track-delivery.jpg" alt="">
+                            </div>
+
+                            <div class="track-dia-info">
+                                <h3>Delivery</h3>
+                                <p>It is time to test your taste buds because your meal is on its way</p>
+                            </div>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+
+            
+            <div class="bottom-panel">
+                <a href="25. track-location.html" class="leaf-btn leaf-btn-green full-btn">Track Order by location</a>
+            </div>
+
+    	</div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <script type="text/javascript">
+        
+        $( document ).ready(function() {
+
+            $(".order-con-1 .green-round").css('height' , '18px');
+
+            function barDown(){
+              $(".order-con-1 .green-bar").css('height' , '57px');
+           };
+
+           window.setTimeout( barDown, 1700 ); // 3 seconds
+
+        });
+
+       
+
+    </script>
+
+</body>
+</html>

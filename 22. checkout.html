@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>22. Checkout</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+    <div class="overlay">
+        
+        <div class="select-bk">
+            
+            <div class="arrow-panel">
+                <img src="img/green-down-arrow.jpg">
+            </div>
+
+            <div class="select-opt">
+                <h3>Please Select</h3>
+
+                <label>
+                <div class="option left-panel">
+                    Cash
+                </div>
+
+               <div class="circle right-panel">
+                   <img src="img/radio-uncheck.jpg">
+               </div>
+
+                </label>
+
+
+                <label>
+                <div class="option left-panel">
+                    Debit / Credit card swipe
+                </div>
+
+               <div class="circle right-panel">
+                   <img src="img/radio-uncheck.jpg">
+               </div>
+
+                </label>
+
+                <label>
+                <div class="option left-panel">
+                    Easypaisa
+                </div>
+
+               <div class="circle right-panel">
+                   <img src="img/radio-uncheck.jpg">
+               </div>
+
+                </label>
+
+                <label class="no-bb">
+                <div class="option left-panel">
+                    Mobicash
+                </div>
+
+               <div class="circle right-panel">
+                   <img src="img/radio-uncheck.jpg">
+               </div>
+
+                </label>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container">
+
+	<header>
+    		
+        <div class="header-wrapper">
+            <div class="header_heading">
+    			<img src="img/round_left_arrow.jpg" />
+    			Checkout
+    		</div>
+        </div>
+
+	</header>
+
+    <div class="eatklik-wallet shadow" style="font-size: 16px; font-weight: 700;">
+         
+        <div class="med-wrapper">   
+                <h3>Use eat klik wallet</h3>
+
+                <div class="checkbox">  
+                    <input id="filter-top-rated" type="checkbox" name="check" value="filter-top-rated">  
+                    <label for="filter-top-rated">Rs: 120</label>
+                </div>
+        </div>
+
+    </div>
+		
+	<div class="med-wrapper relative">	
+
+        
+
+        <div class="checkout-heading">
+                <h3 style="font-size: 16px; font-weight: 700;">Total Payable</h3>
+        </div>
+
+        <div class="checkout-amount">
+            Rs 1896
+        </div>
+
+        <div class="delivery-address">
+            <div class="left-panel">
+                <h4 style="font-size: 16px; font-weight: 700;">Delivery Addresss</h4>
+            </div>
+
+            
+
+            <input type="text" placeholder="House# 12, Garden Toown, Deara Ghazi Khan.">
+        </div>
+
+        <div class="payment-mode">
+           
+            <div class="select">
+                
+                <div class="left-panel"><span id="mod-of-pay">Mode of Payment</span></div>
+                <div class="right-panel"><img src="img/small-down-arrow.jpg"></div>
+
+            </div>
+
+        </div>
+
+        <div class="checkout-inst">
+            <h4>Special Instructions</h4>
+            <textarea name="" id="" cols="30" rows="6">
+Write Text
+            </textarea>
+        </div>
+		
+
+		
+        <div class="bottom-panel sticky-panel">
+            <a class="form-submit-btn leaf-btn leaf-btn-green full-btn standard-btn" href="23. order-placed.html">Place Order</a>
+        </div>
+			
+	</div>
+
+</div>
+
+  <script type="text/javascript" src="js/jquery.js"></script>
+
+    <script type="text/javascript">
+        
+        $(document).ready(function(){
+
+            $(".payment-mode").click(function(){
+
+
+                $(".overlay").fadeIn('slow');
+
+            });
+
+            $(".select-opt label").click(function(){
+
+                var value = $(this).find(".option");
+
+                var actual = $(value).html();
+
+                  $("#mod-of-pay").html(actual);
+
+
+
+            });
+
+            $(".overlay").click(function(){
+
+
+                $(this).css('display' , 'none');
+
+            });
+
+        });
+
+
+         </script>   
+
+</body>
+</html>

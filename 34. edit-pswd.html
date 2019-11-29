@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>34. Edit Password</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+	
+	<header>
+
+		<span class="glass"></span>
+			
+			<div class="header-wrapper">
+
+				<div class="header_heading">
+					<img src="img/round_left_arrow.jpg" />
+					Change Password
+
+					
+				</div>
+
+				<div class="header-done right-panel">
+					Done
+				</div>
+
+			</div>
+
+	</header>
+
+			<div class="med-wrapper relative">
+				<div class="profile-pic-heading ">
+                    Current Password
+                    
+                    <div class="edit-name-panel">
+                        <input type="password" name="" id="edit-name" placeholder="Enter your current password">
+                    </div>
+                </div>
+                
+                <div class="profile-pic-heading ">
+                        New Password
+                        
+                        <div class="edit-name-panel">
+                            <input type="password" name="" id="edit-name">
+                        </div>
+                    </div>
+
+                    <div class="profile-pic-heading ">
+                            Re-type new Password
+                            
+                            <div class="edit-name-panel">
+                                <input type="password" name="" id="edit-name">
+                            </div>
+                        </div>
+
+				
+
+				
+			</div>
+
+			<div class="profile-pic-footer" style="width: 100%; text-align: center;">
+			<span class="standard-btn" style="width: 80%; margin: auto;">Update</span>
+		</div>
+
+</div>
+
+			<script type="text/javascript" src="js/jquery.js"></script>
+
+			<script> 
+
+	        	$("input").focus(function() { 
+
+		            $(".update-pswd-btn").css("display", "none"); 
+		            $(".header-done").css("display", "block"); 
+
+	        	}); 
+
+	        	$("input").focusout(function() { 
+
+		            $(".update-pswd-btn").css("display", "block"); 
+		            $(".header-done").css("display", "none"); 
+	            
+	        	}); 
+
+	   		 </script> 
+</body>
+</html>

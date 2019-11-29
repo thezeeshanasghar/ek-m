@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>17. Filters</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<title>19. View Order</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 
-	<header>
-		<span class="glass"></span>
-	</header>
+    <div class="order-sticky">
+        
+        <header>
+
+            <div class="header-wrapper">
+
+                <div class="header_heading">
+                    <img src="img/round_left_arrow.jpg" />
+                    Al Maida Restaurant
+                </div>
+
+            </div>
+            
+        </header>
+
+        <div class="order-nav-wrapper">
+            <div id="order-nav" class="order-nav">
+                <ul>
+                    <li ><a class="scrollTo active" href="#pizza">Pizza</a></li>
+                    <li><a class="scrollTo" href="#burger">Burger</a></li>
+                    <li><a class="scrollTo" href="#fries">Fries</a></li>
+                    <li><a class="scrollTo" href="#wings">Wings</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <div id="rest-banner" class="banner relative">
+        <div class="rest-name-star">
+            
+            <div class="rest-name-star-head">
+                <h1>Al Maida Restaurant</h1>
+            </div>
+                <img src="img/stars.png">
+        </div>
+    </div>
 		
-	<div class="full-content">	
+	<div class="full-wrapper order-list-page">	
 
         <div class="order-tabs">
             <div class="left-panel">
@@ -25,19 +60,28 @@
             </div>
         </div>
 
-        <div class="order-nav">
-            <ul>
-                <li class="active">Pizza</li>
-                <li>Burger</li>
-                <li>Fries</li>
-                <li>Wings</li>
+        <div class="order-nav-wrapper">
+            <div class="order-nav">
+                <ul>
+                    <li ><a class="active" href="#">Pizza</a></li>
+                    <li><a href="#">Burger</a></li>
+                    <li><a href="#">Fries</a></li>
+                    <li><a href="#">Wings</a></li>
 
-            </ul>
+                </ul>
+            </div>
         </div>
 
+
         <div class="order-list">
+
+            <div class="order-list-heading">
+                <h1 id="pizza">Pizza</h1>
+            </div>
+
             <ul>
                 <li>
+                    <div class="selected-order"><img src="img/selected-order.jpg"></div>
                     <h2><span>3x</span> Chicken Fajita</h2>
                     <div class="left-panel">
                         <p>Small 250, Medium 500, Large 800</p>
@@ -49,27 +93,281 @@
                 </li>
 
                 <li>
-                        <h2><span>3x</span> Special Pizza</h2>
+                    <h2><span>3x</span> Special Pizza</h2>
+                    <div class="left-panel">
+                        <p>Small 300, Medium 500, Large 900</p>
+                    </div>
+
+                    <div class="right-panel">
+                        <img src="img/plus-round-white.jpg" alt="">
+                    </div>
+                </li>
+
+                <li>
+                        <h2><span>3x</span> Chicken Fajita</h2>
                         <div class="left-panel">
-                            <p>Small 300, Medium 500, Large 900</p>
+                            <p>Small 250, Medium 500, Large 800</p>
                         </div>
     
                         <div class="right-panel">
                             <img src="img/plus-round-white.jpg" alt="">
                         </div>
                     </li>
+    
+                    <li>
+                    <div class="selected-order"><img src="img/selected-order.jpg"></div>
+                        <h2><span>3x</span> Special Pizza</h2>
+                        <div class="left-panel">
+                            <p>Small 300, Medium 500, Large 900</p>
+                        </div>
+    
+                        <div class="right-panel">
+                            <img src="img/plus-round-green.jpg" alt="">
+                        </div>
+                    </li>
             </ul>
-        </div>
-		
 
-		<div class="bottom-panel">
-			<button type="submit" class="form-submit-btn leaf-btn leaf-btn-green">Apply</button>
-			<div class="signup-link">
-				<a href="#">Clear all</a>
-			</div>
-		</div>
+        </div>
+
+        <div class="order-list">
+
+        	<div class="order-list-heading">
+        		<h1 id="burger">Burger</h1>
+        	</div>
+
+            <ul>
+                <li>
+                    <div class="selected-order"><img src="img/selected-order.jpg"></div>
+                    <h2><span>3x</span> Chicken Fajita</h2>
+                    <div class="left-panel">
+                        <p>Small 250, Medium 500, Large 800</p>
+                    </div>
+
+                    <div class="right-panel">
+                        <img src="img/plus-round-green.jpg" alt="">
+                    </div>
+                </li>
+
+                <li>
+                    <h2><span>3x</span> Special Pizza</h2>
+                    <div class="left-panel">
+                        <p>Small 300, Medium 500, Large 900</p>
+                    </div>
+
+                    <div class="right-panel">
+                        <img src="img/plus-round-white.jpg" alt="">
+                    </div>
+                </li>
+
+                <li>
+                        <h2><span>3x</span> Chicken Fajita</h2>
+                        <div class="left-panel">
+                            <p>Small 250, Medium 500, Large 800</p>
+                        </div>
+    
+                        <div class="right-panel">
+                            <img src="img/plus-round-white.jpg" alt="">
+                        </div>
+                    </li>
+    
+                    <li>
+                    <div class="selected-order"><img src="img/selected-order.jpg"></div>
+                        <h2><span>3x</span> Special Pizza</h2>
+                        <div class="left-panel">
+                            <p>Small 300, Medium 500, Large 900</p>
+                        </div>
+    
+                        <div class="right-panel">
+                            <img src="img/plus-round-green.jpg" alt="">
+                        </div>
+                    </li>
+            </ul>
+
+        </div>
+
+        <div class="order-list">
+
+        	<div class="order-list-heading">
+        		<h1 id="fries">Fries</h1>
+        	</div>
+
+            <ul>
+                <li>
+                    <div class="selected-order"><img src="img/selected-order.jpg"></div>
+                    <h2><span>3x</span> Chicken Fajita</h2>
+                    <div class="left-panel">
+                        <p>Small 250, Medium 500, Large 800</p>
+                    </div>
+
+                    <div class="right-panel">
+                        <img src="img/plus-round-green.jpg" alt="">
+                    </div>
+                </li>
+
+                <li>
+                    <h2><span>3x</span> Special Pizza</h2>
+                    <div class="left-panel">
+                        <p>Small 300, Medium 500, Large 900</p>
+                    </div>
+
+                    <div class="right-panel">
+                        <img src="img/plus-round-white.jpg" alt="">
+                    </div>
+                </li>
+
+                <li>
+                        <h2><span>3x</span> Chicken Fajita</h2>
+                        <div class="left-panel">
+                            <p>Small 250, Medium 500, Large 800</p>
+                        </div>
+    
+                        <div class="right-panel">
+                            <img src="img/plus-round-white.jpg" alt="">
+                        </div>
+                    </li>
+    
+                    <li>
+                    <div class="selected-order"><img src="img/selected-order.jpg"></div>
+                        <h2><span>3x</span> Special Pizza</h2>
+                        <div class="left-panel">
+                            <p>Small 300, Medium 500, Large 900</p>
+                        </div>
+    
+                        <div class="right-panel">
+                            <img src="img/plus-round-green.jpg" alt="">
+                        </div>
+                    </li>
+            </ul>
+
+        </div>
+
+        <div class="order-list">
+
+            <div class="order-list-heading">
+                <h1 id="wings">Wings</h1>
+            </div>
+
+            <ul>
+                <li>
+                    <div class="selected-order"><img src="img/selected-order.jpg"></div>
+                    <h2><span>3x</span> Chicken Fajita</h2>
+                    <div class="left-panel">
+                        <p>Small 250, Medium 500, Large 800</p>
+                    </div>
+
+                    <div class="right-panel">
+                        <img src="img/plus-round-green.jpg" alt="">
+                    </div>
+                </li>
+
+                <li>
+                    <h2><span>3x</span> Special Pizza</h2>
+                    <div class="left-panel">
+                        <p>Small 300, Medium 500, Large 900</p>
+                    </div>
+
+                    <div class="right-panel">
+                        <img src="img/plus-round-white.jpg" alt="">
+                    </div>
+                </li>
+
+                <li>
+                        <h2><span>3x</span> Chicken Fajita</h2>
+                        <div class="left-panel">
+                            <p>Small 250, Medium 500, Large 800</p>
+                        </div>
+    
+                        <div class="right-panel">
+                            <img src="img/plus-round-white.jpg" alt="">
+                        </div>
+                    </li>
+    
+                    <li>
+                    <div class="selected-order"><img src="img/selected-order.jpg"></div>
+                        <h2><span>3x</span> Special Pizza</h2>
+                        <div class="left-panel">
+                            <p>Small 300, Medium 500, Large 900</p>
+                        </div>
+    
+                        <div class="right-panel">
+                            <img src="img/plus-round-green.jpg" alt="">
+                        </div>
+                    </li>
+            </ul>
+
+        </div>
+	
+        <div class="med-wrapper">
+
+            <div class="cart">
+                <img src="img/cart.png">
+            </div>
+
+        </div>
 			
 	</div>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="19. view-order.js"></script>
+
+        <script type="text/javascript">
+
+            $(window).scroll(function(){
+
+                var sticky = $('.order-sticky'),
+                scroll = $(window).scrollTop();
+
+                if (scroll >= 271) sticky.slideDown();
+                else sticky.slideUp();
+
+            });
+
+
+
+            $(window).scroll(function(){
+
+                var stickyHeading = $('.order-list-heading'),
+                scroll = $(window).scrollTop();
+
+                if (scroll >= 271) stickyHeading.slideDown();
+                else stickyHeading.slideUp();
+            
+            });
+
+
+
+            // Add Remove Active
+            $(document).ready(function() {
+                $("#order-nav a").click(function () {
+                    $("#order-nav a").removeClass("active");
+                    // $(".tab").addClass("active"); // instead of this do the below 
+                    $(this).addClass("active");   
+                });
+            });
+
+
+            // scrollTo Functions
+
+            $('.scrollTo').click(function(){
+
+                var getElement = $(this).attr('href');
+                if($(getElement).length){
+                    var getOffset = $(getElement).offset().top;
+                    $('html,body').animate({
+                        scrollTop: getOffset - 100
+                    }, 500);
+                }
+
+            });
+
+
+            // Menu Active on scroll
+
+           
+
+
+
+        </script>
 
 </body>
 </html>
