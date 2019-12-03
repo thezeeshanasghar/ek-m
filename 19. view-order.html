@@ -73,7 +73,7 @@
         </div>
 
 
-        <div class="order-list">
+        <!-- <div class="order-list">
 
             <div class="order-list-heading">
                 <h1 id="pizza">Pizza</h1>
@@ -295,11 +295,11 @@
                     </li>
             </ul>
 
-        </div>
+        </div> -->
 	
         <div class="med-wrapper">
 
-            <div class="cart">
+            <div class="mob-cart">
                 <img src="img/cart.png">
             </div>
 
@@ -308,6 +308,8 @@
 	</div>
 
     <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="server.js"></script>
+    <script type="text/javascript" src="common.js"></script>
     <script type="text/javascript" src="19. view-order.js"></script>
 
         <script type="text/javascript">
@@ -333,38 +335,6 @@
                 else stickyHeading.slideUp();
             
             });
-
-
-
-            // Add Remove Active
-            $(document).ready(function() {
-                $("#order-nav a").click(function () {
-                    $("#order-nav a").removeClass("active");
-                    // $(".tab").addClass("active"); // instead of this do the below 
-                    $(this).addClass("active");   
-                });
-            });
-
-
-            // scrollTo Functions
-
-            $('.scrollTo').click(function(){
-
-                var getElement = $(this).attr('href');
-                if($(getElement).length){
-                    var getOffset = $(getElement).offset().top;
-                    $('html,body').animate({
-                        scrollTop: getOffset - 100
-                    }, 500);
-                }
-
-            });
-
-
-            // Menu Active on scroll
-
-           
-
 
 
         </script>
