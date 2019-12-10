@@ -2,120 +2,102 @@
 <html>
 <head>
 	<title>17. Filters</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 
-	<header>
-		<span class="glass"></span>
-		<div class="header_heading">
-			<img src="img/cross.jpg" />
-			Filters
-		</div>
-	</header>
-		
-	<div class="main-content">	
-
-		<div class="filter-opt">
-			<h3>Sort</h3>
-			<ul>
-				
-				<li>
-					<div class="left-panel">
-						Top Rated
-					</div>
-
-					<div class="right-panel">
-						<input type="radio" name="">
-					</div>
-				</li>
-
-				<li>
-					<div class="left-panel">
-						Open Now
-					</div>
-
-					<div class="right-panel">
-						<input type="radio" name="">
-					</div>
-				</li>
-
-				<li>
-					<div class="left-panel">
-						Add Your Budget
-					</div>
-
-					<div class="right-panel">
-						<img src="img/gt-arrow.jpg">
-					</div>
-				</li>
-
-			</ul>
-
-			<h3>Categories</h3>
-			<ul>
-				
-				<li>
-					<div class="left-panel">
-						Deals
-					</div>
-
-					<div class="right-panel">
-						<input type="radio" name="">
-					</div>
-				</li>
-
-				<li>
-					<div class="left-panel">
-						Pakistani Food
-					</div>
-
-					<div class="right-panel">
-						<input type="radio" name="">
-					</div>
-				</li>
-
-				<li>
-					<div class="left-panel">
-						Chinese Food
-					</div>
-
-					<div class="right-panel">
-						<input type="radio" name="">
-					</div>
-				</li>
-
-				<li>
-					<div class="left-panel">
-						Deal's
-					</div>
-
-					<div class="right-panel">
-						<input type="radio" name="">
-					</div>
-				</li>
-
-				<li>
-					<div class="left-panel">
-						Pakistani Food
-					</div>
-
-					<div class="right-panel">
-						<input type="radio" name="">
-					</div>
-				</li>
-
-			</ul>
-		</div>
-
-		<div class="bottom-panel">
-			<button type="submit" class="form-submit-btn leaf-btn leaf-btn-green">Apply</button>
-			<div class="signup-link">
-				<a href="#">Clear all</a>
+	<div class="container">
+		<header>
+			<span class="glass"></span>
+			<div class="header-wrapper">	
+				<div class="header_heading filter-header-heading">
+					<img src="img/cross.jpg" />
+					Filters
+				</div>
 			</div>
-		</div>
+		</header>
 			
+		<div class="med-wrapper relative">	
+
+			<div class="filter-opt">
+				<h3>Sort</h3>
+				<ul>
+					
+					<li>
+						<div class="checkbox">  
+					    	<input id="filter-top-rated" type="checkbox" name="check" value="filter-top-rated">  
+					    	<label for="filter-top-rated">Top Rated</label>
+						</div>
+					</li>
+
+					<li>
+						<div class="checkbox">  
+					    	<input id="filter-open" type="checkbox" name="check" value="filter-open">  
+					    	<label for="filter-open">Open Now</label>
+						</div>
+					</li>
+
+					<li>
+						<div class="left-panel">
+							Add Your Budget
+						</div>
+
+						<div class="right-panel">
+							<img src="img/gt-arrow.jpg">
+						</div>
+					</li>
+
+				</ul>
+
+				<h3>Categories</h3>
+				<ul>
+					
+					<li>
+						<div class="checkbox">  
+					    	<input id="filter-cat-deals" type="checkbox" name="check" value="filter-cat-deals">  
+					    	<label for="filter-cat-deals">Deals</label>
+						</div>
+					</li>
+
+					<li>
+						<div class="checkbox">  
+					    	<input id="filter-cat-pak-food" type="checkbox" name="check" value="filter-cat-pak-food">  
+					    	<label for="filter-cat-pak-food">Pakistani Food</label>
+						</div>
+					</li>
+
+					<li>
+						<div class="checkbox">  
+					    	<input id="filter-cat-chinese-food" type="checkbox" name="check" value="filter-cat-chinese-food">  
+					    	<label for="filter-cat-chinese-food">Chinese Food</label>
+						</div>
+					</li>
+
+					<li>
+						<div class="checkbox">  
+					    	<input id="filter-cat-deals-2" type="checkbox" name="check" value="filter-cat-deals-2">  
+					    	<label for="filter-cat-deals-2">Deals</label>
+						</div>
+					</li>
+
+					<li>
+						<div class="checkbox">  
+					    	<input id="filter-cat-pak-food-2" type="checkbox" name="check" value="filter-cat-pak-food-2">  
+					    	<label for="filter-cat-pak-food-2">Pakistani Food</label>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+
+			<div class="bottom-panel sticky-panel">
+				<button type="submit" class="form-submit-btn leaf-btn leaf-btn-green standard-btn filter-apply-btn">Apply</button>
+				<div class="signup-link" style="width: 100%">
+					<a href="#">Clear all</a>
+				</div>
+			</div>
+				
+		</div>
 	</div>
 
 </body>

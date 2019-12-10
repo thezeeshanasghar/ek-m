@@ -2,28 +2,75 @@
 <html>
 <head>
 	<title>12. Map</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-			<header>
-				<span class="glass"></span>
+	
+	<div class="container">
+		<header>
+
+			<div class="header-wrapper">
+
 				<div class="header_heading">
 					<img src="img/round_left_arrow.jpg" />
-					Your Location
+					<span id="mapHideHeading">Your Location</span>
 				</div>
-				<div class="header-right-panel">
-					<img src="img/search-icon.jpg">
+				
+				<div class="right-panel map-search-header">
+					<div class="search-box">
+						
+						<img class="search-btn" src="img/search-icon.png">
+					</div>
 				</div>
-			</header>
 
-			<div id="map">
-				<!-- <img src="img/map.jpg"> -->
-			</div>
+				<div class="search-filter search-filter-map">
+					
+					<div class="search-filter-back">
+						<img src="img/select-search-icon.jpg">
+						<input class="search-txt" type="text" name="" placeholder="Search..." />
+					</div>	
 
-			<div class="bottom-panel">
-				<button class="leaf-btn leaf-btn-green">Confirm</button>
+				</div>
+
 			</div>
+			
+		</header>
+
+		<div id="map" ></div>
+
+		<div class="wrapper relative">
+			<div class="bottom-panel sticky-panel map-btn">
+				<button class="leaf-btn leaf-btn-green map-confirm-btn">Confirm</button>
+			</div>
+		</div>
+	</div>
+
+
+		
+	<script type="text/javascript" src="js/jquery.js"></script>
+
+		<script> 
+
+        	$(".search-btn").click(function() { 
+
+	            $(this).css("display", "none"); 
+	            $(".map-confirm-btn").css("display", "none"); 
+	            $(".header_heading").css("display", "none");
+	            $(".search-filter-map").css("display", "block");
+	            $(".search-txt").focus();
+
+        	}); 
+
+        	$(".search-txt").focusout(function() { 
+
+	            $(".search-btn").css("display", "block"); 
+	            $(".map-confirm-btn").css("display", "block"); 
+	            $(".header_heading").css("display", "block");
+	            $(".search-filter-map").css("display", "none"); 
+            
+        	}); 
+
+   		</script>
 
 			
 </body>

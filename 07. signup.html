@@ -2,62 +2,178 @@
 <html>
 <head>
 	<title>07. Signup</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" src="js/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/animsition.min.css">
 </head>
 <body>
-		
-	<div class="intro-bk">
-		<div class="grad-overlay">	
-			<div class="container">
-				<div class="col-xs-12">
-				
-					<div class="opt-content opt-content-light">
-						<h3>Sign up for Free!</h3>
-						<p class="small-para small-para-light">
-							Kindly fill all the boxes
-						</p>
+	
+	<div class="container">
+		<div class="animsition">
 
-						<form id="signup-form" class="gen-form">
-							<input id ="name" type="text" name="" class="form-input" placeholder="Name">
+			<div class="intro-bk intro-signup">
+					
+					<div class="wrapper">
 
-							<input id="mobileNumber" type="text" name="" class="form-input" placeholder="Mobile Number">
+						<div class="signup-page">
 
-							<input id="email" type="email" name="" class="form-input" placeholder="Email Address">
+							<div class="head-desp signup-heading">	
+								<h1>Sign up for Free!</h1>
+								<p class="small-para small-para-light">
+									Kindly fill all the boxes
+								</p>
+							</div>
 
-							<input id="password" type="password" name="" class="form-input" placeholder="Password">
+							<form id="register-form" class="gen-form">
 
-							<input id="confirm_password" type="password" name="" class="form-input" placeholder="Confirm Password">
+								<div class="input-container" style="position: relative;">
+
+									<img src="img/input-user.png">
+									
+									<input type="text" id="name" name="name" class="form-input" placeholder="Name">
+
+
+								</div>
+
+								<div class="input-container" style="position: relative;">
+
+									<img src="img/input-phone.png">
+									
+									<input type="text" id="MobileNo" name="mobNum" class="form-input" placeholder="Mobile Number">
+
+
+								</div>
+
+								<div class="input-container" style="position: relative;">
+
+									<img src="img/input-mail.png">
+									
+									<input type="text" name="email" id="emailAdd" class="form-input" placeholder="Email Address">
+
+
+								</div>
+
+								<div class="input-container" style="position: relative;">
+
+									<img src="img/input-pswd.png">
+									
+									<input type="password" name="password" id="password" class="form-input" placeholder="Password">
+
+
+								</div>
+
+								<div class="input-container" style="position: relative;">
+
+									<img src="img/input-pswd.png">
+									
+									<input type="password" name="password2" class="form-input" placeholder="Confirm Password">
+
+
+								</div>
+								
+
+								
+
+								
+
+								
+
+								
+
+								<button type="submit" id="submit-button" class="form-submit-btn leaf-btn leaf-btn-green">Sign Up</button>
+							</form>
+
+							<div class="bottom-panel">
+								<div class="signup-link stan-sticky-panel">
+									Already Registered?<a class="animsition-link" href="06. login.html">Login</a>
+								</div>
+							</div>
 							
-							<select id="selectCities" ></select>
+						</div>
 
-							<button type="submit" class="form-submit-btn leaf-btn leaf-btn-green"onclick="SignUp()">Login</button>
-
-							
-					<!-- <button id="signup-btn" type="button" onclick="SignUp()">Submit</button> -->
-						</form>
-
-						
 					</div>
-
-				</div>
+				
 			</div>
 
-
-			<div class="bottom-panel">
-				<div class="signup-link">
-					Already Registered?<a href="#">Login</a>
-				</div>
-			</div>
-
-			
-		</div>	
-			
+		</div>
 	</div>
-<!-- Scripts -->
-	<script src="server.js"></script>
-	<script src="07. signup.js"></script>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.validate.js"></script>
+	<script src="js/additional-methods.min.js"></script>
+	<script src="js/validation.js"></script>
+	<script src="js/animsition.min.js"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+			$(".animsition").animsition({
+				inClass: 'fade-in',
+				outClass: 'fade-out',
+				inDuration: 1500,
+				outDuration: 800,
+				linkElement: '.animsition-link',
+			    // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+			    loading: true,
+			    loadingParentElement: 'body', //animsition wrapper element
+			    loadingClass: 'animsition-loading',
+			    loadingInner: '', // e.g '<img src="loading.svg" />'
+			    timeout: false,
+			    timeoutCountdown: 5000,
+			    onLoadEvent: true,
+			    browser: [ 'animation-duration', '-webkit-animation-duration'],
+			    // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+			    // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+			    overlay : false,
+			    overlayClass : 'animsition-overlay-slide',
+			    overlayParentElement : 'body',
+			    transition: function(url){ window.location.href = url; }
+			});
+
+			$("#SignupBtn").click(function(){
+				$.ajax({
+				  type: "POST",
+				  url: "https://13.127.49.104:5001/api/customer",
+				  data: JSON.stringify({
+				  	Name: $("#name").val(),
+				  	Email: $("#email").val(),
+				  	Password:$("#Password").val(),
+				  	CityId: 16
+				  }),
+				  success: function() {
+				  	// reset form
+				  	// show success message
+				  	// 
+				  },
+				  failure: function() { console.log("data not posted")},
+				  dataType: 'json',
+				  contentType: "application/json; charset=utf-8"
+				});
+			});
+		});
+
+	</script>
+
+<!-- 	<script type="text/javascript">
+		
+		$(document).ready(function() {
+
+			$("#MobileNo").focusout(function(){
+
+				var mobileNumber = $(this).val();
+
+				console.log($.trim(mobileNumber))
+			});
+
+			$("#emailAdd").focusout(function(){
+
+				var emailAddress = $(this).val();
+
+				$.trim(emailAddress)
+			});
+			
+		});
+
+	</script> -->
 
 </body>
 </html>

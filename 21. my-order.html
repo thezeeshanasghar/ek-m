@@ -33,87 +33,9 @@
 	<div class="med-wrapper relative">	
 
         <div class="my-order-list">
-            <ul>
-                <li>
-                    <div class="left-panel">
-                        <img src="img/minus-green-icon.jpg" alt="">
-                        <div class="order-name-price">
-                            Chicken Fajita (Large) <br>
-                            <span>Rs 800</span>
-                        </div>
-                    </div>
-                    
-                    <div class="right-panel">
-                        <img src="img/minus-white-icon.jpg" alt="">
-                        <span>1</span>
-                        <img src="img/plus-white-icon.jpg" alt="">
-                    </div>
-                </li>
-
-                <li>
-                    <div class="left-panel">
-                        <img src="img/minus-green-icon.jpg" alt="">
-                        <div class="order-name-price">
-                            Chicken Fajita (Small) <br>
-                            <span>Rs 500</span>
-                        </div>
-                    </div>
-                    
-                    <div class="right-panel">
-                        <img src="img/minus-white-icon.jpg" alt="">
-                        <span>2</span>
-                        <img src="img/plus-white-icon.jpg" alt="">
-                    </div>
-                </li>
-
-                <li>
-                    <div class="left-panel">
-                        <img src="img/minus-green-icon.jpg" alt="">
-                        <div class="order-name-price">
-                            Chicken Broast <br>
-                            <span>Rs 300</span>
-                        </div>
-                    </div>
-                    
-                    <div class="right-panel">
-                        <img src="img/minus-white-icon.jpg" alt="">
-                        <span>2</span>
-                        <img src="img/plus-white-icon.jpg" alt="">
-                    </div>
-                </li>
-
-                <li>
-                    <div class="left-panel">
-                        <img src="img/minus-green-icon.jpg" alt="">
-                        <div class="order-name-price">
-                            Fries (Large) <br>
-                            <span>Rs 100</span>
-                        </div>
-                    </div>
-                    
-                    <div class="right-panel">
-                        <img src="img/minus-white-icon.jpg" alt="">
-                        <span>1</span>
-                        <img src="img/plus-white-icon.jpg" alt="">
-                    </div>
-                </li>
-
-                <li>
-                    <div class="left-panel">
-                        <img src="img/minus-green-icon.jpg" alt="">
-                        <div class="order-name-price">
-                            Cold Drink (1.5 ltr) <br>
-                            <span>Rs 150</span>
-                        </div>
-                    </div>
-                    
-                    <div class="right-panel">
-                        <img src="img/minus-white-icon.jpg" alt="">
-                        <span>1</span>
-                        <img src="img/plus-white-icon.jpg" alt="">
-                    </div>
-                </li>
-            </ul>
+          
+                <div id="itemValues"></div>
+            
         </div>
 
         <div class="my-order-total">
@@ -124,7 +46,7 @@
                 </div>
 
                 <div class="right-panel">
-                    Rs 1850
+                    <span id="subtotal"> </span>
                 </div>
             </div>
 
@@ -134,7 +56,7 @@
                     </div>
     
                     <div class="right-panel">
-                        Rs 296
+                        <span id="GST"> </span>
                     </div>
                 </div>
 
@@ -144,7 +66,7 @@
                         </div>
         
                         <div class="right-panel">
-                            Free
+                            <span id="DelCharges"> </span>
                         </div>
                     </div>
         </div>
@@ -162,7 +84,7 @@
 		
 
         <div class="bottom-panel" style="padding-bottom: 30px;">
-            <a class="form-submit-btn leaf-btn leaf-btn-green full-btn standard-btn" href="22. checkout.html">Checkout</a>
+            <a class="form-submit-btn leaf-btn leaf-btn-green full-btn standard-btn checkout-btn" href="22. checkout.html">Checkout<span id="grandTotal">Rs. 2000</span></a>
         </div>
         
 			
@@ -183,6 +105,10 @@
             });
 
         </script>
+         <script type="text/javascript" src="js/jquery.js"></script>
+         <script type="text/javascript" src="server.js"></script>
+         <script type="text/javascript" src="common.js"></script>
+         <script type="text/javascript" src="21. my-order.js"></script>
 
 </body>
 </html>

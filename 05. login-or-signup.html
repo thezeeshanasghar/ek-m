@@ -2,35 +2,63 @@
 <html>
 <head>
 	<title>05. Login or Signup</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/animsition.min.css">
 </head>
 <body>
-		
-	<div class="intro-bk">
-		<div class="overlay">	
-			<div class="container">
-				<div class="col-xs-12">
+	<div class="animsition">	
+	
+		<div class="intro-bk intro-forth">
+			
+				<div class="wrapper">
 				
-					<div class="opt-content">
-						<h3>Hey Foodis!</h3>
-						<p class="small-para">
-							The answer to your cravings is finally here!!
-						</p>
+					<div class="intro-page">
+						<h1>Hey Foodies!</h1>
+						<p>The answer to your cravings is finally here!!</p>
+						
+						<div class="bottom-panel stan-sticky-panel">
+							<a class="leaf-btn leaf-btn-trans animsition-link" href="06. login.html"  style="height: 34px;">Login</a>
+							<a class="leaf-btn animsition-link" href="07. signup.html" style="height: 34px;">Sign Up</a>
+						</div>
 					</div>
 
-				</div>
-			</div>
-
-			<div class="bottom-panel">
-				<button class="leaf-btn leaf-btn-trans">
-					Login
-				</button>
-				<button class="leaf-btn">Sign up</button>
-			</div>
-		</div>	
+				</div>	
 			
+		</div>
+
 	</div>
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/animsition.min.js"></script>
+
+	<script type="text/javascript">
+	
+$(document).ready(function() {
+  $(".animsition").animsition({
+    inClass: 'fade-in-right-sm',
+    outClass: 'fade-out-right-sm',
+    inDuration: 1500,
+    outDuration: 800,
+    linkElement: '.animsition-link',
+    // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+    loading: true,
+    loadingParentElement: 'body', //animsition wrapper element
+    loadingClass: 'animsition-loading',
+    loadingInner: '', // e.g '<img src="loading.svg" />'
+    timeout: false,
+    timeoutCountdown: 5000,
+    onLoadEvent: true,
+    browser: [ 'animation-duration', '-webkit-animation-duration'],
+    // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    overlay : false,
+    overlayClass : 'animsition-overlay-slide',
+    overlayParentElement : 'body',
+    transition: function(url){ window.location.href = url; }
+  });
+});
+
+</script>
 
 </body>
 </html>

@@ -2,36 +2,77 @@
 <html>
 <head>
 	<title>02. Pick Restaurant</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/animsition.min.css">
 </head>
 <body>
-		
-	<div class="intro-bk">
-		<div class="overlay">	
-			<div class="container">
-				<div class="col-xs-12">
-				
-					<div class="opt-content">
+
+
+
+	<div class="animsition">
+
+		<div class="intro-bk intro-first">
+					
+				<div class="wrapper">
+						
+					<div class="intro-page">
 						<h1>Pick the best restaurant</h1>
-						<p>Access all the best restaurants around you and enjoy their cuisine at the location of your choice</p>
+						<p class="font-light">Access all the best restaurants around you and enjoy their cuisine at the location of your choice</p>
+
+						<div class="bottom-panel stan-sticky-panel">
+							<div class="dots">
+								<span class="white-dot dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+							</div>
+							<a class="leaf-btn animsition-link" href="03. delivery-service.html" style="height: 34px;">Next</a>
+						</div>
+
+						<div class="top-panel">
+							<span class="skip"><a href="05. login-or-signup.html">Skip</a></span>
+						</div>
 					</div>
 
 				</div>
-			</div>
+				
+				
+		</div>
 
-			<div class="bottom-panel">
-				<div class="dots">
-					<span class="white-dot dot"></span>
-					<span class="dot"></span>
-					<span class="dot"></span>
-				</div>
-				<button class="leaf-btn">Next</button>
-				<span class="skip">Skip</span>
-			</div>
-		</div>	
-			
 	</div>
+
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/animsition.min.js"></script>
+
+
+<script type="text/javascript">
+	
+$(document).ready(function() {
+  $(".animsition").animsition({
+    inClass: 'fade-in-right-sm',
+    outClass: 'fade-out-right-sm',
+    inDuration: 1500,
+    outDuration: 800,
+    linkElement: '.animsition-link',
+    // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+    loading: true,
+    loadingParentElement: 'body', //animsition wrapper element
+    loadingClass: 'animsition-loading',
+    loadingInner: '', // e.g '<img src="loading.svg" />'
+    timeout: false,
+    timeoutCountdown: 5000,
+    onLoadEvent: true,
+    browser: [ 'animation-duration', '-webkit-animation-duration'],
+    // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    overlay : false,
+    overlayClass : 'animsition-overlay-slide',
+    overlayParentElement : 'body',
+    transition: function(url){ window.location.href = url; }
+  });
+});
+
+</script>
 
 </body>
 </html>

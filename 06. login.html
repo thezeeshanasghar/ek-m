@@ -2,49 +2,99 @@
 <html>
 <head>
 	<title>06. Login</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" src="js/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/animsition.min.css">
 </head>
 <body>
-		
-	<div class="intro-bk">
-		<div class="grad-overlay">	
-			<div class="container">
-				<div class="col-xs-12">
+	
+	<div class="container">	
+		<div class="animsition">
+
+			<div class="intro-bk intro-login">
+					
+					<div class="wrapper">
+					
+						<div class="login-page">
+
+							<div class="head-desp login-heading">
+								<h1>Welcome Back</h1>
+								<p class="small-para small-para-light">
+									Login to Continue
+								</p>
+							</div>
+								
+
+							<form id="login-form" class="gen-form">
+
+								<div class="input-container" style="position: relative;">
+
+									<img src="img/input-phone.png">
+									
+									<input type="text" name="" class="form-input" placeholder="Mobile Number">
+
+
+								</div>
+								
+								<div class="input-container" style="position: relative;">
+
+									<img src="img/input-pswd.png">
+									
+									<input type="password" name="" class="form-input" placeholder="Password">
+
+
+								</div>
+
+								<button type="submit" class="form-submit-btn leaf-btn leaf-btn-green">Login</button>
+							</form>
+
+							<div class="forgot-pswd"><a href="08. reset-pswd.html">Forgot Your Password?</a></div>
+
+							<div class="bottom-panel wrapper">
+								<div class="signup-link stan-sticky-panel">
+									Don't Have an Account? <a class="animsition-link" href="07. signup.html">Sign up for Free</a>
+								</div>
+							</div>
+
+						</div>
+
+					</div>	
 				
-					<div class="opt-content opt-content-light">
-						<h3>Welcome Back</h3>
-						<p class="small-para small-para-light">
-							Login to Continue
-						</p>
-
-						<form id="login-form" class="gen-form">
-							<input id="Email" type="email" name="" class="form-input">
-							<input id="Password" type="password" name="" class="form-input">
-
-							<button type="submit" class="form-submit-btn leaf-btn leaf-btn-green" onclick="login()">Login</button>
-						</form>
-
-						<div class="forgot-pswd"><a href="#">Forgot Your Password?</a></div>
-					</div>
-
-				</div>
 			</div>
 
-
-			<div class="bottom-panel">
-				<div class="signup-link">
-					Don't Have an Account? <a href="#">Sign up for Free</a>
-				</div>
-			</div>
-
-			
-		</div>	
-			
+		</div>
 	</div>
-<!-- Scripts -->
-  <script src="server.js"></script>
-  <script src="06. login.js"></script>
+
+			<script src="js/jquery.js"></script>
+	<script src="js/animsition.min.js"></script>
+
+	<script type="text/javascript">
+	
+$(document).ready(function() {
+  $(".animsition").animsition({
+    inClass: 'fade-in',
+    outClass: 'fade-out',
+    inDuration: 1500,
+    outDuration: 800,
+    linkElement: '.animsition-link',
+    // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+    loading: true,
+    loadingParentElement: 'body', //animsition wrapper element
+    loadingClass: 'animsition-loading',
+    loadingInner: '', // e.g '<img src="loading.svg" />'
+    timeout: false,
+    timeoutCountdown: 5000,
+    onLoadEvent: true,
+    browser: [ 'animation-duration', '-webkit-animation-duration'],
+    // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    overlay : false,
+    overlayClass : 'animsition-overlay-slide',
+    overlayParentElement : 'body',
+    transition: function(url){ window.location.href = url; }
+  });
+});
+
+</script>
+
 </body>
 </html>

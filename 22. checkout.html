@@ -137,7 +137,7 @@ Write Text
 
 		
         <div class="bottom-panel sticky-panel">
-            <a class="form-submit-btn leaf-btn leaf-btn-green full-btn standard-btn" href="23. order-placed.html">Place Order</a>
+            <a id="placeOrder" class="form-submit-btn leaf-btn leaf-btn-green full-btn standard-btn" href="23. order-placed.html">Place Order</a>
         </div>
 			
 	</div>
@@ -145,6 +145,7 @@ Write Text
 </div>
 
   <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="22. checkout.js"></script>
 
     <script type="text/javascript">
         
@@ -164,6 +165,8 @@ Write Text
                 var actual = $(value).html();
 
                   $("#mod-of-pay").html(actual);
+
+                  localStorage.setItem("payMode" , actual)
 
 
 

@@ -1435,6 +1435,7 @@ padding-top: 4px;
 	height: 30px;
 	top: 17px;
 	width: 6px;
+	display: none;
 }
 
 .order-list ul li h2 {

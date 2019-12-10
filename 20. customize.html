@@ -32,11 +32,14 @@
 		
 	<div class="med-wrapper relative">	
 
+        <div id="customize-panel">
+
         <div class="customize-panel">
             <h4>Chicken Fajita</h4>
             <p>Select Multiple</p>
 
             <div class="customize-opt">
+
                 <ul>
                     <div class="left-panel">
                         <li>
@@ -56,19 +59,22 @@
 
                     <div class="right-panel">
 
-                    <li class="rs">
-                        <h5>Rs 250</h5>
-                        <span>Rs500</span>
-                    </li>
+                        <li class="rs">
+                            <h5>Rs 250</h5>
+                            <span>Rs500</span>
+                        </li>
 
-                    <li class="customize-radio">
-                        <div class="checkbox"> <input class="toCheck" id="small" type="checkbox" name=""> <label for="small"></label> </div>
-                    </li>
+                        <li class="customize-radio">
+                            <div class="checkbox"> <input class="toCheck" id="small" type="checkbox" name=""> <label for="small"></label> </div>
+                        </li>
+
                     </div>
+
                 </ul>
+
             </div>
 
-            <div class="customize-opt">
+            <!-- <div class="customize-opt">
                 <ul>
 
                 <div class="left-panel">    
@@ -134,11 +140,9 @@
                     </li>
                 </div>
                 </ul>
-            </div>
+            </div> -->
 
-            <div class="green-border">
-
-            </div>
+            <div class="green-border"></div>
 
             
         </div>
@@ -256,73 +260,74 @@
     
                 
             </div>
+
+        </div>
 		
 
 		<div class="bottom-panel">
 			<a class="leaf-btn leaf-btn-green top-half-gaped full-btn standard-btn" style="margin: 20px auto;" href="#">Add to Order</a>
 			<div class="signup-link" style="width: 100%;">
-				<a href="#">Back to Menu</a>
+				<a href="21. my-order.html">Back to Menu</a>
 			</div>
 		</div>
 			
 	</div>
 
-    <script type="text/javascript" src="js/jquery.js"></script>
 
     <script type="text/javascript">
         
-        $(document).ready(function(){
+        // $(document).ready(function(){
 
-            $(".quantity .plus").click(function(){
-                var parent = $(this).parent();
+        //     $(".quantity .plus").click(function(){
+        //         var parent = $(this).parent();
 
-                var grand = $(parent).parent();
+        //         var grand = $(parent).parent();
 
-                var value = $(grand).find(".customize-quantity");
+        //         var value = $(grand).find(".customize-quantity");
 
-                var num = $(value).html();
+        //         var num = $(value).html();
 
-                var int = Number(num);
+        //         var int = Number(num);
 
-                var result = (int) + 1;
+        //         var result = (int) + 1;
 
-                if (result < 100) {
-                  $(value).html(result);
-                } else {
-                    false;
-                }
+        //         if (result < 100) {
+        //           $(value).html(result);
+        //         } else {
+        //             false;
+        //         }
 
-            });
-
-
-             $(".quantity .minus").click(function(){
-                var parent = $(this).parent();
-
-                var grand = $(parent).parent();
-
-                var value = $(grand).find(".customize-quantity");
-
-                var num = $(value).html();
-
-                var int = Number(num);
-
-                var result = (int) - 1;
+        //     });
 
 
+        //      $(".quantity .minus").click(function(){
+        //         var parent = $(this).parent();
 
-                if (result > 0) {
-                  $(value).html(result);
-                } else {
-                    false;
-                }
+        //         var grand = $(parent).parent();
+
+        //         var value = $(grand).find(".customize-quantity");
+
+        //         var num = $(value).html();
+
+        //         var int = Number(num);
+
+        //         var result = (int) - 1;
+
+
+
+        //         if (result > 0) {
+        //           $(value).html(result);
+        //         } else {
+        //             false;
+        //         }
 
                 
                 
-            });
+        //     });
 
      
 
-        });
+        // });
 
     </script>
 
@@ -348,46 +353,51 @@
 
         <script type="text/javascript">
         	
-        	$(".toCheck").click(function(){
+        	// $(".toCheck").click(function(){
                 
-                if ($(this).prop('checked') == true) {
+         //        if ($(this).prop('checked') == true) {
 
-                	var topDiv = $(this).parentsUntil(".customize-opt");
+         //        	var topDiv = $(this).parentsUntil(".customize-opt");
 
-                	var control = $(topDiv).find(".quantity");
+         //        	var control = $(topDiv).find(".quantity");
                   
-                	$ (control).css('display' , 'block');
+         //        	$ (control).css('display' , 'block');
 
 
-                }
+         //        }
 
-                else if($(this).prop("checked") == false) {
-                	$ (control).css('display' , 'none');
-                }
+         //        else if($(this).prop("checked") == false) {
+         //        	$ (control).css('display' , 'none');
+         //        }
 
-            });
+         //    });
 
 
-            $(".toCheck").click(function(){
+         //    $(".toCheck").click(function(){
                 
-                if ($(this).prop('checked') == false) {
+         //        if ($(this).prop('checked') == false) {
 
-                	var topDiv = $(this).parentsUntil(".customize-opt");
+         //        	var topDiv = $(this).parentsUntil(".customize-opt");
 
-                	var control = $(topDiv).find(".quantity");
+         //        	var control = $(topDiv).find(".quantity");
                   
-                	$ (control).css('display' , 'none');
+         //        	$ (control).css('display' , 'none');
 
 
-                }
+         //        }
 
-                else if($(this).prop("checked") == true) {
-                	$ (control).css('display' , 'block');
-                }
+         //        else if($(this).prop("checked") == true) {
+         //        	$ (control).css('display' , 'block');
+         //        }
 
-            });
+         //    });
 
         </script>
+
+        <script type="text/javascript" src="js/jquery.js"></script>
+         <script type="text/javascript" src="server.js"></script>
+         <script type="text/javascript" src="common.js"></script>
+         <script type="text/javascript" src="20. customize.js"></script>
 
 </body>
 </html>
