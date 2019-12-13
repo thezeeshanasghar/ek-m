@@ -10,7 +10,7 @@ $(document).ready(function(){
 function loadCuisine() {
 
     $.ajax({
-        url: "http://localhost:5000/api/cuisine",
+        url: SERVER + "cuisine",
         type: "GET",
         dataType: "JSON",
         contentType: "application/json;charset=utf-8",
@@ -80,7 +80,7 @@ function loadCuisine() {
 function loadSpon() {
 
     $.ajax({
-        url: "http://localhost:5000/api/restaurant",
+        url: SERVER + "restaurant",
         type: "GET",
         dataType: "JSON",
         contentType: "application/json;charset=utf-8",
@@ -95,7 +95,7 @@ function loadSpon() {
                     html += '<div class="swiper-slide swiper-slide-widthed">';
                     html += '<div class="restaurants-slides">';
                     html += '<div class="rest-photo">';
-                    html += '<div class="img"><img src="http://localhost:5000/'+spon.CoverImagePath+'" /></div>';
+                    html += '<div class="img"><img src="http://15.206.164.188:5002/'+spon.CoverImagePath+'" /></div>';
                     html += '<span class="status">open</span>';
                     html += '<span class="distance">Approximately <br><b>45 Min</b></span>';
                     html += '</div>';
@@ -129,7 +129,7 @@ function loadSpon() {
 function loadRest() {
 
     $.ajax({
-        url: "http://localhost:5000/api/restaurant",
+        url: SERVER + "restaurant",
         type: "GET",
         dataType: "JSON",
         contentType: "application/json;charset=utf-8",
@@ -145,7 +145,7 @@ function loadRest() {
                     html += '<a href="19. view-order.html?id='+rest.Id+'">';
                     html += '<div class="all-rest-item rest-item">';
                     html += '<div class="rest-photo">';
-                    html += '<div class="img"><img src="http://localhost:5000/'+rest.CoverImagePath+'" /></div>';
+                    html += '<div class="img"><img src="http://15.206.164.188:5002/'+rest.CoverImagePath+'" /></div>';
                     html += '<span class="distance">Approximately<br><b>30 Min</b></span>';
                     html += '</div>';
                     html += '<div class="rest-info">';
@@ -174,7 +174,7 @@ function searchRest() {
         var expression = new RegExp(searchField, "i");
 
          $.ajax({
-        url: "http://localhost:5000/api/restaurant",
+        url: SERVER + "restaurant",
         type: "GET",
         dataType: "JSON",
         contentType: "application/json;charset=utf-8",
@@ -185,7 +185,7 @@ function searchRest() {
                 if (value.Name.search(expression) != -1 || value.LogoImagePath.search(expression) != -1)
 
                 {
-                    $("#liveSearch").append('<li><img src="http://localhost:5000/'+value.LogoImagePath+'" /> | '+value.Name+'</li>');
+                    $("#liveSearch").append('<li><img src="http://15.206.164.188:5002/'+value.LogoImagePath+'" /> | '+value.Name+'</li>');
                 }
 
                 $("#liveSearch").on('click', 'li' , function(){
@@ -219,7 +219,7 @@ function searchstickRest() {
         var expression = new RegExp(searchField, "i");
 
          $.ajax({
-        url: "http://localhost:5000/api/restaurant",
+        url: "http://15.206.164.188:5002/api/restaurant",
         type: "GET",
         dataType: "JSON",
         contentType: "application/json;charset=utf-8",
@@ -230,7 +230,7 @@ function searchstickRest() {
                 if (value.Name.search(expression) != -1 || value.LogoImagePath.search(expression) != -1)
 
                 {
-                    $("#livestickSearch").append('<li><img src="http://localhost:5000/'+value.LogoImagePath+'" /> | '+value.Name+'</li>');
+                    $("#livestickSearch").append('<li><img src="http://15.206.164.188:5002/'+value.LogoImagePath+'" /> | '+value.Name+'</li>');
                 } 
 
                 $("#livestickSearch").on('click', 'li' , function(){

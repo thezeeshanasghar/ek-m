@@ -14,7 +14,7 @@ function loadOrderItems() {
             console.log(item.Name);
 
             html += '<ul><li>';
-            html += '<div class="left-panel"><img src="img/minus-green-icon.jpg" alt="">';
+            html += '<div class="left-panel"><img src="img/minus-green-icon.jpg" onclick = deleteItem('+index+');alt="">';
             html += '<div class="order-name-price">';
             html +=   item.Name + ' (' + item.Size + ')<br>';
             html+= '<span>Rs'+item.Price+'</span>'; 
@@ -43,6 +43,15 @@ function plusQuantity(itemId, price, quantity) {
     quantity = quantity + 1;
     let total = calculateTotal(price, quantity);
     changeItemValues(itemId, quantity, total)
+}
+
+function deleteItem (i)
+{
+    console.log (items[i]);
+   items.splice(i , 1);
+   localStorage.setItem('items', JSON.stringify(items));
+  loadOrderItems(); toggleCart();
+
 }
 
 function calculateTotal(price, quantity) {
