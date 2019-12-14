@@ -110,7 +110,7 @@ function calculateOrderTotals() {
     $("#GST").html(GST);
     console.log(roundtotal)
 
-    $("#grandTotal").html("Rs. " + roundtotal);
+    $("#grandTotal").html(" Rs." + roundtotal);
     localStorage.setItem('grand' , roundtotal)
 }
 
