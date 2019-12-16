@@ -164,30 +164,15 @@ function loadRestaurantDetails(restaurantId) {
 
                         var parentLi = $(this).closest( "li" );
                         var selected = $(parentLi).find(".selected-order img");
-                  
                         $ (selected).css('display' , 'none');
-
-
-                        // Remove from localStorage
-                        // var parentDiv = $(this).parentsUntil("li");
-                        // var paraText = $(parentDiv).find( "p" );
-                        // var txt = $(paraText).html();
-
-                        // console.log(txt);
-
-                      //  localStorage.removeItem("MenuItem", txt);
                         console.log("item Removed");
-
+                        var items = getObjsFromLocalStorage("items");
+                        console.log(items);
+                        items.splice(0);
+                        localStorage.setItem('items', JSON.stringify(items));
                         $(this).attr('src',"img/plus-round-white.jpg");
                         // function deleteItem (i)
-                    {
-                        console.log (items[i]);
-                        items.splice(i , 1);
-                        localStorage.setItem('items', JSON.stringify(items));
-                        loadOrderItems(); toggleCart();
-
-                    }
-
+                    
                 });
 
 
@@ -268,6 +253,7 @@ function addToCart(id, name, size, price) {
             item.Size = getMenuSize(item.Size);
             items.push(item);
             localStorage.setItem('items', JSON.stringify(items));
+            console.log(items);
             toggleCart();
         } else {
             alert('This item already added in your cart, please click items on right top corner!');
@@ -284,3 +270,4 @@ function deleteItem (i)
    localStorage.setItem('items', JSON.stringify(items));
 
 }
+

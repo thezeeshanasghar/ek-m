@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title>22. Checkout</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+   
 </head>
 <body>
 
@@ -110,10 +111,7 @@
             <div class="left-panel">
                 <h4 style="font-size: 16px; font-weight: 700;">Delivery Addresss</h4>
             </div>
-
-            
-
-            <input type="text" placeholder="House# 12, Garden Toown, Deara Ghazi Khan.">
+            <input id="Address" type="text" placeholder="House# 12, Garden Toown, Deara Ghazi Khan.">
         </div>
 
         <div class="payment-mode">
@@ -129,7 +127,7 @@
 
         <div class="checkout-inst">
             <h4>Special Instructions</h4>
-            <textarea name="" id="" cols="30" rows="6">
+            <textarea id = "instructions" name=""  cols="30" rows="6">
 Write Text
             </textarea>
         </div>
@@ -137,52 +135,16 @@ Write Text
 
 		
         <div class="bottom-panel sticky-panel">
-            <a id="placeOrder" class="form-submit-btn leaf-btn leaf-btn-green full-btn standard-btn" href="23. order-placed.html">Place Order</a>
+            <a id="placeOrder" href = "#" class="form-submit-btn leaf-btn leaf-btn-green full-btn standard-btn" onclick="checkout()">Place Order</a>
         </div>
 			
 	</div>
 
 </div>
-
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript" src="22. checkout.js"></script>
-
-    <script type="text/javascript">
-        
-        $(document).ready(function(){
-
-            $(".payment-mode").click(function(){
-
-
-                $(".overlay").fadeIn('slow');
-
-            });
-
-            $(".select-opt label").click(function(){
-
-                var value = $(this).find(".option");
-
-                var actual = $(value).html();
-
-                  $("#mod-of-pay").html(actual);
-
-                  localStorage.setItem("payMode" , actual)
-
-
-
-            });
-
-            $(".overlay").click(function(){
-
-
-                $(this).css('display' , 'none');
-
-            });
-
-        });
-
-
-         </script>   
-
+<script type="text/javascript" src="js/jquery.js"></script>
+          <script type="text/javascript" src="js/jquery.js"></script>
+          <script type="text/javascript" src="common.js"></script>
+          <script type="text/javascript" src="22. checkout.js"></script>
+          <script type="text/javascript" src="server.js"></script> 
 </body>
 </html>

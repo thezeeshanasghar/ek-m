@@ -3112,3 +3112,12 @@ input[type=checkbox]:checked + label:before {
 	display: block;
 	margin: auto;
 }
+
+.order-summary-input-values {
+	line-height: 0px;
+	border: none;
+	width: 100px;
+	padding-left: 12px;
+	background: white;
+	text-align: right;
+}

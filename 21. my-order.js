@@ -83,7 +83,7 @@ function deleteItem (i)
 function calculateOrderTotals() {
     
     let itemsubtotal = 0;
-    let exitemsubtotal = 0;
+  //  let exitemsubtotal = 0;
     let subtotal = 0;
     let grandTotal = 0;
     let GST = 0;
@@ -104,13 +104,16 @@ function calculateOrderTotals() {
 
     roundtotal = Math.round(grandTotal);
     console.log(subtotal);
-    $("#subtotal").html(subtotal);
-   // $("#GST").val(GST);
-    $("#DelCharges").html(DelCharges);
-    $("#GST").html(GST);
+    $("#subtotal").val(subtotal);
+   localStorage.setItem("subtotal" , subtotal);
+    $("#DelCharges").val(DelCharges);
+    localStorage.setItem("DelCharges" , DelCharges);
+    $("#GST").val(GST);
+    localStorage.setItem("GST" , GST);
     console.log(roundtotal)
 
-    $("#grandTotal").html("Rs. " + roundtotal);
-    localStorage.setItem('grand' , roundtotal)
+    $("#grandTotal").val(roundtotal);
+    localStorage.setItem('grandTotal' , roundtotal)
 }
+
 

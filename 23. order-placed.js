@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var grandT = localStorage.getItem('grand');
+    var grandT = localStorage.getItem('grandTotal');
     $("#orderAmount").html("Rs " + grandT);
 
     var payMode = localStorage.getItem('payMode');

@@ -2,26 +2,40 @@ var items = getObjsFromLocalStorage("items");
 var CityId = getObjsFromLocalStorage("CityId");
 var RestaurantId = getObjsFromLocalStorage("RestaurantId");
 var DelCharges = getObjsFromLocalStorage("DelCharges");
+var subtotal = getObjsFromLocalStorage("subtotal");
+var grandTotal = getObjsFromLocalStorage("grandTotal");
+var GST = getObjsFromLocalStorage("GST");
+
 $(document).ready(function () {
-    var grandT = localStorage.getItem('grand');
-    $(".checkout-amount").html("Rs " + grandT);
+    $(".checkout-amount").html("Rs " + grandTotal);
 
     $("#placeOrder").click(function(){
 
     	var orderId = Math.floor(100000 + Math.random() * 900000);
-    	localStorage.setItem("orderId" , orderId)
-
+        localStorage.setItem("orderId" , orderId)
+    });
+    $(".payment-mode").click(function(){
+        $(".overlay").fadeIn('slow');
+    });
+    $(".select-opt label").click(function(){
+        var value = $(this).find(".option");
+        var pMethod = $(value).html();
+          $("#mod-of-pay").html(pMethod);
+          localStorage.setItem("PayMethod" , pMethod)
+    });
+    $(".overlay").click(function(){
+        $(this).css('display' , 'none');
     });
 });
 function checkout() {
-    if (isLoggedIn()) {
+   // if (isLoggedIn()) {
         var customer = getObjsFromLocalStorage("Customer");
+        var items = getObjsFromLocalStorage("items");
         for (var i = 0; i <= items.length - 1; i++) {
             delete items[i].Id; 
             if (items[i].Quantity === 0) {
                 delete items[i]; 
                 items.length--;
-
             }
         }
         
@@ -43,15 +57,19 @@ function checkout() {
             {allItems = items}
             console.log (allItems);
             var order = {
-                Subtotal: $("#subtotal").val(),
-                GrandTotal: $("#grandTotal").val(),
-                Fee: $("#DelCharges").val(),
-                GST: $("#GST").val(),
+                Subtotal: subtotal,
+                GrandTotal: grandTotal,
+                Fee: DelCharges,
+                GST: GST,
+                Address: $("#Address").val(),
+                PayMethod: $("#mod-of-pay").val(),
+                Instruction:$("#instructions").val(),
                 OrderItems : allItems,
                 CustomerId: customer.Id,
                 CityId : CityId,
                 RestaurantId: RestaurantId 
             }
+            console.log(order);
             $.ajax({
                 url: SERVER + "order/customer-order",
                 type: "POST",
@@ -62,16 +80,15 @@ function checkout() {
                         alert("Your order is placed successfully");
                         localStorage.removeItem("items");
                         //localStorage.removeItem("extraitems");
-                        toggleCart();
                         window.location.reload(true);
-                        location.href = 'order-placed.html';
+                        location.href = '23. order-placed.html';
                 }
             });
         } else {
             alert("Cart is empty");
         }
-    } else {
-        alert('Please login first');
-    }
+  //  } else {
+  //      alert('Please login first');
+   // }
 
 }

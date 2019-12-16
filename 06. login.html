@@ -24,15 +24,14 @@
 							</div>
 								
 
-							<form id="login-form" class="gen-form" action="11. welcome.html">
+							  <form id="login-form" class="gen-form" action="11. welcome.html"> 
+							    <!-- <form id="login-form" class="gen-form"> -->
 
 								<div class="input-container" style="position: relative;">
 
 									<img src="img/input-phone.png">
 									
 									<input type="email" id="Email" name="" class="form-input" placeholder="Input Email">
-
-
 								</div>
 								
 								<div class="input-container" style="position: relative;">
@@ -44,8 +43,9 @@
 
 								</div>
 
-								<button type="submit"  class="form-submit-btn leaf-btn leaf-btn-green" >Login</button>
+								<button type="submit" onclick="login()" class="form-submit-btn leaf-btn leaf-btn-green" >Login</button>
 							</form>
+							
 
 							<div class="forgot-pswd"><a href="08. reset-pswd.html">Forgot Your Password?</a></div>
 
@@ -95,6 +95,9 @@ $(document).ready(function() {
 });
 
 </script>
+	<script src="server.js"></script>
+	<script src="06. login.js"></script>
+	<script src="common.js"></script>
 
 </body>
 </html>
