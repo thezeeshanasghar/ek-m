@@ -1,4 +1,5 @@
 
+localStorage.setItem("CityId", 1);    // temporary set
 var items = [];
 var items = getObjsFromLocalStorage("items");
 var CityId = getObjsFromLocalStorage("CityId");
@@ -80,10 +81,11 @@ function loadRestaurantDetails(restaurantId) {
                     html += '<li>';
                     html += '<div class="selected-order"><img src="img/selected-order.jpg"/></div>';
                     html += '<h2>'+menuItem.Name+'</h2>';
-                    html += '<div class="left-panel"><p>Small 250, Medium 500, Large 800</p></div>';
+                    html += '<div class="left-panel"><p>'+menuItem.Size+' Rs.'+menuItem.Price+'</p></div>';
+                    //html += '<div class="left-panel"><p>Small 250, Medium 500, Large 800</p></div>';
                     html += '<div class="right-panel"><a role="button" tabindex="0"  onclick="addToCart('
                     + menuItem.Id + ',' + quoteAndEscape(menuItem.Name) +
-                    ',' + menuItem.Size + ',' + menuItem.Price +
+                    ',' + quoteAndEscape(menuItem.Size) + ',' + menuItem.Price +
                     ')" style="cursor: pointer;"><img src="img/plus-round-white.jpg" /> </a> </div>';
                     html += '</li>';  
 
@@ -210,23 +212,23 @@ function animatedMenu() {
 
 }
 
-function getMenuSize(size) {
-    let sizeName = "";
-    switch (size) {
-        case 0:
-            sizeName = "Nothing";
-            break;
-        case 1:
-            sizeName = "Half";
-            break;
-        case 2:
-            sizeName = "Full";
-            break;
-        // default:
-        //     sizeName = "Default Size";
-    }
-    return sizeName;
-    }
+// function getMenuSize(size) {
+//     let sizeName = "";
+//     switch (size) {
+//         case 0:
+//             sizeName = "Nothing";
+//             break;
+//         case 1:
+//             sizeName = "Half";
+//             break;
+//         case 2:
+//             sizeName = "Full";
+//             break;
+//         // default:
+//         //     sizeName = "Default Size";
+//     }
+//     return sizeName;
+//     }
 function addToCart(id, name, size, price) {
     // if (isLoggedIn()) {
         items = getObjsFromLocalStorage("items");
@@ -250,11 +252,10 @@ function addToCart(id, name, size, price) {
                 Total: 0
             }
             item.Total = item.Price * item.Quantity;
-            item.Size = getMenuSize(item.Size);
+          //  item.Size = getMenuSize(item.Size);
             items.push(item);
             localStorage.setItem('items', JSON.stringify(items));
             console.log(items);
-            toggleCart();
         } else {
             alert('This item already added in your cart, please click items on right top corner!');
         }

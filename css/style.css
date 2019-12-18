@@ -3060,6 +3060,16 @@ input[type=checkbox]:checked + label:before {
 	text-align: center;
 	margin-right: 10px;
 }
+.order-con-2 .green-bar {
+	width: 5px;
+	height: 0;
+	background: #36ab40;	
+	display: block;
+	margin: auto;
+	margin-top: -1px;
+
+	transition: all 2s ease-in-out;
+}
 
 .order-con-2 .round {
 	width: 18px;

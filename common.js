@@ -1,47 +1,7 @@
 $(document).ready(function () {
     /* Authentication */
-    toggleLogInOut();
-    selectCities();
-
-    // Login popup
-    $(".loginBtn").click(function () {
-        $(".login-overlay").fadeIn();
-    });
-    $(".login-overlay").on('click', function (event) {
-        $(this).fadeOut();
-        $("#Email , #Password").val("");
-    });
-
-    $(".login-box").on('click', function (event) {
-        event.stopPropagation();
-    });
-
-    $(".login-box-header .right-panel").click(function () {
-        $(".login-overlay").fadeOut();
-        $("#Email , #Password").val("");
-    });
-
-
-
-    // Signup Popup
-    $(".signupBtn").click(function () {
-        $(".signup-overlay").fadeIn();
-    });
-    $(".signup-overlay").on('click', function (event) {
-        $(this).fadeOut();
-        // $("#name , #mobNum , #email , #password , #password2 , Address").val("");
-    });
-
-    $(".signup-box").on('click', function (event) {
-        event.stopPropagation();
-    });
-
-    $(".signup-box-header .right-panel").click(function () {
-        $(".signup-overlay").fadeOut();
-        // $("#name , #mobNum , #email , #password , #password2 , Address").val("");
-    });
-
-
+    // toggleLogInOut();
+    // selectCities();
 
 
 
@@ -50,8 +10,6 @@ $(document).ready(function () {
         toggleLogInOut();
         location.reload(true);
     });
-    toggleCart();
-    toggleProfileAndOrders();
 });
 
 function login() {
@@ -69,9 +27,10 @@ function login() {
             // if (result.IsSuccess) {
                // localStorage.setItem("Customer", JSON.stringify(result.ResponseData));
                localStorage.setItem("Customer", JSON.stringify(result));
-                $(".login-overlay").fadeOut();
-                toggleLogInOut();
-                toggleProfileAndOrders();
+               window.location = "11. welcome.html"
+                // $(".login-overlay").fadeOut();
+                // toggleLogInOut();
+                // toggleProfileAndOrders();
             // } else {
             //     alert(result.Message);
             // }
@@ -150,37 +109,7 @@ function isLoggedIn() {
     }
 }
 
-function toggleCart() {
-    var cartItems = getObjsFromLocalStorage("items");
-    var html = '';
-    html += '<a class="nav-item header-cart-icon" href="order.html">';
-    html += '<img src="img/cart-icon.png">';
-    if (cartItems && cartItems.length > 0) {
-        html += '<span>' + cartItems.length + '</span> Items';
-    } else {
-        html += '<span>0</span> Items';
-    }
-    html += '</a>';
-    $(".cart").html(html);
-}
-function toggleProfileAndOrders() {
-    if (isLoggedIn()) {
 
-        var html = '';
-        html += '<li>';
-        html += '<a class="nav-item header-cart-icon" href="profile.html">';
-        html += '<img src="img/edit-photo.png">Profile';
-        html += '</a>';
-        html += '</li>';
-
-        html += '<li>';
-        html += '<a class="nav-item header-cart-icon" href="orders.html">';
-        html += '<img src="img/order-icon-3.jpg">My Orders';
-        html += '</a>';
-        html += '</li>';
-        $(".myProfileOrders").html(html);
-    }
-}
 
 function quoteAndEscape(str) {
     return ''
@@ -191,23 +120,6 @@ function quoteAndEscape(str) {
             .replace(/'/g, '\\&#39;')  // encode '
         + '&#39;';                     // close quote '
 }
-
-
-
-function cartGlow() {
-    
-    console.log("hello");
-
-    $(".header-cart-icon").addClass("ace");
-
-    setTimeout(function(){
-    
-        $(".header-cart-icon").removeClass("ace");
-
-    },1500);
-
-}
-
 
 function selectCities() {
 

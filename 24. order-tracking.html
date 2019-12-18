@@ -67,8 +67,10 @@
                     <li>
 
                         <div class="order-con order-con-2">
-                            <span class="bar bar-1"></span>
-                            <span class="round"></span>
+                            <span class="bar bar-1">
+                                <span class="green-bar"></span>
+                            </span>
+                            <span class="round"> </span>
                             <span class="bar bar-2"></span>
                         </div>
                         
@@ -115,25 +117,11 @@
     	</div>
     </div>
 
+    <!-- <script type="text/javascript" src="js/jquery.js"></script> -->
     <script type="text/javascript" src="js/jquery.js"></script>
-
-    <script type="text/javascript">
-        
-        $( document ).ready(function() {
-
-            $(".order-con-1 .green-round").css('height' , '18px');
-
-            function barDown(){
-              $(".order-con-1 .green-bar").css('height' , '57px');
-           };
-
-           window.setTimeout( barDown, 1700 ); // 3 seconds
-
-        });
-
-       
-
-    </script>
+    <script type="text/javascript" src="server.js"></script>
+    <script type="text/javascript" src="common.js"></script>
+    <script type="text/javascript" src="24. order-tracking.js"></script>
 
 </body>
 </html>

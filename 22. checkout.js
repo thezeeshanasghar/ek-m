@@ -62,7 +62,8 @@ function checkout() {
                 Fee: DelCharges,
                 GST: GST,
                 Address: $("#Address").val(),
-                PayMethod: $("#mod-of-pay").val(),
+                //PayMethod: $("#mod-of-pay").val(),
+                PayMethod: 0,
                 Instruction:$("#instructions").val(),
                 OrderItems : allItems,
                 CustomerId: customer.Id,
@@ -77,6 +78,7 @@ function checkout() {
                 dataType: "json",
                 contentType: "application/json;charset=utf-8",
                 success: function (result) {
+                        localStorage.setItem("Id" , result.Id)
                         alert("Your order is placed successfully");
                         localStorage.removeItem("items");
                         //localStorage.removeItem("extraitems");
