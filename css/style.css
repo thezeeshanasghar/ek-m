@@ -1979,12 +1979,12 @@ padding-top: 4px;
 }
 
 
-.rider-rating {
+.rider-rates {
 	font-size: 16px;
 	font-weight: 700;
 }
 
-.rider-rating img {
+.rider-rates img {
 	width: 17px;
 	height: 17px;
 	margin-left: 10px;
@@ -3130,4 +3130,83 @@ input[type=checkbox]:checked + label:before {
 	padding-left: 12px;
 	background: white;
 	text-align: right;
+}
+
+
+/*Rider Rating*/
+
+
+
+.rider-stars {
+    text-align: center;
+    float: left;
+    width: 100%;
+    height: 36px;
+    float: left;
+    width: 100%;
+    width: 170px;
+    margin-top: 10px;
+}
+
+
+.rider-rating-heading {
+	float: left;
+	font-size: 28px;
+	font-weight: 500;
+	color: #62ba64;
+	margin: 20px;
+	margin-left: 0;
+	text-transform: capitalize;
+}
+
+#rider-rating .rider-rating {
+	float: left;
+	display: flex;
+	transform: rotateY(180deg);
+
+}
+
+#rider-rating .rider-rating input {
+	display: none;
+}
+
+#rider-rating .rider-rating label {
+	display: block;
+	cursor: pointer;
+	width: 34px;
+}
+
+#rider-rating .rider-rating label:before {
+	content: '\f005';
+	font-family: fontAwesome;
+	position: relative;
+	display: block;
+	font-size: 30px;
+	color: #9b9b9b;
+}
+
+#rider-rating .rider-rating label:after {
+	content: '\f005';
+	font-family: fontAwesome;
+	position: absolute;
+	display: block;
+	font-size: 30px;
+	color: #4db748;
+	top: 0;
+	opacity: 0;
+	transition: .5s;
+	text-shadow: 0 2px 5px rgba(0,0,0,.5);
+
+}
+
+
+
+#rider-rating .rider-rating label:hover:after,
+#rider-rating .rider-rating label:hover ~ label:after,
+#rider-rating .rider-rating input:checked ~ label:after  {
+	opacity: 1;
+}
+
+#rider-rating input[type="radio"]:checked + label::before {
+    background: none;
 }
