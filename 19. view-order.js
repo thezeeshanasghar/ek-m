@@ -3,7 +3,6 @@ localStorage.setItem("CityId", 1);    // temporary set
 var items = [];
 var items = getObjsFromLocalStorage("items");
 var CityId = getObjsFromLocalStorage("CityId");
-var RestaurantId = getObjsFromLocalStorage("RestaurantId");
 var DelCharges = getObjsFromLocalStorage("DelCharges");
 $(document).ready(function(){
 

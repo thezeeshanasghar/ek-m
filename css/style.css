@@ -3025,7 +3025,7 @@ input[type=checkbox]:checked + label:before {
 	overflow: hidden;
 }
 
-.order-con-1 .green-round {
+.order-con-1 .green-round , .order-con-2 .green-round , .order-con-3 .green-round {
 	width: 18px;
 	height: 0;
 	background: #36ab40;	
@@ -3043,7 +3043,7 @@ input[type=checkbox]:checked + label:before {
 	margin-top: -1px;
 }
 
-.order-con-1 .green-bar {
+.order-con-1 .green-bar , .order-con-2 .green-bar , .order-con-3 .green-bar {
 	width: 5px;
 	height: 0;
 	background: #36ab40;	
@@ -3060,7 +3060,7 @@ input[type=checkbox]:checked + label:before {
 	text-align: center;
 	margin-right: 10px;
 }
-.order-con-2 .green-bar {
+ .order-con-2 .green-bar2 {
 	width: 5px;
 	height: 0;
 	background: #36ab40;	
@@ -3069,7 +3069,7 @@ input[type=checkbox]:checked + label:before {
 	margin-top: -1px;
 
 	transition: all 2s ease-in-out;
-}
+} 
 
 .order-con-2 .round {
 	width: 18px;
