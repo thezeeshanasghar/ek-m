@@ -21,7 +21,7 @@
 
 	<div class="full-wrapper">
 		<div class="order-detail-list">
-            <ul>
+            <ul id = "myOrders">
 
                 <li>
                     <div class="header-wrapper">
@@ -129,15 +129,10 @@
 
 
             <script type="text/javascript" src="js/jquery.js"></script>
+            <script type="text/javascript" src="server.js"></script>
+            <script type="text/javascript" src="common.js"></script>
+            <script type="text/javascript" src="36. my-orders.js"></script>
 
-            <script type="text/javascript">
-                            $(window).scroll(function(){
-              var sticky = $('header'),
-                  scroll = $(window).scrollTop();
-
-              if (scroll >= 90) sticky.addClass('fixed');
-              else sticky.removeClass('fixed');
-            });
-            </script>
+           
 </body>
 </html>

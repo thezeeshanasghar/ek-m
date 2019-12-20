@@ -1,25 +1,27 @@
+
+var RiderId = getObjsFromLocalStorage("RiderId");
+var Customer = getObjsFromLocalStorage("Customer");
+var CustomerId = Customer.Id;
 $(document).ready(function(){
     // loadCities();
     console.log("Ok");
-
-
-
-
     $("#star1").click(function(){
 
         $("#rider-rating label").css("pointer-events","none");
 
 
         var riderrating = {
-            value: 5
+            CustomerId: CustomerId,
+            Value: 5,
+            RiderId:RiderId
         }
 
         $.ajax({
             type: "POST",
-            url: "http://localhost:5000/riderrating",
-            data: riderrating,
+            url: SERVER + "riderrating",
+            data: JSON.stringify(riderrating),
             dataType: "JSON",
-            // contentType: "application/json;charset=utf-8",
+            contentType: "application/json;charset=utf-8",
             success: function (data) {
 
                 
@@ -45,15 +47,17 @@ $(document).ready(function(){
 
 
         var riderrating = {
-            value: 4
+            Value: 4,
+            CustomerId: CustomerId,
+            RiderId:RiderId
         }
 
         $.ajax({
             type: "POST",
-            url: "http://localhost:5000/riderrating",
-            data: riderrating,
+            url: SERVER + "riderrating",
+            data: JSON.stringify(riderrating),
             dataType: "JSON",
-            // contentType: "application/json;charset=utf-8",
+            contentType: "application/json;charset=utf-8",
             success: function (data) {
 
                 
@@ -79,15 +83,17 @@ $(document).ready(function(){
 
 
         var riderrating = {
-            value: 3
+            Value: 3,
+            CustomerId: CustomerId,
+            RiderId:RiderId
         }
 
         $.ajax({
             type: "POST",
-            url: "http://localhost:5000/riderrating",
-            data: riderrating,
+            url: SERVER+ "riderrating",
+            data: JSON.stringify(riderrating),
             dataType: "JSON",
-            // contentType: "application/json;charset=utf-8",
+            contentType: "application/json;charset=utf-8",
             success: function (data) {
 
                 
@@ -111,15 +117,17 @@ $(document).ready(function(){
 
 
         var riderrating = {
-            value: 2
+            Value: 2,
+            CustomerId: CustomerId,
+            RiderId:RiderId
         }
 
         $.ajax({
             type: "POST",
-            url: "http://localhost:5000/riderrating",
-            data: riderrating,
+            url: SERVER + "riderrating",
+            data: JSON.stringify(riderrating),
             dataType: "JSON",
-            // contentType: "application/json;charset=utf-8",
+            contentType: "application/json;charset=utf-8",
             success: function (data) {
 
                 
@@ -142,15 +150,17 @@ $(document).ready(function(){
         
 
         var riderrating = {
-            value: 1
+            Value: 1,
+            CustomerId: CustomerId,
+            RiderId:RiderId
         }
 
         $.ajax({
             type: "POST",
-            url: "http://localhost:5000/riderrating",
-            data: riderrating,
+            url: SERVER + "riderrating",
+            data: JSON.stringify(riderrating),
             dataType: "JSON",
-            // contentType: "application/json;charset=utf-8",
+            contentType: "application/json;charset=utf-8",
             success: function (data) {
 
                 
