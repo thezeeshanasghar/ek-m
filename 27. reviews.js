@@ -1,7 +1,17 @@
 var Id = getObjsFromLocalStorage("RestaurantId");
+localStorage.setItem("CityId", 1);    // temporary set
+var items = [];
+var items = getObjsFromLocalStorage("items");
+var CityId = getObjsFromLocalStorage("CityId");
+var DelCharges = getObjsFromLocalStorage("DelCharges");
 $(document).ready(function(){
 
    loadReviews(Id);
+
+    var id = parseInt(getParameterByName("id")) || 0;
+    localStorage.setItem("RestaurantId", id);
+    restBanner(id);
+
    
    
    $(window).scroll(function(){
@@ -25,6 +35,37 @@ $(window).scroll(function(){
 });
 
  });
+
+
+
+function restBanner(id) {
+
+    $.ajax({
+        url: SERVER + "restaurant/" + id,
+        type: "GET",
+        dataType: "JSON",
+        contentType: "application/json;charset=utf-8",
+        success: function (result) {
+
+          var stickyHeading = '';
+
+          stickyHeading += '<img src="img/round_left_arrow.jpg" />' + result.Name;
+
+            var path = result.CoverImagePath;
+            var path2 = path.replace(/\\/g, "/");
+            console.log(path2);
+            
+        $("#rest-banner").css("background-image","url('"+IP+":"+PORT+"/"+path2+"')");
+        $(".rest-name-star-head h1").text(result.Name);
+        $(".header_heading").html(stickyHeading);
+
+                
+        },
+        error: function (xhr, status, error) {
+            console.log(xhr.responseText);
+        }
+    });
+}
  
 
 function loadReviews(id) {

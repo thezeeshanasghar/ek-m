@@ -1801,6 +1801,17 @@ padding-top: 4px;
 	font-size: 32px;
 }
 
+.checkout-btn #grandTotal {
+    width: 55px;
+    text-align: center;
+    display: inline;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none !important;
+    margin: 0;
+    padding: 0;
+}
+
 .delivery-address {
 	width: 100%;
 	float: left;

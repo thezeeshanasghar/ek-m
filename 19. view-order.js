@@ -6,11 +6,11 @@ var CityId = getObjsFromLocalStorage("CityId");
 var DelCharges = getObjsFromLocalStorage("DelCharges");
 $(document).ready(function(){
 
-   var id = parseInt(getParameterByName("id")) || 0;
+    var id = parseInt(getParameterByName("id")) || 0;
     localStorage.setItem("RestaurantId", id);
-  restBanner(id);
-  loadRestaurantDetails(id);
- animatedMenu();
+    restBanner(id);
+    loadRestaurantDetails(id);
+    animatedMenu();
 
 
 });
