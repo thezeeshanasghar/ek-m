@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>37. Old Order</title>
+	<title>37. Old Order detail</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -34,7 +34,9 @@
                             </div>
                         </li>
 
-                        <li>
+                        <div id = "itemValues">
+                            
+                            <li>
                             <div class="left-panel">
                                 Pizza Large
                             </div>
@@ -89,6 +91,7 @@
                                 Rs 150
                             </div>
                         </li>
+                        </div>
                     </ul>
                 </div>
 
@@ -118,8 +121,8 @@
                                     
                                 </div>
     
-                                <div class="right-panel">
-                                    Rs 1450
+                                <div  class="right-panel">
+                                    Rs <span id = "subTotal"></span>
                                 </div>
                             </li>
 
@@ -133,7 +136,7 @@
                                 </div>
     
                                 <div class="right-panel">
-                                    Rs 232
+                                    Rs <span id = "GST"></span>
                                 </div>
                             </li>
 
@@ -147,7 +150,7 @@
                                 </div>
     
                                 <div class="right-panel">
-                                    Rs 100
+                                    Rs <span id = "DelCharges"></span>
                                 </div>
                             </li>
 
@@ -161,7 +164,7 @@
                                 </div>
     
                                 <div class="right-panel">
-                                    Rs 1782
+                                    Rs <span id = "Total"></span>
                                 </div>
                             </li>
 

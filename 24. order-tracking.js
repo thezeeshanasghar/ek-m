@@ -7,7 +7,6 @@ $( document ).ready(function() {
    };
    window.setTimeout( barDown, 1700 ); // 3 seconds
    window.setInterval("loadOrderStatus(OrderId)", 10000);
-   orderTrack();
 });
 
 function loadOrderStatus (id)
@@ -22,12 +21,18 @@ function loadOrderStatus (id)
             {
             $(".order-con-2 .green-bar").css('height' , '57px');
             $(".order-con-2 .green-round").css('height' , '18px');
+            $(".order-con-2 .green-bar2").css('height' , '57px');
             }
             else if (result ==2)
             {
-                // $(".order-con-2 .green-bar").css('height' , '57px');
-                // $(".order-con-2 .green-round").css('height' , '18px');
+        
+                $(".order-con-2 .green-bar").css('height' , '57px');
+                $(".order-con-2 .green-round").css('height' , '18px');
                 $(".order-con-2 .green-bar2").css('height' , '57px');
+                $(".order-con-3 .green-bar").css('height' , '57px');
+                $(".order-con-3 .green-round").css('height' , '18px');
+                $("#orderTrackBtn").attr("onclick" ,"window.location.href='25. track-location.html'");
+                $("#orderTrackBtn").css("background-color", "#039611");
             }
             else if (result ==3)
             {
