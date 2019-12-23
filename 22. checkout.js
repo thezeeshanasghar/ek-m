@@ -18,14 +18,33 @@ $(document).ready(function () {
         $(".overlay").fadeIn('slow');
     });
     $(".select-opt label").click(function(){
+        var $this = $(this);
         var value = $(this).find(".option");
         var pMethod = $(value).html();
           $("#mod-of-pay").html(pMethod);
-          localStorage.setItem("PayMethod" , pMethod)
+          localStorage.setItem("PayMethod" , pMethod);
+
+
+        if ($this.is(':nth-child(2)')) {
+            console.log('Cash Selected')
+            localStorage.setItem("PCode" , 1);
+        } else if ($this.is(':nth-child(3)')) {
+            console.log('Debit Selected')
+            localStorage.setItem("PCode" , 2);
+        } else if ($this.is(':nth-child(4)')) {
+            console.log('EasyPaisa Selected')
+            localStorage.setItem("PCode" , 3);
+        } else if ($this.is(':nth-child(5)')) {
+            console.log('MobiCash Selected')
+            localStorage.setItem("PCode" , 4);
+        }
+
     });
     $(".overlay").click(function(){
         $(this).css('display' , 'none');
     });
+
+    
 });
 function checkout() {
    // if (isLoggedIn()) {
