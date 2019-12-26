@@ -29,7 +29,7 @@
 
 									<img src="img/input-user.png">
 									
-									<input type="text" id="name" name="name" class="form-input" placeholder="Name">
+									<input type="text" id="Name" name="Name" class="form-input" placeholder="Name">
 
 
 								</div>
@@ -47,7 +47,7 @@
 
 									<img src="img/input-mail.png">
 									
-									<input type="text" name="email" id="emailAdd" class="form-input" placeholder="Email Address">
+									<input type="email" name="email" id="Email" class="form-input" placeholder="Email Address">
 
 
 								</div>
@@ -56,7 +56,7 @@
 
 									<img src="img/input-pswd.png">
 									
-									<input type="password" name="password" id="password" class="form-input" placeholder="Password">
+									<input type="password" name="password" id="Password" class="form-input" placeholder="Password">
 
 
 								</div>
@@ -65,22 +65,12 @@
 
 									<img src="img/input-pswd.png">
 									
-									<input type="password" name="password2" class="form-input" placeholder="Confirm Password">
+									<input type="password" name="Password2" class="form-input" placeholder="Confirm Password">
 
 
 								</div>
-								
-
-								
-
-								
-
-								
-
-								
-
-								<button type="submit" id="submit-button" class="form-submit-btn leaf-btn leaf-btn-green">Sign Up</button>
 							</form>
+							<button onclick="SignUp()" id="submit-button" class="form-submit-btn leaf-btn leaf-btn-green">Sign Up</button>
 
 							<div class="bottom-panel">
 								<div class="signup-link stan-sticky-panel">
@@ -102,56 +92,11 @@
 	<script src="js/additional-methods.min.js"></script>
 	<script src="js/validation.js"></script>
 	<script src="js/animsition.min.js"></script>
+	<script src="common.js"></script>
+	<script src="server.js"></script>
+	<script src="07. signup.js"></script>
 
-	<script type="text/javascript">
-
-		$(document).ready(function() {
-			$(".animsition").animsition({
-				inClass: 'fade-in',
-				outClass: 'fade-out',
-				inDuration: 1500,
-				outDuration: 800,
-				linkElement: '.animsition-link',
-			    // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
-			    loading: true,
-			    loadingParentElement: 'body', //animsition wrapper element
-			    loadingClass: 'animsition-loading',
-			    loadingInner: '', // e.g '<img src="loading.svg" />'
-			    timeout: false,
-			    timeoutCountdown: 5000,
-			    onLoadEvent: true,
-			    browser: [ 'animation-duration', '-webkit-animation-duration'],
-			    // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
-			    // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
-			    overlay : false,
-			    overlayClass : 'animsition-overlay-slide',
-			    overlayParentElement : 'body',
-			    transition: function(url){ window.location.href = url; }
-			});
-
-			$("#SignupBtn").click(function(){
-				$.ajax({
-				  type: "POST",
-				  url: "https://13.127.49.104:5001/api/customer",
-				  data: JSON.stringify({
-				  	Name: $("#name").val(),
-				  	Email: $("#email").val(),
-				  	Password:$("#Password").val(),
-				  	CityId: 16
-				  }),
-				  success: function() {
-				  	// reset form
-				  	// show success message
-				  	// 
-				  },
-				  failure: function() { console.log("data not posted")},
-				  dataType: 'json',
-				  contentType: "application/json; charset=utf-8"
-				});
-			});
-		});
-
-	</script>
+	
 
 <!-- 	<script type="text/javascript">
 		

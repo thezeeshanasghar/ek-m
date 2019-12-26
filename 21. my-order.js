@@ -3,9 +3,15 @@ var items = getObjsFromLocalStorage("items");
 var CityId = getObjsFromLocalStorage("CityId");
 var RestaurantId = getObjsFromLocalStorage("RestaurantId");
 var DelCharges = getObjsFromLocalStorage("DelCharges");
+var menuIds = getObjsFromLocalStorage("menuIds");
+
 $(document).ready(function () {
     loadOrderItems();
+    loadExtraItems();
 });
+
+
+
 function loadOrderItems() {
 
     if (items && items.length >= 0) {
@@ -28,6 +34,27 @@ function loadOrderItems() {
         calculateOrderTotals();
     }
 }
+
+   function loadExtraItems() {
+
+    $.each(menuIds, function (index, id) { 
+        console.log(id);  
+        $.ajax({
+            url: SERVER + "menu/" + id + "/menuextraitem",
+            type: "GET",
+            dataType: "JSON",
+            contentType: "application/json;charset=utf-8",
+            success: function (result) { 
+                console.log(result);             
+            },
+            error: function (xhr, status, error) {
+                console.log(xhr.responseText);
+            }
+        });
+
+    }); 
+
+   }
 
 function minusQuantity(itemId, price, quantity) {
     if (quantity > 0) {

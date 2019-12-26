@@ -1,13 +1,7 @@
 $(document).ready(function () {
-    /* Authentication */
-    // toggleLogInOut();
-    // selectCities();
-
-
-
+    
     $(".logoutLi").on('click', function () {
         localStorage.clear();
-        toggleLogInOut();
         location.reload(true);
     });
 });
@@ -25,7 +19,6 @@ function login() {
         contentType: "application/json;charset=utf-8",
         success: function (result) {
             // if (result.IsSuccess) {
-               // localStorage.setItem("Customer", JSON.stringify(result.ResponseData));
                localStorage.setItem("Customer", JSON.stringify(result));
                window.location = "11. welcome.html"
                 // $(".login-overlay").fadeOut();
