@@ -3,6 +3,7 @@
 <head>
 	<title>21. My Order</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
 </head>
 <body>
 
@@ -37,6 +38,56 @@
                 <div id="itemValues"></div>
             
         </div>
+
+        <div class="item-list cuisines exts">
+
+            <h4>Extras</h4>
+            <div class="swiper-container ext">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                      <div class="ext-item">
+                          
+                        <span class="ext-name">Coke</span>
+                        <span class="ext-price">Rs.90</span>
+                        <span class="ext-add">+</span>
+
+                      </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                      <div class="ext-item">
+                          
+                        <span class="ext-name">Raita</span>
+                        <span class="ext-price">Rs.75</span>
+                        <span class="ext-add">+</span>
+
+                      </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                      <div class="ext-item">
+                          
+                        <span class="ext-name">Salad</span>
+                        <span class="ext-price">Rs.50</span>
+                        <span class="ext-add">+</span>
+
+                      </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                      <div class="ext-item">
+                          
+                        <span class="ext-name">Ketchup</span>
+                        <span class="ext-price">Rs.60</span>
+                        <span class="ext-add">+</span>
+
+                      </div>
+                  </div>
+                </div>
+             </div>
+        </div>
+
+
 
         <div class="my-order-total">
 
@@ -112,6 +163,18 @@
          <script type="text/javascript" src="server.js"></script>
          <script type="text/javascript" src="common.js"></script>
          <script type="text/javascript" src="21. my-order.js"></script>
+
+                    <!-- Swiper JS -->
+  <script src="js/swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.ext', {
+      slidesPerView: 'auto',
+      spaceBetween: 12,
+      freeMode: true,
+    });
+  </script>
 
 </body>
 </html>

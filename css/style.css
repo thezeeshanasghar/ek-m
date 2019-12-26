@@ -109,7 +109,7 @@ button {
 }
 
 .shadow {
-		-moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.5);
 	box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.5);
 	-webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.5);
 }
@@ -977,6 +977,30 @@ header .select-location-header img {
 	background: #460063;
 }
 
+#order-nav a {
+	float: left;
+color: white;
+margin: 0 1px;
+padding: 0px 18px;
+    padding-top: 0px;
+padding-top: 4px;
+border-radius: 25px;
+}
+
+#order-nav a:hover {
+	background: #fff;
+	color: #36ab40;
+}
+
+#order-nav a.active {
+	background: #fff;
+	color: #36ab40;
+}
+
+.orderNavList {
+	height: 30px;
+}
+
 .rest-slider {
 	width: 100%;
 	float: left;
@@ -1704,7 +1728,7 @@ padding-top: 4px;
 .my-order-total {
 	width: 100%;
 	float: left;
-	margin-top: 50px;
+	margin-top: 20px;
 	padding: 10px 0;
 	padding-top: 15px;
 	border-top: 2px solid #dddddd;
@@ -1801,17 +1825,6 @@ padding-top: 4px;
 	font-size: 32px;
 }
 
-.checkout-btn #grandTotal {
-    width: 55px;
-    text-align: center;
-    display: inline;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none !important;
-    margin: 0;
-    padding: 0;
-}
-
 .delivery-address {
 	width: 100%;
 	float: left;
@@ -1857,8 +1870,6 @@ padding-top: 4px;
 	width: 8px;
 	vertical-align: middle;
 }
-
-
 
 .select-bk {
 	width: 100%;
@@ -1937,11 +1948,6 @@ padding-top: 4px;
 }
 
 
-/*.select-opt label:nth-child(5) {
-	background: blue;
-}*/
-
-
 
 /*Order Placed Page*/
 
@@ -1997,12 +2003,12 @@ padding-top: 4px;
 }
 
 
-.rider-rates {
+.rider-rating {
 	font-size: 16px;
 	font-weight: 700;
 }
 
-.rider-rates img {
+.rider-rating img {
 	width: 17px;
 	height: 17px;
 	margin-left: 10px;
@@ -3043,7 +3049,7 @@ input[type=checkbox]:checked + label:before {
 	overflow: hidden;
 }
 
-.order-con-1 .green-round , .order-con-2 .green-round , .order-con-3 .green-round {
+.order-con-1 .green-round {
 	width: 18px;
 	height: 0;
 	background: #36ab40;	
@@ -3061,7 +3067,7 @@ input[type=checkbox]:checked + label:before {
 	margin-top: -1px;
 }
 
-.order-con-1 .green-bar , .order-con-2 .green-bar , .order-con-3 .green-bar {
+.order-con-1 .green-bar {
 	width: 5px;
 	height: 0;
 	background: #36ab40;	
@@ -3078,7 +3084,7 @@ input[type=checkbox]:checked + label:before {
 	text-align: center;
 	margin-right: 10px;
 }
- .order-con-2 .green-bar2 {
+.order-con-2 .green-bar {
 	width: 5px;
 	height: 0;
 	background: #36ab40;	
@@ -3087,7 +3093,7 @@ input[type=checkbox]:checked + label:before {
 	margin-top: -1px;
 
 	transition: all 2s ease-in-out;
-} 
+}
 
 .order-con-2 .round {
 	width: 18px;
@@ -3151,99 +3157,80 @@ input[type=checkbox]:checked + label:before {
 }
 
 
-/*Rider Rating*/
 
-
-
-.rider-stars {
-    text-align: center;
-    float: left;
-    width: 100%;
-    height: 36px;
-    float: left;
-    width: 100%;
-    width: 170px;
-    margin-top: 10px;
+#order-nav .swiper-slide {
+	width: auto !important;
 }
 
-
-.rider-rating-heading {
-	float: left;
-	font-size: 28px;
-	font-weight: 500;
-	color: #62ba64;
-	margin: 20px;
-	margin-left: 0;
-	text-transform: capitalize;
-}
-
-#rider-rating .rider-rating {
-	float: left;
-	display: flex;
-	transform: rotateY(180deg);
-
-}
-
-#rider-rating .rider-rating input {
-	display: none;
-}
-
-#rider-rating .rider-rating label {
-	display: block;
-	cursor: pointer;
-	width: 34px;
-}
-
-#rider-rating .rider-rating label:before {
-	content: '\f005';
-	font-family: fontAwesome;
-	position: relative;
-	display: block;
-	font-size: 30px;
-	color: #9b9b9b;
-}
-
-#rider-rating .rider-rating label:after {
-	content: '\f005';
-	font-family: fontAwesome;
-	position: absolute;
-	display: block;
-	font-size: 30px;
-	color: #4db748;
-	top: 0;
-	opacity: 0;
-	transition: .5s;
-	text-shadow: 0 2px 5px rgba(0,0,0,.5);
-
-}
-
-
-
-#rider-rating .rider-rating label:hover:after,
-#rider-rating .rider-rating label:hover ~ label:after,
-#rider-rating .rider-rating input:checked ~ label:after  {
-	opacity: 1;
-}
-
-#rider-rating input[type="radio"]:checked + label::before {
-    background: none;
-}
-#orderTrackBtn{
-	background-color: #ddd;
-}
-/* .extraitemsul{
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	background-color: green;
-}
-
-.extraitemsli{
-	float: left ;
-	display: block;
+#menu-heading {
+	width: 90%;
+	margin: auto;
 	color: white;
+	font-weight: normal !important;
+}
+
+.ext-item {
+	position: relative;
+	width: 80px;
+	height: 80px;
+	padding: 7px;
+	float: left;
+	border: 2px solid #ddd;
+	border-radius: 5px;
+}
+
+.exts h4 {
+	margin-bottom: 7px;
+	font-size: 16px;
+}
+
+.ext-name {
+	font-size: 17px;
+	display: block;
+	line-height: 15px;
+}
+
+.ext-price {
+	font-size: 14px;
+	color: gray;
+	font-weight: 600;
+}
+
+.ext-add {
+	display: block;
 	text-align: center;
-	padding: 16px;
-	text-decoration: none;
-} */
+	width: 90%;
+	height: 16px;
+	line-height: 17px;
+	color: #fff;
+	background: #36ab40;
+	cursor: pointer;
+	position: absolute;
+	bottom: 5px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+
+.exts .swiper-slide {
+	width: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

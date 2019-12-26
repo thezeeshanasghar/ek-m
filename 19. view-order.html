@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
 	<title>19. View Order</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+    
 </head>
 <body>
 
@@ -22,15 +27,29 @@
         </header>
 
         <div class="order-nav-wrapper">
-            <div id="order-nav" class="order-nav">
-                <ul>
-                    <li ><a class="scrollTo active" href="#pizza">Pizza</a></li>
-                    <li><a class="scrollTo" href="#burger">Burger</a></li>
-                    <li><a class="scrollTo" href="#fries">Fries</a></li>
-                    <li><a class="scrollTo" href="#wings">Wings</a></li>
 
-                </ul>
+            <div id="order-nav" class="order-nav">
+
+
+                <div class="swiper-container s4">
+
+                    <div class="orderNavList swiper-wrapper">
+                        <div class="swiper-slide"><a class="scrollTo" href="#pizza">Pizza</a></div>
+                        <div class="swiper-slide"><a class="scrollTo" href="#burger">Burger</a></div>
+                        <div class="swiper-slide"><a class="scrollTo" href="#fries">Fries</a></div>
+                        <div class="swiper-slide"><a class="scrollTo" href="#wings">Wings</a></div>
+                        <div class="swiper-slide"><a class="scrollTo" href="#fifth">Fifth</a></div>
+                        <div class="swiper-slide"><a class="scrollTo" href="#sixth">Sixth</a></div>
+                        <div class="swiper-slide"><a class="scrollTo" href="#seventh">Seventh</a></div>
+                        <div class="swiper-slide"><a class="scrollTo" href="#eight">Eight</a></div>
+
+                    </div>
+
+                </div>
+
+
             </div>
+
         </div>
 
     </div>
@@ -56,20 +75,38 @@
             |
 
             <div class="right-panel">
-                <span onclick = "window.location.href='27. reviews.html'" class="review">Reviews</span>
+                <span class="review">Reviews</span>
             </div>
         </div>
 
         <div class="order-nav-wrapper">
-            <div class="order-nav">
-                <!-- <ul>
-                    <li ><a class="active" href="#">Pizza</a></li>
-                    <li><a href="#">Burger</a></li>
-                    <li><a href="#">Fries</a></li>
-                    <li><a href="#">Wings</a></li>
 
-                </ul> -->
+            <div id="order-nav" class="order-nav">
+
+
+                <div id="menu-heading">
+                    <h3>Scroll up Screen to Explore up Menu</h3>
+                </div>
+
+               <!--  <div class="swiper-container s5">
+
+                    <div class="orderNavList swiper-wrapper">
+                        <div class="swiper-slide"><a class="scrollTo" href="#pizza">Pizza</a></div>
+                        <div class="swiper-slide"><a class="scrollTo" href="#burger">Burger</a></div>
+                        <div class="swiper-slide"><a class="scrollTo" href="#fries">Fries</a></div>
+                        <div class="swiper-slide"><a class="scrollTo" href="#wings">Wings</a></div>
+                        <div class="swiper-slide"><a class="scrollTo" href="#fifth">Fifth</a></div>
+                        <div class="swiper-slide"><a class="scrollTo" href="#sixth">Sixth</a></div>
+                        <div class="swiper-slide"><a class="scrollTo" href="#seventh">Seventh</a></div>
+                        <div class="swiper-slide"><a class="scrollTo" href="#eight">Eight</a></div>
+
+                    </div>
+
+                </div> -->
+
+
             </div>
+
         </div>
 
 
@@ -311,33 +348,8 @@
     <script type="text/javascript" src="server.js"></script>
     <script type="text/javascript" src="common.js"></script>
     <script type="text/javascript" src="19. view-order.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
 
-        <script type="text/javascript">
-
-            $(window).scroll(function(){
-
-                var sticky = $('.order-sticky'),
-                scroll = $(window).scrollTop();
-
-                if (scroll >= 271) sticky.slideDown();
-                else sticky.slideUp();
-
-            });
-
-
-
-            $(window).scroll(function(){
-
-                var stickyHeading = $('.order-list-heading'),
-                scroll = $(window).scrollTop();
-
-                if (scroll >= 271) stickyHeading.slideDown();
-                else stickyHeading.slideUp();
-            
-            });
-
-
-        </script>
 
 </body>
 </html>

@@ -1,19 +1,17 @@
 
 localStorage.setItem("CityId", 1);    // temporary set
- var menuId = [];
-// localStorage.setItem("menuId", menuId );
 var items = [];
 var items = getObjsFromLocalStorage("items");
 var CityId = getObjsFromLocalStorage("CityId");
+var RestaurantId = getObjsFromLocalStorage("RestaurantId");
 var DelCharges = getObjsFromLocalStorage("DelCharges");
 $(document).ready(function(){
 
-    var id = parseInt(getParameterByName("id")) || 0;
+   var id = parseInt(getParameterByName("id")) || 0;
     localStorage.setItem("RestaurantId", id);
-    restBanner(id);
-    loadRestaurantDetails(id);
-    animatedMenu();
-
+  restBanner(id);
+  loadRestaurantDetails(id);
+ animatedMenu();    
 
 });
 
@@ -64,14 +62,14 @@ function loadRestaurantDetails(restaurantId) {
                 // Restaurant Menus
                 $.each(restaurant.RestaurantMenus, function (index, menu) {
 
-                  navList += '<li>';
-                  navList += '<a class="scrollTo" href="#'+menu.Name+'">'+menu.Name+'</a>';
-                  navList += '</li>';
+                  navList += '<div id="" class="swiper-slide">';
+                  navList += '<a class="scrollTo" href="#'+menu.Name.split(" ").join("")+'">'+menu.Name+'</a>';
+                  navList += '</div>';
 
 
                   html += '<div class="order-list">';
                   html += '<div class="order-list-heading">';
-                  html += '<h1 id="'+menu.Name+'">'+menu.Name+'</h1>';
+                  html += '<h1 id="'+menu.Name.split(" ").join("")+'">'+menu.Name+'</h1>';
                   html += '</div>';
                   html += '<ul>';
 
@@ -85,7 +83,7 @@ function loadRestaurantDetails(restaurantId) {
                     html += '<div class="left-panel"><p>'+menuItem.Size+' Rs.'+menuItem.Price+'</p></div>';
                     //html += '<div class="left-panel"><p>Small 250, Medium 500, Large 800</p></div>';
                     html += '<div class="right-panel"><a role="button" tabindex="0"  onclick="addToCart('
-                    + menu.Id + ','+ menuItem.Id + ',' + quoteAndEscape(menuItem.Name) +
+                    + menuItem.Id + ',' + quoteAndEscape(menuItem.Name) +
                     ',' + quoteAndEscape(menuItem.Size) + ',' + menuItem.Price +
                     ')" style="cursor: pointer;"><img src="img/plus-round-white.jpg" /> </a> </div>';
                     html += '</li>';  
@@ -95,27 +93,28 @@ function loadRestaurantDetails(restaurantId) {
                   html += '</ul>';
                   html += '</div>';
 
+                    
+
 
 
                 });
 
-                $(".order-nav ul").html(navList);
+                
+
+
+                // Adding items in Div
+
+                $(".orderNavList").html(navList);
                 $(".order-list-page").append(html);
 
 
-                $("#order-nav a").click(function () {
-
-                    $("#order-nav a").removeClass("active");
-                    // $(".tab").addClass("active"); // instead of this do the below 
-                    $(this).addClass("active");   
-                });
-                
-
+                // Scroll on click on header menu items
+     
                 $('.scrollTo').click(function(){
 
                     var getElement = $(this).attr('href');
                     if($(getElement).length){
-                        var getOffset = $(getElement).offset().top;
+                        var getOffset = $("h1"+getElement).offset().top;
                         $('html,body').animate({
                             scrollTop: getOffset - 100
                         }, 500);
@@ -123,6 +122,88 @@ function loadRestaurantDetails(restaurantId) {
 
                 });
 
+
+                // On Scroll Swiper Animate
+
+                $(window).scroll(function(){
+
+
+                    var sticky = $('.order-sticky'),
+                    scroll = $(window).scrollTop();
+
+                    if (scroll >= 271)  {
+
+                        sticky.fadeIn();
+                    
+                    } else sticky.fadeOut();
+
+                    var stickyHeading = $('.order-list-heading'),
+                    scroll = $(window).scrollTop();
+
+                    if (scroll >= 271) {
+
+                        stickyHeading.fadeIn();
+
+                    } else stickyHeading.fadeOut();
+
+
+
+
+
+                    var scrollLink = $(".scrollTo");
+
+                    
+                    var scrollbarLocation = $(this).scrollTop();
+                    // console.log(scrollbarLocation)
+
+                    scrollLink.each(function(){
+
+                        var sectionOffset = $(this.hash).offset().top - 150 ;
+
+                        // console.log(sectionOffset)
+
+                        if ( sectionOffset <= scrollbarLocation) {
+                            $("#order-nav a").removeClass("active");
+                            $(this).addClass("active");
+
+
+                            var target = $(this).parent();
+
+                            var swiper = new Swiper('.s4', {
+                              slidesPerView: 'auto',
+                              freeMode: true,
+                              observer: true,
+                              observeParents: false,
+
+
+                            })
+                            
+                                // e.preventDefault();
+                                swiper.slideTo( target.index(),false );
+                                // console.log("Working");
+                                var El = $('h1').attr('id');
+                            // console.log(El)
+
+
+
+
+
+                        }
+
+                    })
+
+                });
+
+
+                // Add active on clicked
+
+                $("#order-nav a").click(function (e) {
+
+                    e.preventDefault();
+                    $("#order-nav a").removeClass("active");
+                    // $(".tab").addClass("active"); // instead of this do the below 
+                    $(this).addClass("active");   
+                });
 
 
                  // toggle function
@@ -140,6 +221,9 @@ function loadRestaurantDetails(restaurantId) {
                         return this;
                     };
                 }(jQuery));
+
+
+                // Selecting Item     
 
                 $('.order-list .right-panel img').clickToggle(function() {
                    
@@ -168,11 +252,11 @@ function loadRestaurantDetails(restaurantId) {
                         var parentLi = $(this).closest( "li" );
                         var selected = $(parentLi).find(".selected-order img");
                         $ (selected).css('display' , 'none');
-                        // console.log("item Removed");
-                        // var items = getObjsFromLocalStorage("items");
-                        // console.log(items);
-                        // items.splice(0);
-                        // localStorage.setItem('items', JSON.stringify(items));
+                        console.log("item Removed");
+                        var items = getObjsFromLocalStorage("items");
+                        console.log(items);
+                        items.splice(0);
+                        localStorage.setItem('items', JSON.stringify(items));
                         $(this).attr('src',"img/plus-round-white.jpg");
                         // function deleteItem (i)
                     
@@ -188,6 +272,7 @@ function loadRestaurantDetails(restaurantId) {
             console.log(xhr.responseText);
         }
     });
+
 }
 
 function animatedMenu() {
@@ -206,7 +291,7 @@ function animatedMenu() {
                     var getOffset = $(getElement).offset().top;
                     $('html,body').animate({
                         scrollTop: getOffset - 100
-                    }, 500);
+                    }, 1000);
                 }
 
             });
@@ -230,12 +315,10 @@ function animatedMenu() {
 //     }
 //     return sizeName;
 //     }
-function addToCart(menuId ,id, name, size, price) {
+function addToCart(id, name, size, price) {
     // if (isLoggedIn()) {
         items = getObjsFromLocalStorage("items");
-         menuIds = getObjsFromLocalStorage("menuIds");
-        if (!items) items = []; 
-        if (!menuIds) menuIds = [];
+        if (!items) items = [];
         let isExist = false;
         if (items.length > 0) {
             $.each(items, function (i, value) {
@@ -258,16 +341,7 @@ function addToCart(menuId ,id, name, size, price) {
           //  item.Size = getMenuSize(item.Size);
             items.push(item);
             localStorage.setItem('items', JSON.stringify(items));
-            function checkMenuId(Id) {
-                return Id == menuId;
-              }
-            var testid = menuIds.find(checkMenuId);
-           // console.log(testid);
-           if (testid == undefined)
-            menuIds.push(menuId);
-            localStorage.setItem('menuIds', JSON.stringify(menuIds));
             console.log(items);
-            console.log(menuIds);
         } else {
             alert('This item already added in your cart, please click items on right top corner!');
         }
@@ -275,8 +349,6 @@ function addToCart(menuId ,id, name, size, price) {
     //     alert('Please login first');
     // }
 }
-
-   
 
 function deleteItem (i)
 {
