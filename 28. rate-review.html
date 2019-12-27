@@ -36,11 +36,11 @@
 
 
             <div class="checkout-inst write-review">
-                <textarea>Write your review here
+                <textarea id ="comment">Write your review here
                 </textarea>
             </div>
 
-            <div class="allow-review">
+            <!-- <div class="allow-review">
                 <p>Allow eat klik to publish your profile picture with your review?</p>
 
                 <div class="allow-radio right-panel">
@@ -55,11 +55,11 @@
                     </div>
 
                 </div>
-            </div>
+            </div> -->
 
                
             <div class="bottom-panel sticky-panel">
-                <button for="vote-form" type="submit" class="leaf-btn leaf-btn-green full-btn standard-btn" style="margin-bottom: 30px;">Submit</button>
+                <button onclick="postReview();" for="vote-form" type="submit" class="leaf-btn leaf-btn-green full-btn standard-btn" style="margin-bottom: 30px;">Submit</button>
             </div>
 
           
@@ -67,6 +67,9 @@
     	</div>
 
     </div>
-
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="server.js"></script>
+    <script type="text/javascript" src="common.js"></script>
+    <script type="text/javascript" src="28. rate-review.js"></script>
 </body>
 </html>

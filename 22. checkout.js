@@ -58,21 +58,8 @@ function checkout() {
             }
         }
         
-        // if (extraitems != null)
-        // for (var i = 0; i <= extraitems.length - 1; i++) {
-        //     delete extraitems[i].Id; 
-        //     if (extraitems[i].Quantity === 0) {
-        //         delete extraitems[i]; 
-        //         extraitems.length--;
-
-        //     }
-        // }
         if (items && items.length > 0) {
             var allItems = [];
-            // if (extraitems != null){
-            // allItems = items.concat(extraitems);
-            // }
-            // else 
             {allItems = items}
             console.log (allItems);
             var order = {
