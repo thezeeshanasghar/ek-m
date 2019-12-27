@@ -5,6 +5,23 @@ $(document).ready(function(){
       loadRest();
       searchRest();
       searchstickRest();
+
+      var Customer = getObjsFromLocalStorage("Customer");
+    var UserName = 'Hello ' +Customer.Name+ '!' ;
+    $("#UserName").html(UserName);
+    $("#logout").on('click', function () {
+        localStorage.clear();
+        window.location.href = '06. login.html';
+    });
+
+    $(".select-location-header img").click(function(){
+        $(".edit-back").fadeIn();
+        console.log("working")
+    });
+
+    $(".edit-back").click(function(){
+        $(this).fadeOut();
+    });
 });
 
 // Load Cuisines

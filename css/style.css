@@ -1324,9 +1324,15 @@ padding-top: 4px;
 	text-align: center;
 	width: 100%;
 	float: left;
+	margin-bottom: 10px;
 	padding: 15px 0;
 	padding-bottom: 10px;
 	font-weight: 500;
+	background: #36ab40;
+	color: #fff;
+	-moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.5);
+	box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.5);
 }
 
 .order-tabs .left-panel {
@@ -1335,8 +1341,8 @@ padding-top: 4px;
 }
 
 .order-tabs .left-panel .menu {
-	color: #039611;
-	border: 1px solid #039611;
+	color: #fff;
+	border: 1px solid #fff;
 	border-radius: 20px;
 	padding: 1px 30px;
 	padding-top: 5px;
@@ -2042,8 +2048,8 @@ padding-top: 4px;
 }
 
 .order-tabs .right-panel .review {
-	color: #039611;
-	border: 1px solid #039611;
+	color: #fff;
+	border: 1px solid #fff;
 	border-radius: 20px;
 	padding: 1px 30px;
 	padding-top: 5px;
@@ -2166,8 +2172,11 @@ padding-top: 4px;
 /*Edit Page*/
 
 .edit-back {
-	background: #36555a;
+	background: rgba(0, 0, 0, 0.8);
 	height: 100%;
+	position: fixed;
+	z-index: 9999;
+	display: none;
 }
 
 .edit-list {
@@ -2176,6 +2185,7 @@ padding-top: 4px;
 	background: white;
 	margin-top: 30px;
 	overflow: hidden;
+	height: 100%;
 }
 
 .edit-header {
@@ -2192,6 +2202,7 @@ padding-top: 4px;
 .edit-header h3 {
 	font-size: 21px;
 	line-height: 19px;
+	margin-top: 12px;
 }
 
 .edit-list ul li {
@@ -2240,8 +2251,10 @@ padding-top: 4px;
 .copy {
 	text-align: center;
 	color: #999;
-	margin-bottom: 80px;
 	font-size: 12px;
+	position: absolute;
+	bottom: 30px;
+	left: 20px;
 }
 
 .user_list {
@@ -3218,8 +3231,6 @@ input[type=checkbox]:checked + label:before {
 .exts .swiper-slide {
 	width: auto;
 }
-
-
 
 
 
