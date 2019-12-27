@@ -63,7 +63,7 @@ console.log (obj);
         contentType: "application/json;charset=utf-8",
         success: function (result) {
                localStorage.setItem("Customer", JSON.stringify(result));
-               window.location.href = "11. Welcome.html";
+               window.location.href = "11. welcome.html";
         },
         error: function (xhr, status, error) {
             console.log(xhr.responseText);

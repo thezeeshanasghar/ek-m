@@ -10,8 +10,6 @@ $(document).ready(function () {
     loadExtraItems();
 });
 
-
-
 function loadOrderItems() {
 
     if (items && items.length >= 0) {
@@ -36,8 +34,8 @@ function loadOrderItems() {
 }
 
    function loadExtraItems() {
-
-    $.each(menuIds, function (index, id) { 
+     var html = '';
+     $.each(menuIds, function (index, id) { 
         console.log(id);  
         $.ajax({
             url: SERVER + "menu/" + id + "/menuextraitem",
@@ -45,7 +43,14 @@ function loadOrderItems() {
             dataType: "JSON",
             contentType: "application/json;charset=utf-8",
             success: function (result) { 
-                console.log(result);             
+                console.log(result);  
+                $.each(result, function (index, item) {
+                    html +=  '<div class="swiper-slide"><div class="ext-item">';
+                    html += ' <span class="ext-name">'+item.Name+'('+item.Size+')'+'</span> <span class="ext-price">Rs.'+item.Price+'</span>';
+                    html+= '<span onclick = "addToCart('+item.Id+','+quoteAndEscape(item.Name)+','+quoteAndEscape(item.Size)+','+item.Price+')"; class="ext-add">+</span>';
+                    html +=  '</div></div>';
+                });
+                $("#extras").html(html);
             },
             error: function (xhr, status, error) {
                 console.log(xhr.responseText);
@@ -53,9 +58,7 @@ function loadOrderItems() {
         });
 
     }); 
-
    }
-
 function minusQuantity(itemId, price, quantity) {
     if (quantity > 0) {
         quantity = quantity - 1;
@@ -83,9 +86,8 @@ function deleteItem (i)
 
 function calculateTotal(price, quantity) {
     return price * quantity;
-    var sub = price * quantity;
-    localStorage.setItem('total', sub);
-
+    // var sub = price * quantity;
+    // localStorage.setItem('total', sub);
 }
 
 function changeItemValues(itemId, quantity, total) {
@@ -141,6 +143,43 @@ function calculateOrderTotals() {
 
     $("#grandTotal").val(roundtotal);
     localStorage.setItem('grandTotal' , roundtotal)
+}
+
+function addToCart(id, name, size, price) { 
+        if (!items) items = [];
+        let isExist = false;
+        if (items.length > 0) {
+            $.each(items, function (i, value) {
+                // if (value.Id == id) {
+                //     isExist = true;
+                //     return false;
+                // }
+                if (value.Name == name && value.Size == size) 
+                {
+                    isExist = true;
+                    return false;
+                }
+            });
+        }
+        if (!isExist) {
+            var item = {
+                Id: id,
+                Name: name,
+                Size: size,
+                Price: price,
+                Quantity: 1,
+                Total: 0
+            }
+            item.Total = item.Price * item.Quantity;
+            items.push(item);
+            localStorage.setItem('items', JSON.stringify(items));
+            console.log(items);
+            loadOrderItems();
+          
+        } else {
+            alert('This item already added in your cart');
+        }
+
 }
 
 

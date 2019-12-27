@@ -1,6 +1,7 @@
 
 localStorage.setItem("CityId", 1);    // temporary set
 var items = [];
+var menuId = [];
 var items = getObjsFromLocalStorage("items");
 var CityId = getObjsFromLocalStorage("CityId");
 var RestaurantId = getObjsFromLocalStorage("RestaurantId");
@@ -83,7 +84,7 @@ function loadRestaurantDetails(restaurantId) {
                     html += '<div class="left-panel"><p>'+menuItem.Size+' Rs.'+menuItem.Price+'</p></div>';
                     //html += '<div class="left-panel"><p>Small 250, Medium 500, Large 800</p></div>';
                     html += '<div class="right-panel"><a role="button" tabindex="0"  onclick="addToCart('
-                    + menuItem.Id + ',' + quoteAndEscape(menuItem.Name) +
+                    + menu.Id +',' + menuItem.Id + ',' + quoteAndEscape(menuItem.Name) +
                     ',' + quoteAndEscape(menuItem.Size) + ',' + menuItem.Price +
                     ')" style="cursor: pointer;"><img src="img/plus-round-white.jpg" /> </a> </div>';
                     html += '</li>';  
@@ -252,11 +253,11 @@ function loadRestaurantDetails(restaurantId) {
                         var parentLi = $(this).closest( "li" );
                         var selected = $(parentLi).find(".selected-order img");
                         $ (selected).css('display' , 'none');
-                        console.log("item Removed");
-                        var items = getObjsFromLocalStorage("items");
-                        console.log(items);
-                        items.splice(0);
-                        localStorage.setItem('items', JSON.stringify(items));
+                        //console.log("item Removed");
+                        // var items = getObjsFromLocalStorage("items");
+                        // console.log(items);
+                        // items.splice(0);
+                        // localStorage.setItem('items', JSON.stringify(items));
                         $(this).attr('src',"img/plus-round-white.jpg");
                         // function deleteItem (i)
                     
@@ -315,10 +316,12 @@ function animatedMenu() {
 //     }
 //     return sizeName;
 //     }
-function addToCart(id, name, size, price) {
+function addToCart(menuId ,id, name, size, price) {
     // if (isLoggedIn()) {
         items = getObjsFromLocalStorage("items");
+        menuIds = getObjsFromLocalStorage("menuIds");
         if (!items) items = [];
+        if (!menuIds) menuIds = [];
         let isExist = false;
         if (items.length > 0) {
             $.each(items, function (i, value) {
@@ -342,8 +345,17 @@ function addToCart(id, name, size, price) {
             items.push(item);
             localStorage.setItem('items', JSON.stringify(items));
             console.log(items);
+            function checkMenuId(Id) {
+                return Id == menuId;
+              }
+            var testid = menuIds.find(checkMenuId);
+           // console.log(testid);
+           if (testid == undefined)
+            menuIds.push(menuId);
+            localStorage.setItem('menuIds', JSON.stringify(menuIds));
+            console.log(menuIds);
         } else {
-            alert('This item already added in your cart, please click items on right top corner!');
+            alert('This item already added in your cart');
         }
     // } else {
     //     alert('Please login first');
