@@ -129,19 +129,28 @@ function loadRestaurantDetails(restaurantId) {
                 $(window).scroll(function(){
 
 
-                    var sticky = $('.order-sticky'),
+                    var sticky = $('.order-sticky');
+                    var banner = $('#rest-banner');
                     scroll = $(window).scrollTop();
 
-                    if (scroll >= 271)  {
+                    if (scroll >= 1)  {
 
                         sticky.fadeIn();
+
+                        banner.css('height', '50px');
                     
-                    } else sticky.fadeOut();
+                    } else {
+
+                        banner.css('height', '180px');
+
+                        sticky.fadeOut();
+
+                    }
 
                     var stickyHeading = $('.order-list-heading'),
                     scroll = $(window).scrollTop();
 
-                    if (scroll >= 271) {
+                    if (scroll >= 1) {
 
                         stickyHeading.fadeIn();
 
