@@ -10,42 +10,10 @@ $(document).ready(function(){
 
    var id = parseInt(getParameterByName("id")) || 0;
     localStorage.setItem("RestaurantId", id);
-  restBanner(id);
-  loadRestaurantDetails(id);
+ loadRestaurantDetails(id);
  animatedMenu();    
 
 });
-
-
-function restBanner(id) {
-
-    $.ajax({
-        url: SERVER + "restaurant/" + id,
-        type: "GET",
-        dataType: "JSON",
-        contentType: "application/json;charset=utf-8",
-        success: function (result) {
-
-          var stickyHeading = '';
-
-          stickyHeading += '<img src="img/round_left_arrow.jpg" />' + result.Name;
-
-            var path = result.CoverImagePath;
-            var path2 = path.replace(/\\/g, "/");
-            console.log(path2);
-            
-        $("#rest-banner").css("background-image","url('"+IP+":"+PORT+"/"+path2+"')");
-        $(".rest-name-star-head h1").text(result.Name);
-        $(".header_heading").html(stickyHeading);
-
-                
-        },
-        error: function (xhr, status, error) {
-            console.log(xhr.responseText);
-        }
-    });
-}
-
 function loadRestaurantDetails(restaurantId) {
 
     $.ajax({
@@ -54,30 +22,38 @@ function loadRestaurantDetails(restaurantId) {
         dataType: "JSON",
         contentType: "application/json;charset=utf-8",
         success: function (result) {
+           
+           //Bnner Section
+            var stickyHeading = '';
+
+            stickyHeading += '<img src="img/round_left_arrow.jpg" />' + result.Name;
+  
+              var path = result.CoverImagePath;
+              var path2 = path.replace(/\\/g, "/");
+              console.log(path2);
+              
+          $("#rest-banner").css("background-image","url('"+IP+":"+PORT+"/"+path2+"')");
+          $(".rest-name-star-head h1").text(result.Name);
+          $(".header_heading").html(stickyHeading);
+        
+           // Menu Section
             var navList = '';
             var html = '';
            
                 var restaurant = result;
                 localStorage.setItem("DelCharges", restaurant.DelCharges);
-                
-                // Restaurant Menus
                 $.each(restaurant.RestaurantMenus, function (index, menu) {
 
                   navList += '<div id="" class="swiper-slide">';
                   navList += '<a class="scrollTo" href="#'+menu.Name.split(" ").join("")+'">'+menu.Name+'</a>';
                   navList += '</div>';
-
-
                   html += '<div class="order-list">';
                   html += '<div class="order-list-heading">';
                   html += '<h1 id="'+menu.Name.split(" ").join("")+'">'+menu.Name+'</h1>';
                   html += '</div>';
                   html += '<ul>';
-
-
+                  
                   $.each(menu.MenuItems , function (index, menuItem) {
-
-
                     html += '<li>';
                     html += '<div class="selected-order"><img src="img/selected-order.jpg"/></div>';
                     html += '<h2>'+menuItem.Name+'</h2>';
@@ -88,23 +64,13 @@ function loadRestaurantDetails(restaurantId) {
                     ',' + quoteAndEscape(menuItem.Size) + ',' + menuItem.Price +
                     ')" style="cursor: pointer;"><img src="img/plus-round-white.jpg" /> </a> </div>';
                     html += '</li>';  
-
                   });
-
                   html += '</ul>';
                   html += '</div>';
-
-                    
-
-
-
                 });
 
-                
-
-
+            
                 // Adding items in Div
-
                 $(".orderNavList").html(navList);
                 $(".order-list-page").append(html);
 
@@ -157,12 +123,7 @@ function loadRestaurantDetails(restaurantId) {
                     } else stickyHeading.fadeOut();
 
 
-
-
-
-                    var scrollLink = $(".scrollTo");
-
-                    
+                    var scrollLink = $(".scrollTo"); 
                     var scrollbarLocation = $(this).scrollTop();
                     // console.log(scrollbarLocation)
 
@@ -193,10 +154,6 @@ function loadRestaurantDetails(restaurantId) {
                                 // console.log("Working");
                                 var El = $('h1').attr('id');
                             // console.log(El)
-
-
-
-
 
                         }
 
@@ -369,13 +326,5 @@ function addToCart(menuId ,id, name, size, price) {
     // } else {
     //     alert('Please login first');
     // }
-}
-
-function deleteItem (i)
-{
-    console.log (items[i]);
-   items.splice(i , 1);
-   localStorage.setItem('items', JSON.stringify(items));
-
 }
 

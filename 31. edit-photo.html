@@ -26,16 +26,19 @@
 			</div>
 
 			<div class="profile-pic-photo">
-				<label for="file-input"><img src="img/edit-profile-pic.jpg"></label>
-				<input id="file-input" type="file" name="">
+				<label for="file-input"><img id="output" src="img/edit-profile-pic.jpg"></label>
+				<!-- <input onchange="loadFile(event)" id="file-input" type="file" name=""> -->
+				<input onchange="UpdateCustomerPhoto(event)" id="file-input" type="file" name="">
 			</div>
-
-			
 		</div>
 
 		<div class="profile-pic-footer" style="width: 100%; text-align: center;">
-			<span class="standard-btn" style="width: 80%; margin: auto;">Save</span>
+			<span onclick="UpdateCustomerPhoto()" class="standard-btn" style="width: 80%; margin: auto;">Save</span>
 		</div>
 	</div>
 </body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="server.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="31. edit-photo.js"></script>
 </html>

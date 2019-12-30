@@ -34,7 +34,7 @@
                     Current Password
                     
                     <div class="edit-name-panel">
-                        <input type="password" name="" id="edit-name" placeholder="Enter your current password">
+                        <input type="password" name="" id="edit-pswd">
                     </div>
                 </div>
                 
@@ -42,7 +42,7 @@
                         New Password
                         
                         <div class="edit-name-panel">
-                            <input type="password" name="" id="edit-name">
+                            <input type="password" name="" id="new-pswd">
                         </div>
                     </div>
 
@@ -50,7 +50,7 @@
                             Re-type new Password
                             
                             <div class="edit-name-panel">
-                                <input type="password" name="" id="edit-name">
+                                <input type="password" name="" id="cnew-pswd">
                             </div>
                         </div>
 
@@ -60,7 +60,7 @@
 			</div>
 
 			<div class="profile-pic-footer" style="width: 100%; text-align: center;">
-			<span class="standard-btn" style="width: 80%; margin: auto;">Update</span>
+			<span onclick="UpdatePassword()" class="standard-btn" style="width: 80%; margin: auto;">Update</span>
 		</div>
 
 </div>
@@ -85,4 +85,8 @@
 
 	   		 </script> 
 </body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="server.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="34. edit-pswd.js"></script>
 </html>

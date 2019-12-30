@@ -5,37 +5,7 @@ $(document).ready(function () {
     $("#Mobile").html(customer.MobileNumber);
 });
 
-function loadCustomerProfile(customerId) {
 
-    $.ajax({
-        url: SERVER + "Customer/" + customerId,
-        type: "GET",
-        dataType: "JSON",
-        contentType: "application/json;charset=utf-8",
-        success: function (result) {
-                var customer = result;
-                
-                $(".Name").text(customer.Name);
-                $(".Email").text(customer.Email);
-                $("#oldPassword").val(customer.Password);
-
-                $("#Name").val(customer.Name);
-                $("#MobileNumber").val(customer.MobileNumber);
-                $("#Email").val(customer.Email);
-                var html = '';
-                if (customer.ImagePath) {
-                    html += '<img src="' + RESOURCEURL + customer.ImagePath + '" />';
-                } else {
-                    html += '<img src="img/edit-profile-pic.jpg"></img>';
-                }
-                $("#oldProfileImage").html(html);
-
-        },
-        error: function (xhr, status, error) {
-            console.log(error);
-        }
-    });
-}
 
 $("form#data").submit(function (e) {
     if (isLoggedIn()) {
