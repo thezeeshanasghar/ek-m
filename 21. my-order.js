@@ -4,7 +4,8 @@ var CityId = getObjsFromLocalStorage("CityId");
 var RestaurantId = getObjsFromLocalStorage("RestaurantId");
 var DelCharges = getObjsFromLocalStorage("DelCharges");
 var menuIds = getObjsFromLocalStorage("menuIds");
-
+var CouponDiscount = 0 ;
+var Discount = 0;
 $(document).ready(function () {
     loadOrderItems();
     loadExtraItems();
@@ -105,7 +106,7 @@ function deleteItem (i)
     console.log (items[i]);
    items.splice(i , 1);
    localStorage.setItem('items', JSON.stringify(items));
-  loadOrderItems(); toggleCart();
+  loadOrderItems();
 
 }
 
@@ -126,15 +127,21 @@ function calculateOrderTotals() {
     // });
 
     //subtotal = itemsubtotal + exitemsubtotal ;
+    console.log(CouponDiscount);
+    if (CouponDiscount !=0 && CouponDiscount != null)
+    {
+    Discount = ((CouponDiscount/100)*itemsubtotal);
+    subtotal = itemsubtotal-Discount ;
+    }
+    else 
     subtotal = itemsubtotal ;
-    GST = Math.round((15/100)*subtotal);
-
-    grandTotal = subtotal + fee + GST; // TODO: using gst and fee to cal grandtotal
-
-    roundtotal = Math.round(grandTotal);
+    subtotal = Math.round(subtotal);
     console.log(subtotal);
+    GST = Math.round((15/100)*subtotal);
+    grandTotal = subtotal + fee + GST; // TODO: using gst and fee to cal grandtotal
+    roundtotal = Math.round(grandTotal);
     $("#subtotal").val(subtotal);
-   localStorage.setItem("subtotal" , subtotal);
+    localStorage.setItem("subtotal" , subtotal);
     $("#DelCharges").val(DelCharges);
     localStorage.setItem("DelCharges" , DelCharges);
     $("#GST").val(GST);
@@ -179,7 +186,41 @@ function addToCart(id, name, size, price) {
         } else {
             alert('This item already added in your cart');
         }
+}
 
+function loadCouponCode()
+{
+    var code = $("#CouponCode").val();
+    $.ajax({
+        url: SERVER +"CouponCode/" + code,
+        type: "GET",
+        dataType: "JSON",
+        contentType: "application/json;charset=utf-8",
+        success: function (result) { 
+            console.log(result);
+            var date = result.ValidTill;
+            var jdate = new Date(date);
+            var sysdate = new Date();
+            if (sysdate < jdate)
+            {
+            alert("Congratulations You Got " +result.PctDiscount+"% Discount");  
+            CouponDiscount = result.PctDiscount;
+            console.log(CouponDiscount);
+            calculateOrderTotals();
+            }
+            if(sysdate > jdate)
+            {
+            alert("Sorry This Code is Expired");
+            }
+
+            
+          
+            //$("#extras").html(html);
+        },
+        error: function (xhr, status, error) {
+            console.log(xhr.responseText);
+        }
+    });
 }
 
 

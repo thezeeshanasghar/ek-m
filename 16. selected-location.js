@@ -123,7 +123,6 @@ function loadSpon() {
                     html += '</span>(20+) - Pizza - Burger - Peri...</p>';
                     html += '</div></div></div>';
 
-                 
                 }); 
                 $("#spon-rest").html(html);
 
@@ -168,7 +167,7 @@ function loadRest() {
                     html += '</div>';
                     html += '<div class="rest-info">';
                     html += '<h4>'+rest.Name+'</h4>';
-                    html += '<p><span><img src="img/star.jpg" />'+rest.Rating+' Good</span>(40+) - BBQ - Chinese - Pak...</p>';
+                    html += '<p><span><img src="img/star.jpg" />'+rest.Rating+' Good</span>('+rest.reviewCount+'+) - BBQ - Chinese - Pak...</p>';
                     html += '</div></div></a></div>';
                     
 

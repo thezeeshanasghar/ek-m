@@ -44,45 +44,7 @@
             <h4>Extras</h4>
             <div class="swiper-container ext">
                 <div class="swiper-wrapper" id="extras">
-                  <div class="swiper-slide">
-                      <div class="ext-item">
-                          
-                        <span class="ext-name">Coke</span>
-                        <span class="ext-price">Rs.90</span>
-                        <span class="ext-add">+</span>
-
-                      </div>
-                  </div>
-
-                  <div class="swiper-slide">
-                      <div class="ext-item">
-                          
-                        <span class="ext-name">Raita</span>
-                        <span class="ext-price">Rs.75</span>
-                        <span class="ext-add">+</span>
-
-                      </div>
-                  </div>
-
-                  <div class="swiper-slide">
-                      <div class="ext-item">
-                          
-                        <span class="ext-name">Salad</span>
-                        <span class="ext-price">Rs.50</span>
-                        <span class="ext-add">+</span>
-
-                      </div>
-                  </div>
-
-                  <div class="swiper-slide">
-                      <div class="ext-item">
-                          
-                        <span class="ext-name">Ketchup</span>
-                        <span class="ext-price">Rs.60</span>
-                        <span class="ext-add">+</span>
-
-                      </div>
-                  </div>
+                <!-- extra items list -->
                 </div>
              </div>
         </div>
@@ -128,11 +90,11 @@
 
             <h4>Do you have a Coupon Code?</h4>
             <div class="left-panel">
-                <input type="text" placeholder="Enter your coupon code here">
+                <input id = "CouponCode" type="text" placeholder="Enter your coupon code here">
                 
             </div>
             <div class="right-panel">
-                    <button type="submit">Apply</button>
+                    <button onclick="loadCouponCode()" type="submit">Apply</button>
             </div>
         </div>
 		

@@ -26,9 +26,16 @@
 			</div>
 
 			<div class="profile-pic-photo">
+					<!-- <form class = form id="myForm">
 				<label for="file-input"><img id="output" src="img/edit-profile-pic.jpg"></label>
-				<!-- <input onchange="loadFile(event)" id="file-input" type="file" name=""> -->
 				<input onchange="UpdateCustomerPhoto(event)" id="file-input" type="file" name="">
+					</form> -->
+						<form class = form id="myForm">
+				<label for="file-input"><img id="output" src="img/edit-profile-pic.jpg"></label>
+				<input onchange="loadFile(event)" id="file-input" type="file" name="">
+				<button type="submit">Upload</button>
+					</form>
+
 			</div>
 		</div>
 
