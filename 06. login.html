@@ -96,5 +96,28 @@ $(document).ready(function() {
 	<script src="06. login.js"></script>
 	<script src="common.js"></script>
 
+	<script type="text/javascript">
+		
+		$(document).ready(function() {
+
+			$("#login-form").focusin(function(){
+
+				$(".bottom-panel").css("display", "none");
+				// $(".bottom-panel").css({"display": "none" , "position": "relative"});
+				
+			});
+
+			$("#login-form").focusout(function(){
+
+				$(".bottom-panel").css("display", "block")
+				
+			});
+
+			
+			
+		});
+
+	</script>
+
 </body>
 </html>

@@ -98,27 +98,27 @@
 
 	
 
-<!-- 	<script type="text/javascript">
+	<script type="text/javascript">
 		
 		$(document).ready(function() {
 
-			$("#MobileNo").focusout(function(){
+			$("#register-form").focusin(function(){
 
-				var mobileNumber = $(this).val();
-
-				console.log($.trim(mobileNumber))
+				$(".bottom-panel").css("display", "none");
+				
 			});
 
-			$("#emailAdd").focusout(function(){
+			$("#register-form").focusout(function(){
 
-				var emailAddress = $(this).val();
-
-				$.trim(emailAddress)
+				$(".bottom-panel").css("display", "block")
+				
 			});
+
+			
 			
 		});
 
-	</script> -->
+	</script>
 
 </body>
 </html>

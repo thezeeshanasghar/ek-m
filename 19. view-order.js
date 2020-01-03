@@ -11,9 +11,60 @@ $(document).ready(function(){
    var id = parseInt(getParameterByName("id")) || 0;
     localStorage.setItem("RestaurantId", id);
  loadRestaurantDetails(id);
- animatedMenu();    
+ restStarRating(id)
+ animatedMenu();  
 
 });
+
+function restStarRating(restaurantId){
+
+     $.ajax({
+        url: SERVER + "restaurant/" + restaurantId,
+        type: "GET",
+        dataType: "JSON",
+        contentType: "application/json;charset=utf-8",
+        success: function (result) {
+
+             function restRating(){
+                    var restaurant = result;
+                    var restRating = restaurant.Rating;
+                    // var rrestRating = 4;
+
+                    console.log(restRating)
+
+                    if (restRating <= 1) {
+                        $("#rest-star5").addClass('checked');
+                    }
+
+                    else if (restRating <= 2) {
+                        $("#rest-star4").addClass('checked');
+                    }
+
+                    else if (restRating <= 3) {
+                        $("#rest-star3").addClass('checked');
+                    }
+
+                    else if (restRating <= 4) {
+                        $("#rest-star2").addClass('checked');
+                    }
+
+                    else if (restRating <= 5) {
+                        $("#rest-star1").addClass('checked');
+                    }
+                }
+
+             restRating();
+           
+          
+        },
+        error: function (xhr, status, error) {
+            console.log(xhr.responseText);
+        }
+    });
+
+}
+
+
 function loadRestaurantDetails(restaurantId) {
 
     $.ajax({
@@ -22,6 +73,36 @@ function loadRestaurantDetails(restaurantId) {
         dataType: "JSON",
         contentType: "application/json;charset=utf-8",
         success: function (result) {
+
+             function restRating(){
+                    var restaurant = result;
+                    var restRating = restaurant.Rating;
+                    // var rrestRating = 4;
+
+                    console.log(restRating)
+
+                    if (restRating <= 1) {
+                        $("#rest-star5").addClass('checked');
+                    }
+
+                    else if (restRating <= 2) {
+                        $("#rest-star4").addClass('checked');
+                    }
+
+                    else if (restRating <= 3) {
+                        $("#rest-star3").addClass('checked');
+                    }
+
+                    else if (restRating <= 4) {
+                        $("#rest-star2").addClass('checked');
+                    }
+
+                    else if (restRating <= 5) {
+                        $("#rest-star1").addClass('checked');
+                    }
+                }
+
+             restRating();
            
            //Bnner Section
             var stickyHeading = '';
@@ -39,8 +120,12 @@ function loadRestaurantDetails(restaurantId) {
            // Menu Section
             var navList = '';
             var html = '';
+
+                
            
                 var restaurant = result;
+
+                
                 localStorage.setItem("DelCharges", restaurant.DelCharges);
                 $.each(restaurant.RestaurantMenus, function (index, menu) {
 
