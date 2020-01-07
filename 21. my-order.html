@@ -91,10 +91,18 @@
             <h4>Do you have a Coupon Code?</h4>
             <div class="left-panel">
                 <input id = "CouponCode" type="text" placeholder="Enter your coupon code here">
-                
+                <img class="cvalid" src="img/cvalid.png">
+                <img class="cinvalid" src="img/cinvalid.png">
             </div>
             <div class="right-panel">
-                    <button onclick="loadCouponCode()" type="submit">Apply</button>
+                    <button class="coupon-button" onclick="loadCouponCode()" type="submit">Apply</button>
+
+                    <div class="coupon-status">
+                        
+                        <div class="invalid">Invalid</div>
+                        <div class="valid">Rs. 250</div>
+
+                    </div>
             </div>
         </div>
 		

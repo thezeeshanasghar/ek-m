@@ -3433,3 +3433,41 @@ input[type=checkbox]:checked + label:before {
 .starRateUp input[type="radio"]:checked + label::before {
 	display: none;
 }
+
+
+
+/* Coupon panel */
+
+.coupon-panel .coupon-status {
+	text-align: center;
+}
+
+.coupon-panel .invalid {
+	color: red;
+	display: none;
+}
+
+.coupon-panel .valid {
+	color: #36ab40;
+	display: none;
+}
+
+.coupon-panel .left-panel {
+	position: relative;
+}
+
+.cvalid {
+	position: absolute;
+	width: 21px;
+	top: 4px;
+	left: 162px;
+	display: none;
+}
+
+.cinvalid {
+	position: absolute;
+	width: 21px;
+	top: 4px;
+	left: 162px;
+	display: none;
+}

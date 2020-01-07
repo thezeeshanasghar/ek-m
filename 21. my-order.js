@@ -203,15 +203,27 @@ function loadCouponCode()
             var sysdate = new Date();
             if (sysdate < jdate)
             {
-            alert("Congratulations You Got " +result.PctDiscount+"% Discount");  
+            // alert("Congratulations You Got " +result.PctDiscount+"% Discount");  
             CouponDiscount = result.PctDiscount;
             console.log(CouponDiscount);
             calculateOrderTotals();
+            $(".valid").html(result.PctDiscount+"%");
+            $(".valid").css("display" , "block");
+            $(".invalid").css("display" , "none");
+            $("#CouponCode").css("border-color" , "#36ab40");
+            $(".cvalid").css("display" , "block");
+            $(".cinvalid").css("display" , "none");
+            $(".coupon-button").css({
+               'background' : '#36ab40',
+               'color' : 'white'
+            });
+
             }
             if(sysdate > jdate)
             {
             alert("Sorry This Code is Expired");
             }
+
 
             
           
@@ -219,6 +231,16 @@ function loadCouponCode()
         },
         error: function (xhr, status, error) {
             console.log(xhr.responseText);
+            $(".invalid").css("display" , "block");
+            $(".valid").css("display" , "none");
+            $(".cvalid").css("display" , "none");
+            $(".cinvalid").css("display" , "block");
+             $(".coupon-button").css({
+               'background' : '#eeeeee',
+               'color' : 'black'
+            });
+
+
         }
     });
 }
