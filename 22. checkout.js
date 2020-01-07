@@ -5,6 +5,7 @@ var DelCharges = getObjsFromLocalStorage("DelCharges");
 var subtotal = getObjsFromLocalStorage("subtotal");
 var grandTotal = getObjsFromLocalStorage("grandTotal");
 var GST = getObjsFromLocalStorage("GST");
+var paymentMethod ;
 
 $(document).ready(function () {
     $(".checkout-amount").html("Rs " + grandTotal);
@@ -24,19 +25,14 @@ $(document).ready(function () {
           $("#mod-of-pay").html(pMethod);
           localStorage.setItem("PayMethod" , pMethod);
 
-
         if ($this.is(':nth-child(2)')) {
-            console.log('Cash Selected')
-            localStorage.setItem("PCode" , 1);
+            paymentMethod = 0;
         } else if ($this.is(':nth-child(3)')) {
-            console.log('Debit Selected')
-            localStorage.setItem("PCode" , 2);
+            paymentMethod = 1;
         } else if ($this.is(':nth-child(4)')) {
-            console.log('EasyPaisa Selected')
-            localStorage.setItem("PCode" , 3);
+            paymentMethod = 2;
         } else if ($this.is(':nth-child(5)')) {
-            console.log('MobiCash Selected')
-            localStorage.setItem("PCode" , 4);
+            paymentMethod = 3;
         }
 
     });
@@ -69,7 +65,7 @@ function checkout() {
                 GST: GST,
                 Address: $("#Address").val(),
                 //PayMethod: $("#mod-of-pay").val(),
-                PayMethod: 0,
+                PayMethod: paymentMethod,
                 Instruction:$("#instructions").val(),
                 OrderItems : allItems,
                 CustomerId: customer.Id,
