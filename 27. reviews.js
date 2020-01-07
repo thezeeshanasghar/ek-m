@@ -127,43 +127,63 @@ function loadReviews(id) {
         $.each(result, function (index, review) {
             console.log(review.Customer.Name);
 
+            var star1 = review.Id+"a";
+            var star2 = review.Id+"b";
+            var star3 = review.Id+"c";
+            var star4 = review.Id+"d";
+            var star5 = review.Id+"e";
+            
+
             html += '<li><div class="header-wrapper"><div class="left-panel"><div class="user-icon"><img src="img/user-dark.jpg" alt=""></div><div class="user-name-date">'
             html +='<h3>'+review.Customer.Name+'</h3><span>'+review.Created+'</span></div></div>'
             html +='<div class="right-panel">'
             html +='<div class="cust-rate">'
-            html +='<span name="star" class="" id="rest-star'+review.Customer.Id+1+'"></span><label for="rest-star'+review.Customer.Id+1+'"></label>'
-            html +='<span name="star" class="" id="rest-star'+review.Customer.Id+2+'"></span><label for="rest-star'+review.Customer.Id+2+'"></label>'
-            html +='<span name="star" class="" id="rest-star'+review.Customer.Id+3+'"></span><label for="rest-star'+review.Customer.Id+3+'"></label>'
-            html +='<span name="star" class="" id="rest-star'+review.Customer.Id+4+'"></span><label for="rest-star'+review.Customer.Id+4+'"></label>'
-            html +='<span name="star" class="" id="rest-star'+review.Customer.Id+5+'"></span><label for="rest-star'+review.Customer.Id+5+'"></label>'
+            html +='<span name="star" id='+star1+'></span><label for='+star1+'></label>'
+            html +='<span name="star" id='+star2+'></span><label for='+star2+'></label>'
+            html +='<span name="star" id='+star3+'></span><label for='+star3+'></label>'
+            html +='<span name="star" id='+star4+'></span><label for='+star4+'></label>'
+            html +='<span name="star" id='+star5+'></span><label for='+star5+'></label>'
             html +='</div></div>'
             html+='<p>'+review.Comment+'</p></div></li>'
 
-            $("#userReview").html(html);
 
             var custRating = review.Rating;
 
+            // console.log(custRating)
+
+            jstar1 = '#'+star1;
+            jstar2 = '#'+star2;
+            jstar3 = '#'+star3;
+            jstar4 = '#'+star4;
+            jstar5 = '#'+star5;
+
             if (custRating <= 1) {
-                $('#rest-star'+review.Customer.Id+5+'').addClass('checked');
+                $(jstar5).addClass('checked');
+                console.log("if else working")
             }
 
             else if (custRating <= 2) {
-                $('#rest-star'+review.Customer.Id+4+'').addClass('checked');
+                $(jstar4).addClass('checked');
             }
 
             else if (custRating <= 3) {
-                $('#rest-star'+review.Customer.Id+3+'').addClass('checked');
+                $(jstar3).addClass('checked');
             }
 
             else if (custRating <= 4) {
-                $('#rest-star'+review.Customer.Id+2+'').addClass('checked');
+                $(jstar2).addClass('checked');
             }
 
             else if (custRating <= 5) {
-                $('#rest-star'+review.Customer.Id+1+'').addClass('checked');
+                $(jstar1).addClass('checked');
             }
                 
         });
+
+            $("#userReview").html(html);
+
+
+
                 
         },
         error: function (xhr, status, error) {

@@ -3369,6 +3369,67 @@ input[type=checkbox]:checked + label:before {
 
 }
 
-.cust-rate span.checked ~ label:after  {
+.cust-rate span.checked ~ label::after  {
 	opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+/* Customer Upload Rating */
+
+.starRateUp {
+	
+	transform: rotateY(180deg);
+	display: flex;
+	width: 145px;
+	text-align: center;
+	margin: 20px auto;
+	height: 25px;
+}
+
+.starRateUp input {
+	display: none;
+}
+
+.starRateUp label {
+	display: block;
+	cursor: pointer;
+	width: 50px;
+}
+
+.starRateUp label:before {
+	content: '\f005';
+	font-family: fontAwesome;
+	position: relative;
+	display: block;
+	font-size: 22px;
+	color: #bababa;
+}
+
+.starRateUp label:after {
+	content: '\f005';
+	font-family: fontAwesome;
+	position: absolute;
+	display: block;
+	font-size: 22px;
+	color: #36ab40;
+	top: 0;
+	opacity: 0;
+	transition: .5s;
+
+}
+
+.starRateUp input:checked ~ label:after  {
+	opacity: 1;
+}
+
+.starRateUp input[type="radio"]:checked + label::before {
+	display: none;
 }
