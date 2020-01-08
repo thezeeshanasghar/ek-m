@@ -1,5 +1,8 @@
 
 $(document).ready(function(){
+
+
+
       loadCuisine();
       loadSpon();
       loadRest();
@@ -21,6 +24,14 @@ $(document).ready(function(){
 
     $(".edit-back").click(function(){
         $(this).fadeOut();
+    });
+
+    $(".filter-btn").click(function(){
+        $(".filter-popup").fadeIn();
+    });
+
+    $(".filter-close").click(function(){
+        $(".filter-popup").fadeOut();
     });
 });
 
