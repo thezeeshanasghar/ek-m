@@ -234,6 +234,7 @@ function loadCouponCode()
             $(".invalid").css("display" , "block");
             $(".valid").css("display" , "none");
             $(".cvalid").css("display" , "none");
+            $("#CouponCode").css("border-color" , "#dddddd");
             $(".cinvalid").css("display" , "block");
              $(".coupon-button").css({
                'background' : '#eeeeee',
