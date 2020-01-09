@@ -1,8 +1,8 @@
-
+var FilterURL = '';
+var CuisineId ;
+var open = 0;
+var topr = 0;
 $(document).ready(function(){
-
-
-
       loadCuisine();
       loadSpon();
       loadRest();
@@ -67,7 +67,7 @@ function loadCuisine() {
                 		cls = "four";
 
                     html += '<div class="swiper-slide swiper-slide-widthed-sm">';
-                    html += '<a href="#" class="'+cls+'">'+cuis.Name+'</a>';
+                    html += '<a onclick="setCuisineId('+cuis.Id+');" href="#" class="'+cls+'">'+cuis.Name+'</a>';
                     html += '</div>';
 
                  
@@ -157,7 +157,7 @@ function loadSpon() {
 function loadRest() {
 
     $.ajax({
-        url: SERVER + "restaurant",
+        url: SERVER + "restaurant?"+ FilterURL,
         type: "GET",
         dataType: "JSON",
         contentType: "application/json;charset=utf-8",
@@ -282,4 +282,44 @@ function searchstickRest() {
 
     })
 
+}
+function setCuisineId(id)
+{
+    FilterURL = 'cuisineId='+id;
+    loadRest();
+}
+function setOpen(){
+open = 1 ;
+console.log(open);
+}
+function setTop(){
+    topr = 1 ;
+    console.log(topr);
+}
+function ApplyFilters()
+{
+    FilterURL = ''; 
+    $(".filter-popup").fadeOut();
+    if (open = 1)
+    {
+        FilterURL += 'open=true';
+        if (topr = 1)
+        {
+            FilterURL += '&top=true';
+        }
+    }
+    else if (topr = 1)
+    {
+        FilterURL += 'top=true';
+    }
+    loadRest();
+}
+
+function clearFilters()
+{
+ open = 0;
+ top = 0;
+ FilterURL = ''; 
+ loadRest(); 
+ $(".filter-popup").fadeOut(); 
 }

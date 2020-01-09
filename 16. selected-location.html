@@ -58,14 +58,14 @@
 					
 					<li>
 						<div class="checkbox">  
-					    	<input id="filter-top-rated" type="checkbox" name="check" value="filter-top-rated">  
+					    	<input onclick="setTop();" id="filter-top-rated" type="checkbox" name="check" value="filter-top-rated">  
 					    	<label for="filter-top-rated">Top Rated</label>
 						</div>
 					</li>
 
 					<li>
 						<div class="checkbox">  
-					    	<input id="filter-open" type="checkbox" name="check" value="filter-open">  
+					    	<input onclick="setOpen()" id="filter-open" type="checkbox" name="check" value="filter-open">  
 					    	<label for="filter-open">Open Now</label>
 						</div>
 					</li>
@@ -82,7 +82,7 @@
 
 				</ul>
 
-				<h3>Categories</h3>
+				<!-- <h3>Categories</h3>
 				<ul>
 					
 					<li>
@@ -113,13 +113,13 @@
 						</div>
 					</li>
 
-				</ul>
+				</ul> -->
 			</div>
 
 			<div class="bottom-panel sticky-panel">
-				<button type="submit" class="form-submit-btn leaf-btn leaf-btn-green standard-btn filter-apply-btn">Apply</button>
+				<button onclick="ApplyFilters()" type="submit" class="form-submit-btn leaf-btn leaf-btn-green standard-btn filter-apply-btn">Apply</button>
 				<div class="signup-link" style="width: 100%">
-					<a href="#">Clear all</a>
+					<a onclick="clearFilters()" href="#">Clear all</a>
 				</div>
 			</div>				
 		</div>
@@ -201,19 +201,7 @@
 				     <!--  <div class="swiper-slide swiper-slide-widthed-sm"><a class="one" href="#">Wings</a></div>
 				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="two" href="#">Burger</a></div>
 				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="three" href="#">Pizza</a></div>
-				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="four" href="#">Chicken</a></div>
-				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="one" href="#">Wings</a></div>
-				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="two" href="#">Burger</a></div>
-				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="three" href="#">Pizza</a></div>
-				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="four" href="#">Chicken</a></div>
-				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="one" href="#">Wings</a></div>
-				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="two" href="#">Burger</a></div>
-				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="three" href="#">Pizza</a></div>
-				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="four" href="#">Chicken</a></div>
-				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="one" href="#">Wings</a></div>
-				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="two" href="#">Burger</a></div>
-				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="three" href="#">Pizza</a></div>
-				      <div class="swiper-slide swiper-slide-widthed-sm"><a class="four" href="#">Chicken</a></div> -->
+				     
 			  	</div>
  			 </div>
  		</div>
