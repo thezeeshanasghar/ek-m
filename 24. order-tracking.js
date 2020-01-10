@@ -19,14 +19,22 @@ function loadOrderStatus (id)
         success: function (result) {
             if (result ==1)
             {
-            $(".order-con-2 .green-bar").css('height' , '57px');
-            $(".order-con-2 .green-round").css('height' , '18px');
-            $(".order-con-2 .green-bar2").css('height' , '57px');
+                
+            setTimeout('$(".order-con-2 .green-bar").css("height" , "57px");', 3000);
+            // $(".order-con-2 .green-bar").css('height' , '57px');
+
+            setTimeout('$(".order-con-2 .green-round").css("height" , "18px");', 4300);
+            // $(".order-con-2 .green-round").css('height' , '18px');
+
+            setTimeout('$(".order-con-2 .green-bar2").css("height" , "57px");', 5800);
+            // $(".order-con-2 .green-bar2").css('height' , '57px');
             }
             else if (result ==2)
             {
+
+                // setTimeout('$(".order-con-2 .green-bar").css("height" , "57px");', 7000);
         
-                $(".order-con-2 .green-bar").css('height' , '57px');
+                
                 $(".order-con-2 .green-round").css('height' , '18px');
                 $(".order-con-2 .green-bar2").css('height' , '57px');
                 $(".order-con-3 .green-bar").css('height' , '57px');

@@ -119,7 +119,7 @@
 			<div class="bottom-panel sticky-panel">
 				<button onclick="ApplyFilters()" type="submit" class="form-submit-btn leaf-btn leaf-btn-green standard-btn filter-apply-btn">Apply</button>
 				<div class="signup-link" style="width: 100%">
-					<a onclick="clearFilters()" href="#">Clear all</a>
+					<span onclick="clearFilters()" class="clear-filter">Clear all</span>
 				</div>
 			</div>				
 		</div>
@@ -302,6 +302,7 @@
 						      	<div class="top-restaurants-slides">
 								
 									<div class="rest-photo">
+										<div class="img"><img src="img/banner.jpg"></div>
 										<span class="status">open</span>
 
 										<span class="distance">
@@ -330,6 +331,7 @@
 					      	<div class="top-restaurants-slides">
 							
 								<div class="rest-photo">
+									<div class="img"><img src="img/banner.jpg"></div>
 									<span class="status">open</span>
 
 									<span class="distance">
@@ -358,6 +360,7 @@
 					      	<div class="top-restaurants-slides">
 							
 								<div class="rest-photo">
+									<div class="img"><img src="img/banner.jpg"></div>
 									<span class="status">open</span>
 
 									<span class="distance">
@@ -386,6 +389,7 @@
 						      	<div class="top-restaurants-slides">
 								
 									<div class="rest-photo">
+										<div class="img"><img src="img/banner.jpg"></div>
 										<span class="status">open</span>
 
 										<span class="distance">
@@ -414,6 +418,7 @@
 					      	<div class="top-restaurants-slides">
 							
 								<div class="rest-photo">
+									<div class="img"><img src="img/banner.jpg"></div>
 									<span class="status">open</span>
 
 									<span class="distance">
@@ -442,6 +447,7 @@
 					      	<div class="top-restaurants-slides">
 							
 								<div class="rest-photo">
+									<div class="img"><img src="img/banner.jpg"></div>
 									<span class="status">open</span>
 
 									<span class="distance">
@@ -470,6 +476,7 @@
 						      	<div class="top-restaurants-slides">
 								
 									<div class="rest-photo">
+										<div class="img"><img src="img/banner.jpg"></div>
 										<span class="status">open</span>
 
 										<span class="distance">
@@ -498,6 +505,7 @@
 					      	<div class="top-restaurants-slides">
 							
 								<div class="rest-photo">
+									<div class="img"><img src="img/banner.jpg"></div>
 									<span class="status">open</span>
 
 									<span class="distance">
@@ -526,6 +534,7 @@
 					      	<div class="top-restaurants-slides">
 							
 								<div class="rest-photo">
+									<div class="img"><img src="img/banner.jpg"></div>
 									<span class="status">open</span>
 
 									<span class="distance">
@@ -602,12 +611,21 @@
 			<script type="text/javascript" src="js/jquery.js"></script>
 
 			<script type="text/javascript">
-							$(window).scroll(function(){
+
+				$(document).ready(function(){
+
+					// $(".clear-filter").click(function(){
+					// 	$(".filter-opt>input").porp("checked", false );
+					// });
+
+				});
+
+			$(window).scroll(function(){
 			  var sticky = $('.top-sticky'),
 			      scroll = $(window).scrollTop();
 
-			  if (scroll >= 106) sticky.slideDown();
-			  else sticky.slideUp();
+			  if (scroll >= 106) sticky.fadeIn();
+			  else sticky.fadeOut();
 			});
 			</script>
 
