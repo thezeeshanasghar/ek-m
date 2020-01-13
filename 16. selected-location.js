@@ -327,5 +327,6 @@ function clearFilters()
  top = 0;
  FilterURL = ''; 
  loadRest(); 
- $(".filter-popup").fadeOut(); 
+ $(".filter-popup").fadeOut();
+ $(".filter-opt input").prop("checked", false );
 }

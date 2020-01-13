@@ -502,6 +502,13 @@ form .form-submit-btn {
 	font-weight: 500;
 }
 
+.bottom-panel .signup-link .clear-filter {
+    text-decoration: none;
+    color: 
+    black;
+    font-weight: 500;
+}
+
 .signup-page {
 	padding-top: 20vh;
 }
@@ -1064,7 +1071,6 @@ border-radius: 25px;
 .rest-item .rest-photo {
 	width: 100%;
 	height: 170px;
-	border: 2px solid black;
 	border-radius: 10px;
 	position: relative;
 	z-index: 0;
@@ -1097,7 +1103,6 @@ border-radius: 25px;
 .all-rest-item .rest-photo {
 	width: 100%;
 	height: 204px;
-	border: 2px solid black;
 	border-radius: 10px;
 	position: relative;
 	z-index: 0;
@@ -1768,9 +1773,9 @@ padding-top: 4px;
 .coupon-panel input {
 	border: 2px solid #dddddd;
 	border-radius: 25px;
-	width: 120%;
 	height: 24px;
 	padding-left: 5px;
+	width: 100%;
 }
 
 .coupon-panel button {
@@ -3076,7 +3081,6 @@ input[type=checkbox]:checked + label:before {
 	height: 0;
 	background: #36ab40;	
 	display: block;
-
 	transition: all 2s ease-in-out;
 }
 
@@ -3117,6 +3121,17 @@ input[type=checkbox]:checked + label:before {
 	transition: all 2s ease-in-out;
 }
 
+.order-con-2 .green-bar2 {
+	width: 5px;
+	height: 0;
+	background: #36ab40;	
+	display: block;
+	margin: auto;
+	margin-top: -1px;
+
+	transition: all 2s ease-in-out;
+}
+
 .order-con-2 .round {
 	width: 18px;
 	height: 18px;
@@ -3124,6 +3139,15 @@ input[type=checkbox]:checked + label:before {
 	background: #d8d8d8;	
 	display: block;
 	margin-top: -5px;
+	overflow: hidden;
+}
+
+.order-con-2 .green-round {
+	width: 18px;
+	height: 0;
+	background: #36ab40;	
+	display: block;
+	transition: all 2s ease-in-out;
 }
 
 .order-con-2 .bar {
@@ -3444,6 +3468,7 @@ input[type=checkbox]:checked + label:before {
 
 .coupon-panel .coupon-status {
 	text-align: center;
+	margin-top: 4px;
 }
 
 .coupon-panel .invalid {
@@ -3456,15 +3481,16 @@ input[type=checkbox]:checked + label:before {
 	display: none;
 }
 
-.coupon-panel .left-panel {
+.coupon-panel .coupon-input {
 	position: relative;
+	width: 186px;
 }
 
 .cvalid {
 	position: absolute;
 	width: 21px;
 	top: 4px;
-	left: 162px;
+	right: -5px;
 	display: none;
 }
 
@@ -3472,7 +3498,7 @@ input[type=checkbox]:checked + label:before {
 	position: absolute;
 	width: 21px;
 	top: 4px;
-	left: 162px;
+	right: -5px;
 	display: none;
 }
 
