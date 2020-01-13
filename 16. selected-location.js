@@ -289,10 +289,16 @@ function setCuisineId(id)
     loadRest();
 }
 function setOpen(){
-open = 1 ;
-console.log(open);
-}
-function setTop(){
+if (open ==1)
+ open = 0 ;
+ else 
+ open = 1 ;
+ console.log(open);
+ }
+ function setTop(){
+    if (topr == 1)
+    topr = 0;
+    else
     topr = 1 ;
     console.log(topr);
 }
