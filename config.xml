@@ -5,7 +5,15 @@
     versionCode = "10"
     version     = "1.0.0" >
     <gap:plugin name="cordova-plugin-whitelist" source="npm"/>
-    <!-- <uses-permission android:name="android.permission.INTERNET"/> -->
+    <!-- <plugin name="cordova-plugin-geolocation" version="2.1.0" /> -->
+        <plugin name="cordova-plugin-geolocation" spec="~4">
+        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="This app uses your location for maps." />
+    </plugin>
+       <platform name="android">
+        <uses-permission name="android.permission.ACCESS_COARSE_LOCATION" />
+        <uses-permission name="android.permission.ACCESS_FINE_LOCATION" />
+        <uses-permission name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    </platform>
     <content src="01. starting-page.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -14,6 +22,9 @@
    <allow-intent href="sms:*" />
    <allow-intent href="mailto:*" />
    <allow-intent href="geo:*" />
+   <feature name="Geolocation">
+    <param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
+</feature>
     
 
   <name>Mobile App</name>

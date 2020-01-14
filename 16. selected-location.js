@@ -2,13 +2,13 @@ var FilterURL = '';
 var CuisineId ;
 var open = 0;
 var topr = 0;
+var CityId = getObjsFromLocalStorage("CityId"); 
 $(document).ready(function(){
-      loadCuisine();
+    loadCuisine();
       loadSpon();
-      loadRest();
+      loadRest(CityId);
       searchRest();
       searchstickRest();
-
       var Customer = getObjsFromLocalStorage("Customer");
     var UserName = 'Hello ' +Customer.Name+ '!' ;
     $("#UserName").html(UserName);
@@ -109,7 +109,7 @@ function loadCuisine() {
 function loadSpon() {
 
     $.ajax({
-        url: SERVER + "restaurant",
+        url: SERVER + "restaurant/sponsor",
         type: "GET",
         dataType: "JSON",
         contentType: "application/json;charset=utf-8",
@@ -154,10 +154,10 @@ function loadSpon() {
 
 
 // Load Restaurants
-function loadRest() {
+function loadRest(cityid) {
 
     $.ajax({
-        url: SERVER + "restaurant?"+ FilterURL,
+        url: SERVER + "restaurant/city/"+cityid+"?"+ FilterURL,
         type: "GET",
         dataType: "JSON",
         contentType: "application/json;charset=utf-8",
@@ -286,7 +286,7 @@ function searchstickRest() {
 function setCuisineId(id)
 {
     FilterURL = 'cuisineId='+id;
-    loadRest();
+    loadRest(CityId);
 }
 function setOpen(){
 if (open ==1)
@@ -318,7 +318,7 @@ function ApplyFilters()
     {
         FilterURL += 'top=true';
     }
-    loadRest();
+    loadRest(CityId);
 }
 
 function clearFilters()
@@ -326,7 +326,7 @@ function clearFilters()
  open = 0;
  top = 0;
  FilterURL = ''; 
- loadRest(); 
+ loadRest(CityId); 
  $(".filter-popup").fadeOut();
  $(".filter-opt input").prop("checked", false );
 }
