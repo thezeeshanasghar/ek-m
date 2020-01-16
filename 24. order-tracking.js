@@ -54,19 +54,19 @@ function loadOrderStatus (id)
     });
 }
 
-function orderTrack() {
-    var tracker = 1;
-    if (tracker == 1) {
-        $("#orderTrackBtn").removeAttr("onclick");
-        $("#orderTrackBtn").css("background-color", "#ddd");
-        console.log("hello")
+// function orderTrack() {
+//     var tracker = 1;
+//     if (tracker == 1) {
+//         $("#orderTrackBtn").removeAttr("onclick");
+//         $("#orderTrackBtn").css("background-color", "#ddd");
+//         console.log("hello")
 
-    } else if (tracker == 2) {
-        $("#orderTrackBtn").addAttr("onclick" ,"window.location.href='25. track-location.html'");
-        $("#orderTrackBtn").css("background-color", "#039611");
-    }
+//     } else if (tracker == 2) {
+//         $("#orderTrackBtn").addAttr("onclick" ,"window.location.href='25. track-location.html'");
+//         $("#orderTrackBtn").css("background-color", "#039611");
+//     }
 
-}
+// }
 
 
 

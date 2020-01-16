@@ -26,6 +26,8 @@ $(document).ready(function(){
 
                 
                 console.log("Successfully Rated!");
+                window.location.href = "16. selected-location.html";
+
 
             },
 
@@ -62,6 +64,8 @@ $(document).ready(function(){
 
                 
                 console.log("Successfully Rated!");
+                window.location.href = "16. selected-location.html";
+
 
             },
 
@@ -98,6 +102,8 @@ $(document).ready(function(){
 
                 
                 console.log("Successfully Rated!");
+                window.location.href = "16. selected-location.html";
+
 
             },
 
@@ -132,6 +138,8 @@ $(document).ready(function(){
 
                 
                 console.log("Successfully Rated!");
+                window.location.href = "16. selected-location.html";
+
 
             },
 
@@ -165,6 +173,8 @@ $(document).ready(function(){
 
                 
                 console.log("Successfully Rated!");
+                window.location.href = "16. selected-location.html";
+
 
             },
 
