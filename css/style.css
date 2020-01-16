@@ -3182,16 +3182,37 @@ input[type=checkbox]:checked + label:before {
 	border-radius: 50%;
 	background: #d8d8d8;	
 	display: block;
-	margin-top: -1px;
+	overflow: hidden;
 }
 
-.order-con-3 .bar {
+.order-con-3 .round .green-round {
+	width: 18px;
+	height: 0;
+	background: #36ab40;	
+	display: block;
+	transition: all 2s ease-in-out;
+
+}
+
+.order-con-3 .bar-3 {
 	width: 5px;
 	height: 56px;
 	background: #d8d8d8;	
 	display: block;
 	margin: auto;
 }
+
+.order-con-3 .bar-3 .green-bar {
+	width: 100%;
+	float: left;
+	background: #36ab40;
+	height: 0;
+	transition: all 2s ease-in-out;
+}
+
+
+
+
 
 .order-summary-input-values {
 	line-height: 0px;
