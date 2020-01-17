@@ -24,26 +24,29 @@
 
 			<form id="vote-form" class="vote-form-lefted bottom-gaped">
 				<h3>Your City</h3>
-				<input type="text" name="" placeholder="">
+				<input id ="cityname" type="text" name="" placeholder="">
 
 				<h3>Full Name</h3>
-				<input type="text" name="" placeholder="">
+				<input id="votername" type="text" name="" placeholder="">
 
 				<h3>Cell Number</h3>
-				<input type="text" name="" placeholder="">
+				<input id= "cellnumber" type="number" name="" placeholder="">
 
 				<h3>Message</h3>
-				<textarea></textarea>
+				<textarea id="message"></textarea>
 			</form>
 			
 
 			<div class="bottom-panel sticky-panel">
-				<button for="vote-form" type="submit" class="leaf-btn leaf-btn-green standard-btn">Submit</button>
+				<button onclick="PostVote()" for="vote-form" type="submit" class="leaf-btn leaf-btn-green standard-btn">Submit</button>
 			</div>
 
 		</div>
 	</div>
-
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script src="server.js"></script>
+	<script src="common.js"></script>
+	<script src="14. vote.js"></script>
 			
 </body>
 </html>

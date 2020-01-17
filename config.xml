@@ -5,15 +5,15 @@
     versionCode = "10"
     version     = "1.0.0" >
     <gap:plugin name="cordova-plugin-whitelist" source="npm"/>
-    <!-- <plugin name="cordova-plugin-geolocation" version="2.1.0" /> -->
-        <plugin name="cordova-plugin-geolocation" spec="~4">
+    <plugin name="cordova-plugin-geolocation" version="2.1.0" />
+        <!-- <plugin name="cordova-plugin-geolocation" spec="~4">
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="This app uses your location for maps." />
-    </plugin>
-       <platform name="android">
+    </plugin> -->
+       <!-- <platform name="android">
         <uses-permission name="android.permission.ACCESS_COARSE_LOCATION" />
         <uses-permission name="android.permission.ACCESS_FINE_LOCATION" />
         <uses-permission name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
-    </platform>
+    </platform> -->
     <content src="01. starting-page.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
