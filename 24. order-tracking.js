@@ -17,7 +17,7 @@ function loadOrderStatus (id)
         dataType: "JSON",
         contentType: "application/json;charset=utf-8",
         success: function (result) {
-            if (result ==1)
+            if (result ==1 || result == 5 || result == 6 || result == 7)
             {
                 
             setTimeout('$(".order-con-2 .green-bar").css("height" , "100%");', 3000);

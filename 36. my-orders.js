@@ -27,7 +27,7 @@ $(document).ready(function () {
                 $.each(result, function (key, order) {
                     html += '<li><div class="header-wrapper"><div class="left-panel">';
                     html += ' <h4>Order ID #' + order.Id + '</h4><p>Order Amount, Rs.' + order.GrandTotal + '</p><p>' + order.Created + '</p></div>';
-                    if (order.OrderStatus == 0 || order.OrderStatus == 1) {
+                    if (order.OrderStatus == 0 || order.OrderStatus == 1 || order.OrderStatus == 5 || order.OrderStatus == 6 || order.OrderStatus == 7 ) {
                         html += '<div class="right-panel"><div class="order-status orange">' + status[order.OrderStatus] + '</div>';
                         html += ' <div class="order-action"><a onclick = "loadOrderDetails('+order.Id+');">Details</a><br><a href="24. order-tracking.html"> view status</a></div></div></div></li>';
                     }
