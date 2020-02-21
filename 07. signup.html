@@ -7,6 +7,9 @@
 </head>
 <body>
 	
+	<div id="loading" class="d-none">
+        <img id="loading-image" src="img/Loader.gif" alt="Processing..." />
+    </div>
 	<div class="container">
 		<div class="animsition">
 
@@ -31,14 +34,13 @@
 									
 									<input type="text" id="Name" name="Name" class="form-input" placeholder="Name">
 
-
 								</div>
 
 								<div class="input-container" style="position: relative;">
 
 									<img src="img/input-phone.png">
 									
-									<input type="text" id="MobileNo" name="mobNum" class="form-input" placeholder="Mobile Number">
+									<input type="text" id="MobileNo" name="MobileNo" maxlength="11" autocomplete="off" pattern="03[0-9]{2}(?!1234567)(?!1111111)(?!7654321)[0-9]{7}" title="Mobile No must be in Correct Formate eg.xxxx-xxxxxxx" class="form-input" placeholder="Mobile Number">
 
 
 								</div>
@@ -47,7 +49,7 @@
 
 									<img src="img/input-mail.png">
 									
-									<input type="email" name="email" id="Email" class="form-input" placeholder="Email Address">
+									<input type="email" name="Email" id="Email" class="form-input"  placeholder="Email Address">
 
 
 								</div>
@@ -56,7 +58,7 @@
 
 									<img src="img/input-pswd.png">
 									
-									<input type="password" name="password" id="Password" class="form-input" placeholder="Password">
+									<input type="password" name="Password" id="Password" class="form-input" pattern=".{6,}" title="Password must be 6 Character Long"  placeholder="Password">
 
 
 								</div>
@@ -65,12 +67,14 @@
 
 									<img src="img/input-pswd.png">
 									
-									<input type="password" name="Password2" class="form-input" placeholder="Confirm Password">
+									<input type="password" name="Password2" id="Password2" class="form-input" placeholder="Confirm Password">
 
 
 								</div>
+								<input type="submit"  id="submit-button" class="form-submit-btn leaf-btn leaf-btn-green" value="Sign Up" />
+
 							</form>
-							<button onclick="SignUp()" id="submit-button" class="form-submit-btn leaf-btn leaf-btn-green">Sign Up</button>
+							<!-- onclick="SignUp()" -->
 
 							<div class="bottom-panel">
 								<div class="signup-link stan-sticky-panel">

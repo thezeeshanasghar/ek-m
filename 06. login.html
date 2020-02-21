@@ -6,7 +6,9 @@
 	<link rel="stylesheet" type="text/css" href="css/animsition.min.css">
 </head>
 <body>
-	
+	<div id="loading" class="d-none">
+        <img id="loading-image" src="img/Loader.gif" alt="Processing..." />
+    </div>
 	<div class="container">	
 		<div class="animsition">
 
@@ -30,17 +32,17 @@
 
 									<img src="img/input-phone.png">
 									
-									<input type="email" id="Email" name="" class="form-input" placeholder="Input Email">
+									<input type="Email" id="Email" name="Email" class="form-input" placeholder="Input Email">
 								</div>
 								
 								<div class="input-container" style="position: relative;">
 
 									<img src="img/input-pswd.png">
 									
-									<input type="password" id="Password" name="" class="form-input" placeholder="Password">
+									<input type="Password" id="Password" name="Password" class="form-input" placeholder="Password">
 								</div>
 
-								<button type = "button" onclick="login()" class="form-submit-btn leaf-btn leaf-btn-green" >Login</button>
+								<input type = "submit"  class="form-submit-btn leaf-btn leaf-btn-green" value="Login">
 							</form>
 							
 
@@ -63,7 +65,8 @@
 
 			<script src="js/jquery.js"></script>
 	<script src="js/animsition.min.js"></script>
-
+	<script src="js/jquery.validate.js"></script>
+	
 	<script type="text/javascript">
 	
 $(document).ready(function() {
@@ -99,7 +102,7 @@ $(document).ready(function() {
 	<script type="text/javascript">
 		
 		$(document).ready(function() {
-
+			
 			$("#login-form").focusin(function(){
 
 				$(".bottom-panel").css("display", "none");

@@ -45,28 +45,100 @@ $(document).ready(function () {
     
 });
 
-function SignUp() {
+	$("#register-form").validate({
+		rules: {
+			Name: {
+				required: function (element) {
+					return $("#Name").is(':blank');
+				}
+			},
+			Email: {
+				required: function (element) {
+					return $("#Email").is(':blank');
+				}
+			},
+			Password: {
+				required: function (element) {
+					return $("#Password").is(':blank');
+				}
+			},
+			MobileNo: {
+				required: function (element) {
+					return $("#MobileNo").is(':blank');
+				}
+			},
+			Password2:{
+				required:function(element)
+				{
+				console.log($("#Password2").val() ,$("#Password").val())
+					
+					return $("#Password2").is(':blank');
+				}
+			}
+		},
 
-    obj = {
-        "Name": $("#Name").val(),
-        "Email": $("#Email").val(),
-        "Password": $("#Password").val(),
-		"MobileNumber": $("#MobileNo").val(),
-		"CityId": 1
-    }
-console.log (obj);
-    $.ajax({
-        url: SERVER + "customer",
-        type: "POST",
-        data: JSON.stringify(obj),
-        dataType: "json",
-        contentType: "application/json;charset=utf-8",
-        success: function (result) {
-               localStorage.setItem("Customer", JSON.stringify(result));
-               window.location.href = "11. welcome.html";
-        },
-        error: function (xhr, status, error) {
-            console.log(xhr.responseText);
-        }
-    });
-}    
+		messages: {
+			Name: {
+				required: 'Name is Required'
+			},
+			Email: {
+				required: 'Email is Required'
+			},
+			Password: {
+				required: 'Password is Required'
+			},
+			MobileNo: {
+				required: 'Mobile# Is Required'
+			},
+			Password2:{
+				required: 'Password Is Not Matched'
+			}
+		},
+		errorElement: 'span',
+		errorClass: "validate-has-error",
+		validClass: '',
+		highlight: function (element, errorClass, validClass) {
+			if(($("#Password2").val() != $("#Password").val())  )
+					{
+						$("#Password2").val('')
+					}
+			$(element).parents("div.form-group").addClass(errorClass).removeClass(validClass);
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			console.log(element);
+			$(element).parents("div.form-group").removeClass(errorClass).addClass(validClass);
+		},
+		 //Form Processing via AJAX
+		submitHandler: function (form) {
+			obj = {
+				"Name": $("#Name").val(),
+				"Email": $("#Email").val(),
+				"Password": $("#Password").val(),
+				"MobileNumber": $("#MobileNo").val(),
+				"CityId": 1
+			}
+		console.log (obj);
+			$.ajax({
+				url: SERVER + "customer",
+				type: "POST",
+				data: JSON.stringify(obj),
+				dataType: "json",
+				contentType: "application/json;charset=utf-8",
+				beforeSend:function(){
+					$('#loading').removeClass("d-none");
+				},
+				success: function (result) {
+					   localStorage.setItem("Customer", JSON.stringify(result));
+					   window.location.href = "11. welcome.html";
+				},
+				error: function (xhr, status, error) {
+					console.log(xhr.responseText);
+				},
+				complete:function()
+				{
+					$('#loading').addClass("d-none");
+				}
+			});
+		}
+	});
+	

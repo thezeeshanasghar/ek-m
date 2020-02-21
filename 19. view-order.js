@@ -137,18 +137,37 @@ function loadRestaurantDetails(restaurantId) {
                   html += '<h1 id="'+menu.Name.split(" ").join("")+'">'+menu.Name+'</h1>';
                   html += '</div>';
                   html += '<ul>';
-                  
+                  var selectedItems=JSON.parse(localStorage.getItem("items"));
+                  var output;
                   $.each(menu.MenuItems , function (index, menuItem) {
+                     if(selectedItems)
+                     {
+                       output= selectedItems.find(o => o.Id === menuItem.Id );   
+                     }
+                   
                     html += '<li>';
-                    html += '<div class="selected-order"><img src="img/selected-order.jpg"/></div>';
+                    if(output)
+                    {
+                      html += '<div class="selected-order"><img style="display:block" src="img/selected-order.jpg"/></div>';    
+                    }else{
+                        html += '<div class="selected-order"><img  src="img/selected-order.jpg"/></div>';    
+                    }
+                    
                     html += '<h2>'+menuItem.Name+'</h2>';
                     html += '<div class="left-panel"><p>'+menuItem.Size+' Rs.'+menuItem.Price+'</p></div>';
                     //html += '<div class="left-panel"><p>Small 250, Medium 500, Large 800</p></div>';
                     html += '<div class="right-panel"><a role="button" tabindex="0"  onclick="addToCart('
                     + menu.Id +',' + menuItem.Id + ',' + quoteAndEscape(menuItem.Name) +
                     ',' + quoteAndEscape(menuItem.Size) + ',' + menuItem.Price +
-                    ')" style="cursor: pointer;"><img src="img/plus-round-white.jpg" /> </a> </div>';
-                    html += '</li>';  
+                    ')" style="cursor: pointer;">'
+                    if(output)
+                    {
+                        html +='<img src="img/plus-round-green.jpg" />';
+                    }else{
+                       html +='<img src="img/plus-round-white.jpg" />';  
+                    }
+                   
+                    html += '</a> </div></li>';  
                   });
                   html += '</ul>';
                   html += '</div>';
