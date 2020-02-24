@@ -42,57 +42,91 @@ $(document).ready(function () {
 
     
 });
-function checkout() {
-   // if (isLoggedIn()) {
-        var customer = getObjsFromLocalStorage("Customer");
-        var items = getObjsFromLocalStorage("items");
-        for (var i = 0; i <= items.length - 1; i++) {
-            delete items[i].Id; 
-            if (items[i].Quantity === 0) {
-                delete items[i]; 
-                items.length--;
-            }
-        }
-        
-        if (items && items.length > 0) {
-            var allItems = [];
-            {allItems = items}
-            console.log (allItems);
-            var order = {
-                Subtotal: subtotal,
-                GrandTotal: grandTotal,
-                Fee: DelCharges,
-                GST: GST,
-                Address: $("#Address").val(),
-                //PayMethod: $("#mod-of-pay").val(),
-                PayMethod: paymentMethod,
-                Instruction:$("#instructions").val(),
-                OrderItems : allItems,
-                CustomerId: customer.Id,
-                CityId : CityId,
-                RestaurantId: RestaurantId 
-            }
-            console.log(order);
-            $.ajax({
-                url: SERVER + "order/customer-order",
-                type: "POST",
-                data: JSON.stringify(order),
-                dataType: "json",
-                contentType: "application/json;charset=utf-8",
-                success: function (result) {
-                        localStorage.setItem("Id" , result.Id)
-                        alert("Your order is placed successfully");
-                        localStorage.removeItem("items");
-                        //localStorage.removeItem("extraitems");
-                        window.location.reload(true);
-                        location.href = '23. order-placed.html';
-                }
-            });
-        } else {
-            alert("Cart is empty");
-        }
-  //  } else {
-  //      alert('Please login first');
-   // }
 
-}
+$("#frm-Order").validate({
+    rules: {
+        Address: {
+            required: function (element) {
+                return $("#Address").is(':blank');
+            }
+        }
+    },
+
+    messages: {
+        Address: {
+            required: 'Address is Required'
+        }
+    },
+    errorElement: 'span',
+    errorClass: "validate-has-error",
+    validClass: '',
+    highlight: function (element, errorClass, validClass) {
+        console.log(element,errorClass);
+        $(element).parents("div.form-group").addClass(errorClass).removeClass(validClass);
+    },
+    unhighlight: function (element, errorClass, validClass) {
+        console.log(element,errorClass);
+        $(element).parents("div.form-group").removeClass(errorClass).addClass(validClass);
+    },
+     //Form Processing via AJAX
+    submitHandler: function (form) {
+          // if (isLoggedIn()) {
+            var customer = getObjsFromLocalStorage("Customer");
+            var items = getObjsFromLocalStorage("items");
+            for (var i = 0; i <= items.length - 1; i++) {
+                delete items[i].Id; 
+                if (items[i].Quantity === 0) {
+                    delete items[i]; 
+                    items.length--;
+                }
+            }
+            
+            if (items && items.length > 0) {
+                var allItems = [];
+                {allItems = items}
+                console.log (allItems);
+                var order = {
+                    Subtotal: subtotal,
+                    GrandTotal: grandTotal,
+                    Fee: DelCharges,
+                    GST: GST,
+                    Address: $("#Address").val(),
+                    //PayMethod: $("#mod-of-pay").val(),
+                    PayMethod: paymentMethod,
+                    Instruction:$("#instructions").val(),
+                    OrderItems : allItems,
+                    CustomerId: customer.Id,
+                    CityId : CityId,
+                    RestaurantId: RestaurantId 
+                }
+                console.log(order);
+                $.ajax({
+                    url: SERVER + "order/customer-order",
+                    type: "POST",
+                    data: JSON.stringify(order),
+                    dataType: "json",
+                    contentType: "application/json;charset=utf-8",
+                    beforeSend:function(){
+                        $('#loading').removeClass("d-none");
+                    },
+                    success: function (result) {
+                            localStorage.setItem("Id" , result.Id)
+                            alert("Your order is placed successfully");
+                            localStorage.removeItem("items");
+                            //localStorage.removeItem("extraitems");
+                            window.location.reload(true);
+                            location.href = '23. order-placed.html';
+                    },
+                    complete:function(){
+                        $('#loading').addClass("d-none");
+                    }
+                });
+            } else {
+                alert("Cart is empty");
+            }
+      //  } else {
+      //      alert('Please login first');
+       // }
+    }
+});
+

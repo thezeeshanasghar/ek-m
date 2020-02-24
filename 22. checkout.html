@@ -95,7 +95,7 @@
 
     </div> -->
 		
-	<div class="med-wrapper relative">	
+	<form  id="frm-Order" class="med-wrapper relative">	
 
         
 
@@ -111,7 +111,7 @@
             <div class="left-panel">
                 <h4 style="font-size: 16px; font-weight: 700;">Delivery Addresss</h4>
             </div>
-            <input id="Address" type="text" placeholder="House# 12, Garden Toown, Deara Ghazi Khan.">
+            <input id="Address" name="Address" type="text" placeholder="Address">
         </div>
 
         <div class="payment-mode">
@@ -127,22 +127,22 @@
 
         <div class="checkout-inst">
             <h4>Special Instructions</h4>
-            <textarea id = "instructions" name=""  cols="30" rows="6" maxlength="60">
-Write Text
+            <textarea id = "instructions" name=""  cols="30" rows="6" maxlength="60" placeholder="Any Special instructions ">
+
             </textarea>
         </div>
 		
 
 		
         <div class="bottom-panel sticky-panel">
-            <a id="placeOrder" href = "#" class="form-submit-btn leaf-btn leaf-btn-green full-btn standard-btn" onclick="checkout()">Place Order</a>
+            <input type="submit" id="placeOrder"  class="form-submit-btn leaf-btn leaf-btn-green full-btn standard-btn" >Place Order</a>
         </div>
 			
-	</div>
+	</form>
 
 </div>
 <script type="text/javascript" src="js/jquery.js"></script>
-          <script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/jquery.validate.js"></script>
           <script type="text/javascript" src="common.js"></script>
           <script type="text/javascript" src="22. checkout.js"></script>
           <script type="text/javascript" src="server.js"></script> 
