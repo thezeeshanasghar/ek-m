@@ -97,7 +97,8 @@ $("#frm-Order").validate({
                     OrderItems : allItems,
                     CustomerId: customer.Id,
                     CityId : CityId,
-                    RestaurantId: RestaurantId 
+                    RestaurantId: RestaurantId ,
+                    Coordinates:"Null"
                 }
                 console.log(order);
                 $.ajax({
@@ -110,12 +111,14 @@ $("#frm-Order").validate({
                         $('#loading').removeClass("d-none");
                     },
                     success: function (result) {
-                            localStorage.setItem("Id" , result.Id)
+                            localStorage.setItem("Id" , result.Id);
+                           // debugger;
+                            addCoordinates("",localStorage.getItem("coordinates"),result.Id);
                             alert("Your order is placed successfully");
                             localStorage.removeItem("items");
                             //localStorage.removeItem("extraitems");
-                            window.location.reload(true);
-                            location.href = '23. order-placed.html';
+                            //window.location.reload(true);
+                            //location.href = '23. order-placed.html';
                     },
                     complete:function(){
                         $('#loading').addClass("d-none");
@@ -130,3 +133,27 @@ $("#frm-Order").validate({
     }
 });
 
+function addCoordinates(driver_Coordinates,customer_Coordinates,order_Id)
+{
+    var obj={
+        driverCoordinates:driver_Coordinates,
+        customerCoordinates:customer_Coordinates,
+        orderId:order_Id
+    }
+$.ajax({
+    type:"POST",
+    url:SERVER+"Coordinates",
+    data:JSON.stringify(obj),
+    dataType:"json",
+    contentType: "application/json;charset=utf-8",
+    success:function(response)
+    {
+        
+         window.location.reload(true);
+         location.href = '23. order-placed.html';
+    },error:function(response)
+    {
+        console.log("error",response);
+    }
+})
+}
