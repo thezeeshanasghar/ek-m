@@ -3,6 +3,8 @@ var CuisineId ;
 var open = 0;
 var topr = 0;
 var CityId = getObjsFromLocalStorage("CityId"); 
+var lat = getObjsFromLocalStorage("lat");
+var lng = getObjsFromLocalStorage("lng");
 $(document).ready(function(){
     loadCuisine();
       loadSpon();
@@ -133,6 +135,7 @@ function loadSpon() {
                     html += '<p><span><img src="img/star.jpg"/>3.8 Good';
                     html += '</span>(20+) - Pizza - Burger - Peri...</p>';
                     html += '</div></div></div>';
+                    
 
                 }); 
                 $("#spon-rest").html(html);
@@ -154,10 +157,11 @@ function loadSpon() {
 
 
 // Load Restaurants
-function loadRest(cityid) {
+function loadRest() {
 
     $.ajax({
-        url: SERVER + "restaurant/city/"+cityid+"?"+ FilterURL,
+      //  url: SERVER + "restaurant/city/"+cityid+"?"+ FilterURL,
+      url: SERVER + "restaurant/"+lat+"/"+lng + "?"+ FilterURL,
         type: "GET",
         dataType: "JSON",
         contentType: "application/json;charset=utf-8",
