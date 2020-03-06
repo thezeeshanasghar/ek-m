@@ -34,12 +34,14 @@ function initMap() {
     animation: google.maps.Animation.DROP,
     position: { lat: latitude, lng: longitude },
     //gestureHandling: 'greedy',
+    icon:"img/user location.ico",
     draggable: true,
     map: map,
   });
   // map.addObject(marker);
   marker.addListener('click', toggleBounce);
   this.map.setCenter(this.marker.position);
+
   this.marker.setMap(this.map);
 
   google.maps.event.addListener(this.marker, "dragend", function (evt) {
