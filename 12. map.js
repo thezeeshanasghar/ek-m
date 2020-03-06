@@ -151,7 +151,7 @@ function GetRestaurantLocations() {
         $.each(result, function (index, location) {
           var distance = getDistanceFromLatLonInKm(latitude, longitude, location.Latitude, location.Longitude);
           console.log(distance);
-          if (distance < 5)
+          if (distance < result[index].DelRadius)
             restaurant++;
         });
       }

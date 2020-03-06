@@ -113,7 +113,7 @@ $("#frm-Order").validate({
                     success: function (result) {
                             localStorage.setItem("Id" , result.Id);
                            // debugger;
-                            addCoordinates("",localStorage.getItem("coordinates"),result.Id);
+                            addCoordinates("",localStorage.getItem("lat")+","+localStorage.getItem("lng"),result.Id);
                             alert("Your order is placed successfully");
                             localStorage.removeItem("items");
                             //localStorage.removeItem("extraitems");
@@ -136,9 +136,10 @@ $("#frm-Order").validate({
 function addCoordinates(driver_Coordinates,customer_Coordinates,order_Id)
 {
     var obj={
-        driverCoordinates:driver_Coordinates,
-        customerCoordinates:customer_Coordinates,
-        orderId:order_Id
+        Id:0,
+        RiderCoordinates:driver_Coordinates,
+        CustomerCoordinates:customer_Coordinates,
+        OrderId:order_Id
     }
 $.ajax({
     type:"POST",
@@ -149,7 +150,7 @@ $.ajax({
     success:function(response)
     {
         
-         window.location.reload(true);
+      //   window.location.reload(true);
          location.href = '23. order-placed.html';
     },error:function(response)
     {
