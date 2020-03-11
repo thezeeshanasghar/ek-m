@@ -3656,3 +3656,84 @@ input[type=checkbox]:checked + label:before {
 	background-size: cover;
 	background-position: -50px;
 }
+
+
+.updates-bk {
+	width: 100%;
+	height: auto;
+	float: left;
+	background-color: #ddd;
+	position: relative;
+}
+
+.update-wrapper {
+	width: 94%;
+	height: 100%;
+	margin: auto;
+}
+
+.update {
+	width: 100%;
+	float: left;
+	border-radius: 5px;
+	overflow: hidden;
+	margin-top: 14px;
+	background-color: white;
+}
+
+.update .update-img {
+	width: 100%;
+	height: 150px;
+	float: left;
+	overflow: hidden;
+}
+
+.update .update-img img {
+	width: 100%;
+}
+
+.updateWrapper {
+	width: 100%;
+	padding: 10px;
+	float: left;
+	box-sizing: border-box;
+}
+
+.updateWrapper .update-name {
+	float: left;
+	font-weight: bold;
+}
+
+.updateWrapper .update-time {
+	float: right;
+	font-size: 11px;
+	line-height: 24px;
+	color: gray;
+}
+
+.updateWrapper .update-msg {
+	width: 100%;
+	float: left;
+	clear: both;
+	font-size: 13px;
+	margin: 10px 0;
+}
+
+.updateWrapper .update-code-valid {
+	width: 100%;
+	float: left;
+	clear: both;
+}
+
+.updateWrapper .update-code {
+	float: left;
+	color: #36ab40;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.updateWrapper .update-valid {
+	float: right;
+	font-size: 11px;
+	line-height: 24px;
+}
