@@ -126,9 +126,19 @@ function GetCityId(name) {
     contentType: "application/json;charset=utf-8",
     success: function (result) {
       console.log(result.Id)
-      window.alert("city Found In database");
+      result=result.filter(x=>x.Status==1);
+      if(result)
+      {
+           window.alert("city Found In database");
       localStorage.setItem("CityId", result.Id);
       window.location.href = "16. selected-location.html";
+      }else{
+
+        window.alert("Sorry Our Service is Not Available here");
+        window.location.href = '13. na-location.html'
+        console.log(xhr.responseText);
+      }
+   
     },
     error: function (xhr, status, error) {
       window.alert("Sorry Our Service is Not Available here");
@@ -148,7 +158,7 @@ function GetRestaurantLocations() {
     dataType: "JSON",
     contentType: "application/json;charset=utf-8",
     success: function (result) {
-      console.log(result);
+      console.log(result)
       if (result) {
         $.each(result, function (index, location) {
           var distance = getDistanceFromLatLonInKm(latitude, longitude, location.Latitude, location.Longitude);

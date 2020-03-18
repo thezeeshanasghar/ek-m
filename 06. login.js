@@ -52,14 +52,21 @@ $("#login-form").validate({
             },
             success: function (result) {
               
-                   localStorage.setItem("Customer", JSON.stringify(result));
+              if(result)
+              {
+                  localStorage.setItem("Customer", JSON.stringify(result));
                     // $(".login-overlay").fadeOut();
                     // toggleLogInOut();
                     // toggleProfileAndOrders();
-                    window.open("01. starting-page.html");
+                    window.open("01. starting-page.html","_self");  
+              }
+                 
             },
-            error: function (xhr, status, error) {
-                console.log(xhr.responseText);
+            error: function (xhr, status, error) 
+            {
+                var resp=JSON.parse(xhr.responseText);
+
+                alert(resp.message);
             },
             complete:function()
             {
