@@ -51,14 +51,22 @@ $("#login-form").validate({
                 $('#loading').removeClass("d-none");
             },
             success: function (result) {
-              
+              console.log(result);
+              debugger;
               if(result)
               {
+                if(result.UserAuthentication[0].IsVerified==1)
+                {
                   localStorage.setItem("Customer", JSON.stringify(result));
                     // $(".login-overlay").fadeOut();
                     // toggleLogInOut();
                     // toggleProfileAndOrders();
                     window.open("01. starting-page.html","_self");  
+                }else{
+
+                    localStorage.setItem("CustomerId", result.Id);
+                    window.location.href = "09. verify-pswd.html";
+                }
               }
                  
             },
