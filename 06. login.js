@@ -52,7 +52,6 @@ $("#login-form").validate({
             },
             success: function (result) {
               console.log(result);
-              debugger;
               if(result)
               {
                 if(result.UserAuthentication[0].IsVerified==1)
