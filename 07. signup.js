@@ -115,7 +115,7 @@ $(document).ready(function () {
 				"Email": $("#Email").val(),
 				"Password": $("#Password").val(),
 				"MobileNumber": $("#MobileNo").val(),
-				"CityId": 1
+				// "CityId": 1
 			}
 		console.log (obj);
 			$.ajax({

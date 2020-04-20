@@ -124,16 +124,18 @@ function loadSpon() {
                 $.each(result, function(index,spon){
 
                     html += '<div class="swiper-slide swiper-slide-widthed">';
+                    // html += '<a href="19. view-order.html?id='+spon.Id+'">';
                     html += '<div class="restaurants-slides">';
                     html += '<div class="rest-photo">';
-                    html += '<div class="img"><img src="'+IP+":"+PORT+"/"+spon.CoverImagePath+'" /></div>';
+                    html += '<div class="img">';
+                    html += '<img src="'+IP+":"+PORT+"/"+spon.CoverImagePath+'" /></div>';
                     html += '<span class="status">open</span>';
                     html += '<span class="distance">Approximately <br><b>45 Min</b></span>';
                     html += '</div>';
                     html += '<div class="rest-info">';
                     html += '<h4>'+ spon.Name +'</h4>';
-                    html += '<p><span><img src="img/star.jpg"/>3.8 Good';
-                    html += '</span>(20+) - Pizza - Burger - Peri...</p>';
+                    html += '<p><span><img src="img/star.jpg"/>'+spon.Rating;
+                    html += '</span>('+spon.reviewCount+'+) - Pizza - Burger - Peri...</p>';
                     html += '</div></div></div>';
                     
 
