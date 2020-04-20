@@ -51,15 +51,29 @@ $("#login-form").validate({
                 $('#loading').removeClass("d-none");
             },
             success: function (result) {
-              
-                   localStorage.setItem("Customer", JSON.stringify(result));
+              console.log(result);
+              if(result)
+              {
+                if(result.UserAuthentication[0].IsVerified==1)
+                {
+                  localStorage.setItem("Customer", JSON.stringify(result));
                     // $(".login-overlay").fadeOut();
                     // toggleLogInOut();
                     // toggleProfileAndOrders();
-                    window.open("01. starting-page.html");
+                    window.open("01. starting-page.html","_self");  
+                }else{
+
+                    localStorage.setItem("CustomerId", result.Id);
+                    window.location.href = "09. verify-pswd.html";
+                }
+              }
+                 
             },
-            error: function (xhr, status, error) {
-                console.log(xhr.responseText);
+            error: function (xhr, status, error) 
+            {
+                var resp=JSON.parse(xhr.responseText);
+
+                alert(resp.message);
             },
             complete:function()
             {

@@ -2,6 +2,7 @@
 var RiderId = getObjsFromLocalStorage("RiderId");
 var Customer = getObjsFromLocalStorage("Customer");
 var CustomerId = Customer.Id;
+
 $(document).ready(function(){
     // loadCities();
     console.log("Ok");

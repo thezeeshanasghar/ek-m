@@ -168,10 +168,10 @@ function loadRest() {
         dataType: "JSON",
         contentType: "application/json;charset=utf-8",
         success: function (result) {
-
+            result=result.filter(x=>x.Status==1);
         	console.log(result);
             var html='';
-			
+	
              if(result) {
                 $.each(result, function(index,rest){
 

@@ -3,16 +3,17 @@
 <head>
 	<title>09. Verify Password</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/jquery.js"></script>
 </head>
 <body>
-		
-	<div class="container">	
-		<div class="intro-bk intro-login">	
+
+	<div class="container">
+		<div class="intro-bk intro-login">
 
 				<div class="wrapper">
 
 					<div class="verify-pswd-page">
-					
+
 						<div class="head-desp verify-pswd-heading">
 							<h1>Verify Password</h1>
 							<p class="small-para small-para-light">
@@ -22,15 +23,19 @@
 
 						<div class="otp-num">
 							<ul>
-								<li><span class="dot"></span></li>
-								<li><span class="dot"></span></li>
-								<li><span class="dot"></span></li>
-								<li><span class="dot"></span></li>
+								<form class="input-container" style="position: relative;">
+
+									
+									<input type="text" id="otpCode" class="form-input" placeholder="otp number" >
+								</form>
+								<!-- <li><input class="dot"></li>
+								<li><input class="dot"></li>
+								<li><input class="dot"></li> -->
 							</ul>
 						</div>
 
 						<form id="reset-pswd-form" class="gen-form">
-							<button type="submit" class="form-submit-btn leaf-btn leaf-btn-green">Verify</button>
+							<button type="button" onclick="VerifyUser()" class="form-submit-btn leaf-btn leaf-btn-green">Verify</button>
 						</form>
 
 						<div class="bottom-panel">
@@ -38,13 +43,14 @@
 								Don't Receive Code?<a href="#">Click Here</a>
 							</div>
 						</div>
-							
+
 					</div>
 
 				</div>
 
 		</div>
 	</div>
-
+<script src="server.js"></script>
+<script src="09. verify-pswd.js"></script>
 </body>
 </html>

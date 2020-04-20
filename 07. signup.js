@@ -115,7 +115,7 @@ $(document).ready(function () {
 				"Email": $("#Email").val(),
 				"Password": $("#Password").val(),
 				"MobileNumber": $("#MobileNo").val(),
-				// "CityId": 1
+				"Status": 1
 			}
 		console.log (obj);
 			$.ajax({
@@ -128,8 +128,8 @@ $(document).ready(function () {
 					$('#loading').removeClass("d-none");
 				},
 				success: function (result) {
-					   localStorage.setItem("Customer", JSON.stringify(result));
-					   window.location.href = "11. welcome.html";
+					   localStorage.setItem("CustomerId", result.Id);
+					   window.location.href = "09. verify-pswd.html";
 				},
 				error: function (xhr, status, error) {
 					console.log(xhr.responseText);

@@ -6,10 +6,30 @@ var items = getObjsFromLocalStorage("items");
 var CityId = getObjsFromLocalStorage("CityId");
 var RestaurantId = getObjsFromLocalStorage("RestaurantId");
 var DelCharges = getObjsFromLocalStorage("DelCharges");
-$(document).ready(function(){
 
-   var id = parseInt(getParameterByName("id")) || 0;
-    localStorage.setItem("RestaurantId", id);
+$(document).ready(function(){
+    var id = parseInt(getParameterByName("id")) || 0;
+    if(localStorage.getItem("items")!=null)
+    {
+    
+    if(RestaurantId)
+    {
+        if(RestaurantId==id)
+        {
+     
+        }else{
+         
+            if (confirm('Are you sure to Remove Previous Selected Items')) {
+                localStorage.setItem("RestaurantId", id);
+            localStorage.removeItem("items");
+            } else {
+                window.open("16. selected-location.html","_self");
+            }
+       
+        }
+    }
+}
+
  loadRestaurantDetails(id);
  restStarRating(id)
  animatedMenu();  

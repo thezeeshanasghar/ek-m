@@ -61,7 +61,7 @@ function loadRider (id)
         contentType: "application/json;charset=utf-8",
         success: function (result) {
             $("#riderName").html(result.Name);
-        
+        localStorage.setItem("RiderId",result.Id);
         },
         error: function(xhr, status, error) {
             console.log(xhr.responseText);
