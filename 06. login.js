@@ -54,7 +54,7 @@ $("#login-form").validate({
               console.log(result);
               if(result)
               {
-                if(result.UserAuthentication[0].IsVerified==1)
+                if(result.IsVerified==1)
                 {
                   localStorage.setItem("Customer", JSON.stringify(result));
                     // $(".login-overlay").fadeOut();

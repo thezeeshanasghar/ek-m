@@ -14,7 +14,7 @@ function VerifyUser()
           console.log(result);
           if(result)
           {
-              if(result.UserAuthentication[0].IsVerified==1)
+              if(result.IsVerified==1)
               {
                 localStorage.setItem("Customer", JSON.stringify(result));
                 localStorage.removeItem("CustomerId");
@@ -32,9 +32,10 @@ function VerifyUser()
         },
         error: function (xhr, status, error) 
         {
-            var resp=JSON.parse(xhr.responseText);
+            //var resp=JSON.parse(xhr.responseText);
 
-            alert(resp.message);
+           // alert(resp.message);
+        alert("error")
         },
         complete:function()
         {
