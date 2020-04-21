@@ -133,7 +133,7 @@ function loadRest() {
                     spohtml += '<div class="img">';
                     spohtml += '<img src="'+IP+":"+PORT+"/"+rest.CoverImagePath+'" /></div>';
                     spohtml += '<span class="status">open</span>';
-                    spohtml += '<span class="distance">Approximately <br><b>45 Min</b></span>';
+                    spohtml += '<span class="distance">Approximately <br><b>'+rest.approximateTime+' Min</b></span>';
                     spohtml += '</div>';
                     spohtml += '<div class="rest-info">';
                     spohtml += '<h4>'+ rest.Name +'</h4>';
