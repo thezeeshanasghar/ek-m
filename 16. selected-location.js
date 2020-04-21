@@ -2,13 +2,13 @@ var FilterURL = '';
 var CuisineId ;
 var open = 0;
 var topr = 0;
-var CityId = getObjsFromLocalStorage("CityId"); 
+// var CityId = getObjsFromLocalStorage("CityId"); 
 var lat = getObjsFromLocalStorage("lat");
 var lng = getObjsFromLocalStorage("lng");
 $(document).ready(function(){
     loadCuisine();
-      loadSpon();
-      loadRest(CityId);
+    // loadSpon();
+      loadRest();
       searchRest();
       searchstickRest();
       var Customer = getObjsFromLocalStorage("Customer");
@@ -107,57 +107,6 @@ function loadCuisine() {
 }
 
 
-// Load Sponsors
-function loadSpon() {
-
-    $.ajax({
-        url: SERVER + "restaurant/sponsor",
-        type: "GET",
-        dataType: "JSON",
-        contentType: "application/json;charset=utf-8",
-        success: function (result) {
-
-        	console.log(result);
-            var html='';
-			
-             if(result) {
-                $.each(result, function(index,spon){
-
-                    html += '<div class="swiper-slide swiper-slide-widthed">';
-                    // html += '<a href="19. view-order.html?id='+spon.Id+'">';
-                    html += '<div class="restaurants-slides">';
-                    html += '<div class="rest-photo">';
-                    html += '<div class="img">';
-                    html += '<img src="'+IP+":"+PORT+"/"+spon.CoverImagePath+'" /></div>';
-                    html += '<span class="status">open</span>';
-                    html += '<span class="distance">Approximately <br><b>45 Min</b></span>';
-                    html += '</div>';
-                    html += '<div class="rest-info">';
-                    html += '<h4>'+ spon.Name +'</h4>';
-                    html += '<p><span><img src="img/star.jpg"/>'+spon.Rating;
-                    html += '</span>('+spon.reviewCount+'+) - Pizza - Burger - Peri...</p>';
-                    html += '</div></div></div>';
-                    
-
-                }); 
-                $("#spon-rest").html(html);
-
-                var swiper = new Swiper('.s2', {
-			      slidesPerView: 'auto',
-			      spaceBetween: 14,
-			      freeMode: true,
-			    });
-            }
-        },
-        error: function(xhr, status, error) {
-            console.log(xhr.responseText);
-          }
-    });
-}
-
-
-
-
 // Load Restaurants
 function loadRest() {
 
@@ -170,26 +119,48 @@ function loadRest() {
         success: function (result) {
             result=result.filter(x=>x.Status==1);
         	console.log(result);
+            var spohtml='';
             var html='';
-	
              if(result) {
                 $.each(result, function(index,rest){
-
+         // for sponsor Restaurant
+                if (rest.IsSponsor)
+                {
+                    spohtml += '<div class="swiper-slide swiper-slide-widthed">';
+                    // html += '<a href="19. view-order.html?id='+spon.Id+'">';
+                    spohtml += '<div class="restaurants-slides">';
+                    spohtml += '<div class="rest-photo">';
+                    spohtml += '<div class="img">';
+                    spohtml += '<img src="'+IP+":"+PORT+"/"+rest.CoverImagePath+'" /></div>';
+                    spohtml += '<span class="status">open</span>';
+                    spohtml += '<span class="distance">Approximately <br><b>45 Min</b></span>';
+                    spohtml += '</div>';
+                    spohtml += '<div class="rest-info">';
+                    spohtml += '<h4>'+ rest.Name +'</h4>';
+                    spohtml += '<p><span><img src="img/star.jpg"/>'+rest.Rating;
+                    spohtml += '</span>('+rest.reviewCount+'+) - Pizza - Burger - Peri...</p>';
+                    spohtml += '</div></div></div>';
+                }
+        
+        // For All Restaurants
                     html += '<div class="rest-slider">';
                     html += '<a href="19. view-order.html?id='+rest.Id+'">';
                     html += '<div class="all-rest-item rest-item">';
                     html += '<div class="rest-photo">';
                     html += '<div class="img"><img src="'+IP+":"+PORT+"/"+rest.CoverImagePath+'" /></div>';
-                    html += '<span class="distance">Approximately<br><b>30 Min</b></span>';
+                    html += '<span class="distance">Approximately<br><b>'+rest.approximateTime+' Min</b></span>';
                     html += '</div>';
                     html += '<div class="rest-info">';
                     html += '<h4>'+rest.Name+'</h4>';
                     html += '<p><span><img src="img/star.jpg" />'+rest.Rating+' Good</span>('+rest.reviewCount+'+) - BBQ - Chinese - Pak...</p>';
                     html += '</div></div></a></div>';
-                    
-
-                 
                 }); 
+                $("#spon-rest").html(spohtml);
+                var swiper = new Swiper('.s2', {
+                    slidesPerView: 'auto',
+                    spaceBetween: 14,
+                    freeMode: true,
+                  });
                 $("#all-rest").html(html);
             }
         },
