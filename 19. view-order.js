@@ -28,6 +28,9 @@ $(document).ready(function(){
        
         }
     }
+}else{
+    localStorage.setItem("RestaurantId", id);
+
 }
 
  loadRestaurantDetails(id);
