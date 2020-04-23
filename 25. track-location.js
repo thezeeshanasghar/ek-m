@@ -117,7 +117,6 @@ function loadOrderStatus (id)
 
   function calcRoute() {
     var start = new google.maps.LatLng(rest_latitude, rest_longitude);
-   
     var end = new google.maps.LatLng(cust_latitude, cust_longitude);
     var Rest = new google.maps.Marker({icon: "img/rest.ico", map: map, position: start});
     var Customer = new google.maps.Marker({icon: "img/user.ico", map: map, position: end});
@@ -134,8 +133,14 @@ function loadOrderStatus (id)
         url:SERVER+"Coordinates/"+OrderId,
         success:function(response)
         {
-          marker.setPosition( new google.maps.LatLng(parseFloat(response.RiderCoordinates.split(",")[0]),parseFloat(response.RiderCoordinates.split(",")[1])));
+          var ridlat = parseFloat(response.RiderCoordinates.split(",")[0]);
+          var ridlng = parseFloat(response.RiderCoordinates.split(",")[1]);
+          marker.setPosition( new google.maps.LatLng(ridlat,ridlng));
           marker.setMap(map);
+
+          var distance = getDistanceFromLatLonInKm(cust_latitude, cust_longitude, ridlat, ridlng);
+          console.log(distance);
+          $("#time").html(distance*3);
 
         },
         error:function(response)
@@ -173,6 +178,25 @@ function loadOrderStatus (id)
   initialize();
 }
 
-$('#loading').addClass("d-none");   
+$('#loading').addClass("d-none"); 
+
+// distance calculation for time
+function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+  var R = 6371; // Radius of the earth in km
+  var dLat = deg2rad(lat2 - lat1);  // deg2rad below
+  var dLon = deg2rad(lon2 - lon1);
+  var a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+    Math.sin(dLon / 2) * Math.sin(dLon / 2)
+    ;
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  var d = R * c; // Distance in km
+  return d;
+}
+
+function deg2rad(deg) {
+  return deg * (Math.PI / 180)
+}
 
 //});

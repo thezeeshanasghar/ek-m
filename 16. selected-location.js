@@ -263,7 +263,7 @@ function searchstickRest() {
 function setCuisineId(id)
 {
     FilterURL = 'cuisineId='+id;
-    loadRest(CityId);
+    loadRest();
 }
 function setOpen(){
 if (open ==1)
@@ -295,7 +295,7 @@ function ApplyFilters()
     {
         FilterURL += 'top=true';
     }
-    loadRest(CityId);
+    loadRest();
 }
 
 function clearFilters()
@@ -303,7 +303,7 @@ function clearFilters()
  open = 0;
  top = 0;
  FilterURL = ''; 
- loadRest(CityId); 
+ loadRest(); 
  $(".filter-popup").fadeOut();
  $(".filter-opt input").prop("checked", false );
 }
