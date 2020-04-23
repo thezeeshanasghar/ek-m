@@ -38,7 +38,7 @@ $("#login-form").validate({
      //Form Processing via AJAX
     submitHandler: function (form) {
         obj = {
-            "Email": $("#Email").val(),
+            "MobileNumber": $("#MobileNumber").val(),
             "Password": $("#Password").val()
         }
         $.ajax({
