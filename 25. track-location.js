@@ -125,7 +125,7 @@ function loadOrderStatus (id)
       destination: new google.maps.LatLng(cust_latitude,cust_longitude),
       travelMode: google.maps.TravelMode.DRIVING
     };
-    marker = new google.maps.Marker();
+    marker = new google.maps.Marker({icon: "img/Bike.ico"});
     setInterval(function(){
       $.ajax({
         type:"GET",
