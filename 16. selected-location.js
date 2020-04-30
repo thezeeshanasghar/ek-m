@@ -190,16 +190,17 @@ function searchRest() {
                 if (value.Name.search(expression) != -1 || value.LogoImagePath.search(expression) != -1)
 
                 {
-                    $("#liveSearch").append('<li><img src="'+IP+":"+PORT+"/"+value.LogoImagePath+'" /> | '+value.Name+'</li>');
+                    $("#liveSearch").append('<li data-value='+value.Id+' ><img src="'+IP+":"+PORT+"/"+value.LogoImagePath+'" /> | '+value.Name+'</li>');
                 }
-
+            
                 $("#liveSearch").on('click', 'li' , function(){
                     var click_text = $(this).text().split('|');
 
                     // alert(click_text);
-
+                    var Id = $(this).attr("data-value");
                     $("#search").val($.trim(click_text))
                     $("#liveSearch").html('');
+                    window.location.href="19. view-order.html?id="+Id;
                 });
             })
 
