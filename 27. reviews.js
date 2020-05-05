@@ -1,9 +1,11 @@
 var Id = getObjsFromLocalStorage("RestaurantId");
+var Customer=getObjsFromLocalStorage("Customer");
 localStorage.setItem("CityId", 1);    // temporary set
 var items = [];
 var items = getObjsFromLocalStorage("items");
 var CityId = getObjsFromLocalStorage("CityId");
 var DelCharges = getObjsFromLocalStorage("DelCharges");
+var IsReviewed=0
 $(document).ready(function(){
    loadReviews(Id);
     //var id = parseInt(getParameterByName("id")) || 0;
@@ -124,25 +126,34 @@ function loadReviews(id) {
         contentType: "application/json;charset=utf-8",
         success: function (result) {
         var html = '';
+    
         $.each(result, function (index, review) {
-            console.log(review.Customer.Name);
-
+            console.log(review);
+            if(review.Customer.Id==Customer.Id)
+            {
+                IsReviewed=1;
+            }
             var star1 = review.Id+"a";
             var star2 = review.Id+"b";
             var star3 = review.Id+"c";
             var star4 = review.Id+"d";
             var star5 = review.Id+"e";
-            
+            // if(review.)
 
             html += '<li><div class="header-wrapper"><div class="left-panel"><div class="user-icon"><img src="img/user-dark.jpg" alt=""></div><div class="user-name-date">'
-            html +='<h3>'+review.Customer.Name+'</h3><span>'+review.Created+'</span></div></div>'
+            html +='<h3>'+review.Customer.Name+'</h3><span>'+review.Created.split('T')[0]+'</span></div></div>'
             html +='<div class="right-panel">'
-            html +='<div class="cust-rate">'
-            html +='<span name="star" id='+star1+'></span><label for='+star1+'></label>'
+            html +='<div >'
+            for(var i=0;i<review.Rating;i++)
+            {
+                html+="<span><img src=\"img/star.jpg\"></span>"
+
+            }
+            {/* html +='<span name="star" id='+star1+'></span><label for='+star1+'></label>'
             html +='<span name="star" id='+star2+'></span><label for='+star2+'></label>'
             html +='<span name="star" id='+star3+'></span><label for='+star3+'></label>'
             html +='<span name="star" id='+star4+'></span><label for='+star4+'></label>'
-            html +='<span name="star" id='+star5+'></span><label for='+star5+'></label>'
+            html +='<span name="star" id='+star5+'></span><label for='+star5+'></label>' */}
             html +='</div></div>'
             html+='<p>'+review.Comment+'</p></div></li>'
 
@@ -190,4 +201,14 @@ function loadReviews(id) {
             console.log(xhr.responseText);
         }
     });
+}
+
+function Reviewclk()
+{
+    if(IsReviewed>0)
+    {
+        alert("Already Reviewed");
+    }else{
+window.open("28. rate-review.html","_self");
+    }
 }

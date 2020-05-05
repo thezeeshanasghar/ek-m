@@ -2125,9 +2125,12 @@ padding-top: 4px;
 }
 
 .review-list ul li .right-panel img {
-	width: 78px;
+	/* width: 78px;
 	height: 12px;
-	margin-top: -12px;
+	margin-top: -12px; */
+	width: 35px;
+    height: 35px;
+    margin-top: -12px;
 }
 
 .review-list ul li p {
