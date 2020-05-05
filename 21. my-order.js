@@ -201,8 +201,15 @@ function loadCouponCode()
             var date = result.ValidTill;
             var jdate = new Date(date);
             var sysdate = new Date();
+            var UsedCoupon=  localStorage.getItem("UsedCoupon")==null?[]:localStorage.getItem("UsedCoupon").split(",");
+            if(UsedCoupon.filter(x=>x==code).length>0)
+            {
+              alert("Coupon Already Used");
+            }else{
             if (sysdate < jdate)
             {
+            localStorage.setItem("UsedCoupon",code+","+(localStorage.getItem("UsedCoupon")==null?"":localStorage.getItem("UsedCoupon")));
+
             // alert("Congratulations You Got " +result.PctDiscount+"% Discount");  
             CouponDiscount = result.PctDiscount;
             console.log(CouponDiscount);
@@ -219,6 +226,8 @@ function loadCouponCode()
             });
 
             }
+        }
+
             if(sysdate > jdate)
             {
             alert("Sorry This Code is Expired");
